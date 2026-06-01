@@ -1,0 +1,1391 @@
+{
+  "info": {
+    "_postman_id": "61612285-7a7c-4844-98cf-bd1a5ab751d6",
+    "name": "New SuperAdmin",
+    "schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+    "_exporter_id": "54335742",
+    "_collection_link": "https://go.postman.co/collection/54335742-61612285-7a7c-4844-98cf-bd1a5ab751d6?source=collection_link"
+  },
+  "item": [
+    {
+      "name": "createNewSuperAdmin",
+      "request": {
+        "auth": {
+          "type": "noauth"
+        },
+        "method": "POST",
+        "header": [],
+        "body": {
+          "mode": "raw",
+          "raw": "{\r\n  \"emailAddress\": \"pooja@gmail.com\",\r\n  \"phoneNumber\": 9876143210,\r\n  \"password\": \"12345\",\r\n  \"adminName\": \"Pooja\",\r\n  \"institutename\": \"Patel Institute\",\r\n  \"mobileNumber\": 9876543210,\r\n  \"address\": \"Swarget, Pune\",\r\n  \"city\": \"Pune\",\r\n  \"state\": \"Maharashtra\",\r\n  \"aadhar\": 123456789012,\r\n  \"pancard\": \"ABCDE1234F\",\r\n  \"country\": \"India\"\r\n}",
+          "options": {
+            "raw": {
+              "language": "json"
+            }
+          }
+        },
+        "url": {
+          "raw": "http://localhost:8105/createNewLayerSuperAdminHome",
+          "protocol": "http",
+          "host": [
+            "localhost"
+          ],
+          "port": "8105",
+          "path": [
+            "createNewLayerSuperAdminHome"
+          ]
+        }
+      },
+      "response": []
+    },
+    {
+      "name": "superadminlogin",
+      "request": {
+        "auth": {
+          "type": "noauth"
+        },
+        "method": "POST",
+        "header": [],
+        "body": {
+          "mode": "raw",
+          "raw": "{\r\n    \"email\":\"admin@gmail.com\",\r\n    \"password\":\"12345678\"\r\n}",
+          "options": {
+            "raw": {
+              "language": "json"
+            }
+          }
+        },
+        "url": {
+          "raw": "http://localhost:8105/layerSuperAdminLogin",
+          "protocol": "http",
+          "host": [
+            "localhost"
+          ],
+          "port": "8105",
+          "path": [
+            "layerSuperAdminLogin"
+          ]
+        }
+      },
+      "response": []
+    },
+    {
+      "name": "SaveSection",
+      "request": {
+        "auth": {
+          "type": "bearer",
+          "bearer": [
+            {
+              "key": "token",
+              "value": "eyJhbGciOiJIUzI1NiJ9.eyJzdWIiOiJwb29qYUBnbWFpbC5jb20iLCJpYXQiOjE3NTE1NDIxOTcsImV4cCI6MTc1MTYyODU5N30.JBp2b1OSS2nW0wzHpUNgjG8lk4QD5W5R_MciE5euNEc",
+              "type": "string"
+            }
+          ]
+        },
+        "method": "POST",
+        "header": [],
+        "body": {
+          "mode": "raw",
+          "raw": "{\r\n    \"sectionName\": \"Institute/Accademy\"\r\n}",
+          "options": {
+            "raw": {
+              "language": "json"
+            }
+          }
+        },
+        "url": {
+          "raw": "http://localhost:8105/saveSuperAdminHomeLayerSection",
+          "protocol": "http",
+          "host": [
+            "localhost"
+          ],
+          "port": "8105",
+          "path": [
+            "saveSuperAdminHomeLayerSection"
+          ]
+        }
+      },
+      "response": []
+    },
+    {
+      "name": "createPlan",
+      "request": {
+        "method": "POST",
+        "header": [],
+        "body": {
+          "mode": "raw",
+          "raw": "{\r\n  \"planName\": \"Basic Plan\",\r\n  \"mrp\": 1999.99,\r\n  \"employeeCount\": \"40\",\r\n  \"studentCount\": \"200\",\r\n  \"sectionId\": 2,\r\n  \"branchLimit\":3,\r\n  \"perEntry\": 8\r\n}",
+          "options": {
+            "raw": {
+              "language": "json"
+            }
+          }
+        },
+        "url": {
+          "raw": "http://localhost:8105/createSuperAdminHomePlan",
+          "protocol": "http",
+          "host": [
+            "localhost"
+          ],
+          "port": "8105",
+          "path": [
+            "createSuperAdminHomePlan"
+          ]
+        }
+      },
+      "response": []
+    },
+    {
+      "name": "saveinstitude",
+      "request": {
+        "method": "POST",
+        "header": [],
+        "body": {
+          "mode": "raw",
+          "raw": "{\r\n  \"instituteEmail\": \"institute@gmail.com\",\r\n  \"phoneNumber\": 9829028930,\r\n  \"password\": \"12345\",\r\n  \"instituteName\": \"Shreyansh Academy Kolhapur\",\r\n  \"mobileNumber\": 8727645637,\r\n  \"country\": \"India\",\r\n  \"ownerName\": \"Vaishnavi Patil\",\r\n  \"transactionId\": \"TXN123456789\",\r\n  \"amount\": 600.00,\r\n  \"paymentMode\": \"UPI\",\r\n  \"gstPersent\": 18,\r\n  \"gstAmount\": 900.00,\r\n  \"totalAmount\": 5900.00,\r\n  \"studentRange\": \"100-200\",\r\n  \"employeeRange\": \"10-20\",\r\n  \"validity\": 12,\r\n  \"discountper\": 10.0,\r\n  \"isCreatedByAdmin\": true,\r\n//   \"planId\": 7,\r\n  \"address\": \"2178/B, mandalik lane, Managalwar Peth, Kolhapur\",\r\n  \"city\": \"Nashik\",\r\n  \"state\": \"Kolhapur\",\r\n  \"district\": \"Kolhaprn\",\r\n//   \"websiteName\": \"www.nashikinstitute.com\",\r\n  \"aadhar\": 123412341234,\r\n//   \"branchLimit\":2,\r\n  \"pancard\": \"ABCDE1274F\",\r\n  \"pincode\": 416008,\r\n  \"gstNo\": \"27ABCDE1234F1Z5\",\r\n  \"createdByAdmin\":true,\r\n  \"systemIds\": [1]\r\n}\r\n",
+          "options": {
+            "raw": {
+              "language": "json"
+            }
+          }
+        },
+        "url": {
+          "raw": "http://localhost:8105/createLayerClientSuperAdmin",
+          "protocol": "http",
+          "host": [
+            "localhost"
+          ],
+          "port": "8105",
+          "path": [
+            "createLayerClientSuperAdmin"
+          ]
+        }
+      },
+      "response": []
+    },
+    {
+      "name": "createFeature",
+      "request": {
+        "method": "POST",
+        "header": [],
+        "body": {
+          "mode": "raw",
+          "raw": "{\r\n\"featureName\":\"Multiple Branches\"\r\n}\r\n",
+          "options": {
+            "raw": {
+              "language": "json"
+            }
+          }
+        },
+        "url": {
+          "raw": "http://localhost:8105/createLayerFeature",
+          "protocol": "http",
+          "host": [
+            "localhost"
+          ],
+          "port": "8105",
+          "path": [
+            "createLayerFeature"
+          ]
+        }
+      },
+      "response": []
+    },
+    {
+      "name": "createsystemwithfeatures",
+      "request": {
+        "method": "POST",
+        "header": [],
+        "body": {
+          "mode": "raw",
+          "raw": "{\r\n    \"systemName\": \"Lead Management Software\",\r\n    \"featureIds\": [1]\r\n}\r\n",
+          "options": {
+            "raw": {
+              "language": "json"
+            }
+          }
+        },
+        "url": {
+          "raw": "http://localhost:8105/createLayerSystemWithFeatures",
+          "protocol": "http",
+          "host": [
+            "localhost"
+          ],
+          "port": "8105",
+          "path": [
+            "createLayerSystemWithFeatures"
+          ]
+        }
+      },
+      "response": []
+    },
+    {
+      "name": "getallSystems",
+      "request": {
+        "auth": {
+          "type": "bearer",
+          "bearer": [
+            {
+              "key": "token",
+              "value": "eyJhbGciOiJIUzI1NiJ9.eyJzdWIiOiJhZG1pbkBnbWFpbC5jb20iLCJpYXQiOjE3NjA0MTc1MDYsImV4cCI6MTc2MDUwMzkwNn0.14hnJAziEhbP571SPlT6TKUMApE3o8-_GHf3X9-F6jM",
+              "type": "string"
+            }
+          ]
+        },
+        "method": "GET",
+        "header": [],
+        "url": {
+          "raw": "http://localhost:8105/getAllLayerSystems",
+          "protocol": "http",
+          "host": [
+            "localhost"
+          ],
+          "port": "8105",
+          "path": [
+            "getAllLayerSystems"
+          ]
+        }
+      },
+      "response": []
+    },
+    {
+      "name": "getSystembyId",
+      "request": {
+        "auth": {
+          "type": "bearer",
+          "bearer": [
+            {
+              "key": "token",
+              "value": "eyJhbGciOiJIUzI1NiJ9.eyJzdWIiOiJhZG1pbkBnbWFpbC5jb20iLCJpYXQiOjE3NDM1Nzg0MDcsImV4cCI6MTc0MzY2NDgwN30.oSXZ4CqyO_Ca1Cws8dEqnQIONePiCB3rnhM9jtVkL7w",
+              "type": "string"
+            }
+          ]
+        },
+        "method": "GET",
+        "header": [],
+        "url": {
+          "raw": "http://localhost:8105/getSystemby/1",
+          "protocol": "http",
+          "host": [
+            "localhost"
+          ],
+          "port": "8105",
+          "path": [
+            "getSystemby",
+            "1"
+          ]
+        }
+      },
+      "response": []
+    },
+    {
+      "name": "updatesystem",
+      "request": {
+        "auth": {
+          "type": "bearer",
+          "bearer": [
+            {
+              "key": "token",
+              "value": "eyJhbGciOiJIUzI1NiJ9.eyJzdWIiOiJhZG1pbkBnbWFpbC5jb20iLCJpYXQiOjE3NDUzNDA3MTgsImV4cCI6MTc0NTQyNzExOH0.9ZAJhgmuPhAqgBZgdkg8FaHd1jHx98KXSW0F0CHH8TE",
+              "type": "string"
+            }
+          ]
+        },
+        "method": "PUT",
+        "header": [],
+        "body": {
+          "mode": "raw",
+          "raw": "{\r\n   \"systemName\": \"New Hostel System\",\r\n    \"featureIds\": [1,3]\r\n}",
+          "options": {
+            "raw": {
+              "language": "json"
+            }
+          }
+        },
+        "url": {
+          "raw": "http://localhost:8105/updatesystem/3",
+          "protocol": "http",
+          "host": [
+            "localhost"
+          ],
+          "port": "8105",
+          "path": [
+            "updatesystem",
+            "3"
+          ]
+        }
+      },
+      "response": []
+    },
+    {
+      "name": "updateFeature",
+      "request": {
+        "auth": {
+          "type": "bearer",
+          "bearer": [
+            {
+              "key": "token",
+              "value": "eyJhbGciOiJIUzI1NiJ9.eyJzdWIiOiJhZG1pbkBnbWFpbC5jb20iLCJpYXQiOjE3NDM1ODM1OTcsImV4cCI6MTc0MzY2OTk5N30.WnHNUY5g_VFcuuoO3y42d-XK1B3AYYBuAMPokd-sM7w",
+              "type": "string"
+            }
+          ]
+        },
+        "method": "PUT",
+        "header": [],
+        "body": {
+          "mode": "raw",
+          "raw": "{\r\n    \"featureName\":\"Inquiry Summary\"\r\n}",
+          "options": {
+            "raw": {
+              "language": "json"
+            }
+          }
+        },
+        "url": {
+          "raw": "http://localhost:8105/updateFeature/1",
+          "protocol": "http",
+          "host": [
+            "localhost"
+          ],
+          "port": "8105",
+          "path": [
+            "updateFeature",
+            "1"
+          ]
+        }
+      },
+      "response": []
+    },
+    {
+      "name": "additionalFeature",
+      "request": {
+        "auth": {
+          "type": "bearer",
+          "bearer": [
+            {
+              "key": "token",
+              "value": "eyJhbGciOiJIUzI1NiJ9.eyJzdWIiOiJwb29qYUBnbWFpbC5jb20iLCJpYXQiOjE3NTE1NDIxOTcsImV4cCI6MTc1MTYyODU5N30.JBp2b1OSS2nW0wzHpUNgjG8lk4QD5W5R_MciE5euNEc",
+              "type": "string"
+            }
+          ]
+        },
+        "method": "POST",
+        "header": [],
+        "body": {
+          "mode": "raw",
+          "raw": "{\r\n    \"name\":\"Unlimited Entry\"\r\n}",
+          "options": {
+            "raw": {
+              "language": "json"
+            }
+          }
+        },
+        "url": {
+          "raw": "http://localhost:8105/additionalLayerFeature",
+          "protocol": "http",
+          "host": [
+            "localhost"
+          ],
+          "port": "8105",
+          "path": [
+            "additionalLayerFeature"
+          ]
+        }
+      },
+      "response": []
+    },
+    {
+      "name": "assignadditionalAndSystemToPlan",
+      "request": {
+        "auth": {
+          "type": "bearer",
+          "bearer": [
+            {
+              "key": "token",
+              "value": "eyJhbGciOiJIUzI1NiJ9.eyJzdWIiOiJwb29qYUBnbWFpbC5jb20iLCJpYXQiOjE3NTE1NDIxOTcsImV4cCI6MTc1MTYyODU5N30.JBp2b1OSS2nW0wzHpUNgjG8lk4QD5W5R_MciE5euNEc",
+              "type": "string"
+            }
+          ]
+        },
+        "method": "POST",
+        "header": [],
+        "body": {
+          "mode": "raw",
+          "raw": "{\r\n  \"planId\": 4,\r\n  \"systemEnableMap\": {\r\n    \"1\": true,\r\n    \"2\": true,\r\n    \"3\": true,\r\n    \"4\": false,\r\n    \"5\": true\r\n  },\r\n  \"featureEnableMap\": {\r\n    \"1\": true\r\n  }\r\n}\r\n",
+          "options": {
+            "raw": {
+              "language": "json"
+            }
+          }
+        },
+        "url": {
+          "raw": "http://localhost:8105/assignAdditionalAndSystemToSuperAdminHomePlan",
+          "protocol": "http",
+          "host": [
+            "localhost"
+          ],
+          "port": "8105",
+          "path": [
+            "assignAdditionalAndSystemToSuperAdminHomePlan"
+          ]
+        }
+      },
+      "response": []
+    },
+    {
+      "name": "getCompletePlan",
+      "request": {
+        "auth": {
+          "type": "bearer",
+          "bearer": [
+            {
+              "key": "token",
+              "value": "eyJhbGciOiJIUzI1NiJ9.eyJzdWIiOiJhZG1pbkBnbWFpbC5jb20iLCJpYXQiOjE3NjE4MjQ5NzYsImV4cCI6MTc2MTkxMTM3Nn0.Ma-Bgcp2puSr-udxRet9gjOqlhW8dosk9UM6y1CC9qc",
+              "type": "string"
+            }
+          ]
+        },
+        "method": "GET",
+        "header": [],
+        "url": {
+          "raw": "http://localhost:8105/getSuperAdminHomeCompletePlan/1",
+          "protocol": "http",
+          "host": [
+            "localhost"
+          ],
+          "port": "8105",
+          "path": [
+            "getSuperAdminHomeCompletePlan",
+            "1"
+          ]
+        }
+      },
+      "response": []
+    },
+    {
+      "name": "updatesystemvalue",
+      "request": {
+        "auth": {
+          "type": "bearer",
+          "bearer": [
+            {
+              "key": "token",
+              "value": "eyJhbGciOiJIUzI1NiJ9.eyJzdWIiOiJhZG1pbkBnbWFpbC5jb20iLCJpYXQiOjE3NjAxNzU2NzQsImV4cCI6MTc2MDI2MjA3NH0.C7QMp0tN1cEbdkOttmWkkIHTs4dAdp45EwvirF_CKnI",
+              "type": "string"
+            }
+          ]
+        },
+        "method": "PUT",
+        "header": [],
+        "body": {
+          "mode": "raw",
+          "raw": "{\r\n    \"systemName\": \"Attendance Management System\",\r\n     \"perEntryCost\": 25.5,\r\n  \"mrp\": 100.0,\r\n  \"discount\": 10.0,\r\n  \"featureIds\": [1,3, 4]\r\n}",
+          "options": {
+            "raw": {
+              "language": "json"
+            }
+          }
+        },
+        "url": {
+          "raw": "http://localhost:8105/updateLayerSystem/4",
+          "protocol": "http",
+          "host": [
+            "localhost"
+          ],
+          "port": "8105",
+          "path": [
+            "updateLayerSystem",
+            "4"
+          ]
+        }
+      },
+      "response": []
+    },
+    {
+      "name": "updateAddFeatureValue",
+      "request": {
+        "auth": {
+          "type": "bearer",
+          "bearer": [
+            {
+              "key": "token",
+              "value": "eyJhbGciOiJIUzI1NiJ9.eyJzdWIiOiJhZG1pbkBnbWFpbC5jb20iLCJpYXQiOjE3NDQwMTA1MzYsImV4cCI6MTc0NDA5NjkzNn0._Xwn0BGgRB32X3YGgyU0UsiKpBzZ2sbU2uyArHFJcOQ",
+              "type": "string"
+            }
+          ]
+        },
+        "method": "PUT",
+        "header": [],
+        "body": {
+          "mode": "raw",
+          "raw": "{\r\n  \"planId\": 1,\r\n  \"systemEnableMap\": {\r\n    \"2\": false\r\n  },\r\n  \"featureEnableMap\": {\r\n    \"1\": true,\r\n    \"2\": false\r\n  }\r\n}\r\n",
+          "options": {
+            "raw": {
+              "language": "json"
+            }
+          }
+        },
+        "url": {
+          "raw": "http://localhost:8105/updateadditionalAndSystemToPlan",
+          "protocol": "http",
+          "host": [
+            "localhost"
+          ],
+          "port": "8105",
+          "path": [
+            "updateadditionalAndSystemToPlan"
+          ]
+        }
+      },
+      "response": []
+    },
+    {
+      "name": "getPlanBySection",
+      "request": {
+        "auth": {
+          "type": "bearer",
+          "bearer": [
+            {
+              "key": "token",
+              "value": "eyJhbGciOiJIUzI1NiJ9.eyJzdWIiOiJhZG1pbkBnbWFpbC5jb20iLCJpYXQiOjE3NDY2ODA5NzYsImV4cCI6MTc0Njc2NzM3Nn0._nWdJflxXn5brh1iJAk7igXHHf_a4z4vvf_yK1PmI40",
+              "type": "string"
+            }
+          ]
+        },
+        "method": "GET",
+        "header": [],
+        "url": {
+          "raw": "http://localhost:8105/getPlanBySection?id=1",
+          "protocol": "http",
+          "host": [
+            "localhost"
+          ],
+          "port": "8105",
+          "path": [
+            "getPlanBySection"
+          ],
+          "query": [
+            {
+              "key": "id",
+              "value": "1"
+            }
+          ]
+        }
+      },
+      "response": []
+    },
+    {
+      "name": "getPlansBySectionId",
+      "request": {
+        "auth": {
+          "type": "bearer",
+          "bearer": [
+            {
+              "key": "token",
+              "value": "eyJhbGciOiJIUzI1NiJ9.eyJzdWIiOiJhZG1pbkBnbWFpbC5jb20iLCJpYXQiOjE3NDQwMTA1MzYsImV4cCI6MTc0NDA5NjkzNn0._Xwn0BGgRB32X3YGgyU0UsiKpBzZ2sbU2uyArHFJcOQ",
+              "type": "string"
+            }
+          ]
+        },
+        "method": "GET",
+        "header": [],
+        "url": {
+          "raw": "http://localhost:8105/getLayerPlansBySectionId?sectionId=1",
+          "protocol": "http",
+          "host": [
+            "localhost"
+          ],
+          "port": "8105",
+          "path": [
+            "getLayerPlansBySectionId"
+          ],
+          "query": [
+            {
+              "key": "sectionId",
+              "value": "1"
+            }
+          ]
+        }
+      },
+      "response": []
+    },
+    {
+      "name": "AllSections",
+      "request": {
+        "auth": {
+          "type": "bearer",
+          "bearer": [
+            {
+              "key": "token",
+              "value": "eyJhbGciOiJIUzI1NiJ9.eyJzdWIiOiJhZG1pbkBnbWFpbC5jb20iLCJpYXQiOjE3NDY2ODE5MjksImV4cCI6MTc0Njc2ODMyOX0.mRVGIpHr7ATE0wY_JB76fkDvl4Y4zsVbTAEZYycL8JI",
+              "type": "string"
+            }
+          ]
+        },
+        "method": "GET",
+        "header": [],
+        "url": {
+          "raw": "http://localhost:8105/getAllLayerSections",
+          "protocol": "http",
+          "host": [
+            "localhost"
+          ],
+          "port": "8105",
+          "path": [
+            "getAllLayerSections"
+          ]
+        }
+      },
+      "response": []
+    },
+    {
+      "name": "AllPlans",
+      "request": {
+        "auth": {
+          "type": "bearer",
+          "bearer": [
+            {
+              "key": "token",
+              "value": "eyJhbGciOiJIUzI1NiJ9.eyJzdWIiOiJwb29qYUBnbWFpbC5jb20iLCJpYXQiOjE3NTE1NDIxOTcsImV4cCI6MTc1MTYyODU5N30.JBp2b1OSS2nW0wzHpUNgjG8lk4QD5W5R_MciE5euNEc",
+              "type": "string"
+            }
+          ]
+        },
+        "method": "GET",
+        "header": [],
+        "url": {
+          "raw": "http://localhost:8105/getAllSuperAdminHomePlans",
+          "protocol": "http",
+          "host": [
+            "localhost"
+          ],
+          "port": "8105",
+          "path": [
+            "getAllSuperAdminHomePlans"
+          ]
+        }
+      },
+      "response": []
+    },
+    {
+      "name": "renewSubscription",
+      "request": {
+        "auth": {
+          "type": "bearer",
+          "bearer": [
+            {
+              "key": "token",
+              "value": "eyJhbGciOiJIUzI1NiJ9.eyJzdWIiOiJhZG1pbkBnbWFpbC5jb20iLCJpYXQiOjE3NTAwNjk2NjAsImV4cCI6MTc1MDE1NjA2MH0.PnmbhGnMdMHR4ZDbkBE3IqIdb7t9h_o6I7_bomJ40I8",
+              "type": "string"
+            }
+          ]
+        },
+        "method": "POST",
+        "header": [],
+        "body": {
+          "mode": "raw",
+          "raw": "{\r\n  \"instituteEmail\": \"mumbai@gmail.com\",\r\n  \"planId\": 1,\r\n  \"transactionId\": \"TXN987654321\",\r\n  \"amount\": 6000.0,\r\n  \"paymentMode\": \"Cash\",\r\n  \"gstPercent\": 18,\r\n  \"gstAmount\": 1080.0,\r\n  \"totalAmount\": 7080.0,\r\n  \"invoiceNo\": \"639962\",\r\n  \"validity\": 5,\r\n  \"discountPer\": 5.0,\r\n  \"isCreatedByAdmin\": true\r\n}\r\n",
+          "options": {
+            "raw": {
+              "language": "json"
+            }
+          }
+        },
+        "url": {
+          "raw": "http://localhost:8105/renewSubscription",
+          "protocol": "http",
+          "host": [
+            "localhost"
+          ],
+          "port": "8105",
+          "path": [
+            "renewSubscription"
+          ]
+        }
+      },
+      "response": []
+    },
+    {
+      "name": "getAllSystemsByPlanId",
+      "request": {
+        "auth": {
+          "type": "bearer",
+          "bearer": [
+            {
+              "key": "token",
+              "value": "eyJhbGciOiJIUzI1NiJ9.eyJzdWIiOiJhZG1pbkBnbWFpbC5jb20iLCJpYXQiOjE3NjE4MTI2OTMsImV4cCI6MTc2MTg5OTA5M30.uuwEJQNmYLz79rDb0DvXFSzqnig_ncHeaz8Jk5fxd2k",
+              "type": "string"
+            }
+          ]
+        },
+        "method": "GET",
+        "header": [],
+        "url": {
+          "raw": "http://localhost:8105/getAllLayerSystemsByPlanId?planId=1",
+          "protocol": "http",
+          "host": [
+            "localhost"
+          ],
+          "port": "8105",
+          "path": [
+            "getAllLayerSystemsByPlanId"
+          ],
+          "query": [
+            {
+              "key": "planId",
+              "value": "1"
+            }
+          ]
+        }
+      },
+      "response": []
+    },
+    {
+      "name": "getAllInstitute",
+      "protocolProfileBehavior": {
+        "disableBodyPruning": true
+      },
+      "request": {
+        "auth": {
+          "type": "bearer",
+          "bearer": [
+            {
+              "key": "token",
+              "value": "eyJhbGciOiJIUzI1NiJ9.eyJzdWIiOiJhZG1pbkBnbWFpbC5jb20iLCJpYXQiOjE3NjAzMzE2MzcsImV4cCI6MTc2MDQxODAzN30.1yU9iYq1XhA6gGZMBq76Xc3pArUjNMOjDGx-8uF6pQI",
+              "type": "string"
+            }
+          ]
+        },
+        "method": "GET",
+        "header": [],
+        "body": {
+          "mode": "formdata",
+          "formdata": [
+            {
+              "key": "",
+              "type": "file",
+              "uuid": "381431b9-2d90-477a-a45b-5adbc30a2e00",
+              "value": null,
+              "disabled": true
+            }
+          ]
+        },
+        "url": {
+          "raw": "http://localhost:8105/getAllLayerClient",
+          "protocol": "http",
+          "host": [
+            "localhost"
+          ],
+          "port": "8105",
+          "path": [
+            "getAllLayerClient"
+          ]
+        }
+      },
+      "response": []
+    },
+    {
+      "name": "getInstituteByEmail",
+      "protocolProfileBehavior": {
+        "disableBodyPruning": true
+      },
+      "request": {
+        "auth": {
+          "type": "bearer",
+          "bearer": [
+            {
+              "key": "token",
+              "value": "eyJhbGciOiJIUzI1NiJ9.eyJzdWIiOiJhZG1pbkBnbWFpbC5jb20iLCJpYXQiOjE3NjAwNzgwMzQsImV4cCI6MTc2MDE2NDQzNH0.VEq6o2-dxfXRa_ZKdE94TGxDdRIEZxJOL3srd2UedSs",
+              "type": "string"
+            }
+          ]
+        },
+        "method": "GET",
+        "header": [],
+        "body": {
+          "mode": "raw",
+          "raw": "",
+          "options": {
+            "raw": {
+              "language": "json"
+            }
+          }
+        },
+        "url": {
+          "raw": "http://localhost:8105/getLayerClientByClientEmail?email=asdfghjkl@gmail.com",
+          "protocol": "http",
+          "host": [
+            "localhost"
+          ],
+          "port": "8105",
+          "path": [
+            "getLayerClientByClientEmail"
+          ],
+          "query": [
+            {
+              "key": "email",
+              "value": "asdfghjkl@gmail.com"
+            }
+          ]
+        }
+      },
+      "response": []
+    },
+    {
+      "name": "uploadInstituteImage",
+      "request": {
+        "auth": {
+          "type": "bearer",
+          "bearer": [
+            {
+              "key": "token",
+              "value": "eyJhbGciOiJIUzI1NiJ9.eyJzdWIiOiJhZG1pbkBnbWFpbC5jb20iLCJpYXQiOjE3NjAzNDQ4NzEsImV4cCI6MTc2MDQzMTI3MX0.Hp-_1bxwd8HD63JwYqBvstJNW-ioJrO_lbcCHmaHUjU",
+              "type": "string"
+            }
+          ]
+        },
+        "method": "PUT",
+        "header": [],
+        "body": {
+          "mode": "formdata",
+          "formdata": [
+            {
+              "key": "email",
+              "value": "vaishu@gmail.com",
+              "type": "text",
+              "uuid": "a310399a-4fa4-4eaf-b510-f3f751e9eab9"
+            },
+            {
+              "key": "imageFile",
+              "type": "file",
+              "uuid": "90fe50c4-8edc-4e5e-a839-eb8056e4a860",
+              "src": "/C:/Users/hp/Downloads/12345.jpg"
+            }
+          ]
+        },
+        "url": {
+          "raw": "http://localhost:8106/uploadClientProfilePhoto",
+          "protocol": "http",
+          "host": [
+            "localhost"
+          ],
+          "port": "8106",
+          "path": [
+            "uploadClientProfilePhoto"
+          ]
+        }
+      },
+      "response": []
+    },
+    {
+      "name": "updateInstituteById",
+      "request": {
+        "auth": {
+          "type": "bearer",
+          "bearer": [
+            {
+              "key": "token",
+              "value": "eyJhbGciOiJIUzI1NiJ9.eyJzdWIiOiJhZG1pbkBnbWFpbC5jb20iLCJpYXQiOjE3NDQzNjY5MzUsImV4cCI6MTc0NDQ1MzMzNX0.qAjcQagwsXKzQTN1ip2FEak_zWRYBPD5xiOYvU1X_Kg",
+              "type": "string"
+            }
+          ]
+        },
+        "method": "PUT",
+        "header": [],
+        "body": {
+          "mode": "raw",
+          "raw": "{\r\n    \"phoneNumber\":6767676,\r\n    \"address\": \"Pune\",\r\n    \"district\": \"sdfghjk\"\r\n}",
+          "options": {
+            "raw": {
+              "language": "json"
+            }
+          }
+        },
+        "url": {
+          "raw": "http://localhost:8105/updateInstituteById?id=4",
+          "protocol": "http",
+          "host": [
+            "localhost"
+          ],
+          "port": "8105",
+          "path": [
+            "updateInstituteById"
+          ],
+          "query": [
+            {
+              "key": "id",
+              "value": "4"
+            }
+          ]
+        }
+      },
+      "response": []
+    },
+    {
+      "name": "http://localhost:8105/updatePlan/",
+      "request": {
+        "auth": {
+          "type": "bearer",
+          "bearer": [
+            {
+              "key": "token",
+              "value": "eyJhbGciOiJIUzI1NiJ9.eyJzdWIiOiJhZG1pbkBnbWFpbC5jb20iLCJpYXQiOjE3NDUzMTE2NDQsImV4cCI6MTc0NTM5ODA0NH0.Z7vpEklsbTgYt8Xk7VcZ95TnMN_XBd_tX-OQ0td-zY4",
+              "type": "string"
+            }
+          ]
+        },
+        "method": "PUT",
+        "header": [],
+        "body": {
+          "mode": "raw",
+          "raw": "{\r\n//   \"planName\": \"Basic Plan\",\r\n//   \"mrp\": 1999.99,\r\n//   \"employeeCount\": \"40\",\r\n  \"studentCount\": \"20\",\r\n//   \"sectionId\": 1,\r\n  \"branchLimit\":1,\r\n  \"perEntry\": 3\r\n}",
+          "options": {
+            "raw": {
+              "language": "json"
+            }
+          }
+        },
+        "url": {
+          "raw": "http://localhost:8105/updatePlan/1",
+          "protocol": "http",
+          "host": [
+            "localhost"
+          ],
+          "port": "8105",
+          "path": [
+            "updatePlan",
+            "1"
+          ]
+        }
+      },
+      "response": []
+    },
+    {
+      "name": "systembyInstituteEmail",
+      "request": {
+        "auth": {
+          "type": "bearer",
+          "bearer": [
+            {
+              "key": "token",
+              "value": "eyJhbGciOiJIUzI1NiJ9.eyJzdWIiOiJhZG1pbkBnbWFpbC5jb20iLCJpYXQiOjE3NjAwNzgwMzQsImV4cCI6MTc2MDE2NDQzNH0.VEq6o2-dxfXRa_ZKdE94TGxDdRIEZxJOL3srd2UedSs",
+              "type": "string"
+            }
+          ]
+        },
+        "method": "GET",
+        "header": [],
+        "url": {
+          "raw": "http://localhost:8105/systembyInstituteEmail?instituteEmail=asdfghjkl@gmail.com",
+          "protocol": "http",
+          "host": [
+            "localhost"
+          ],
+          "port": "8105",
+          "path": [
+            "systembyInstituteEmail"
+          ],
+          "query": [
+            {
+              "key": "instituteEmail",
+              "value": "asdfghjkl@gmail.com"
+            }
+          ]
+        }
+      },
+      "response": []
+    },
+    {
+      "name": "deletesystem",
+      "request": {
+        "auth": {
+          "type": "bearer",
+          "bearer": [
+            {
+              "key": "token",
+              "value": "eyJhbGciOiJIUzI1NiJ9.eyJzdWIiOiJhZG1pbkBnbWFpbC5jb20iLCJpYXQiOjE3NDM4Mzc4NzMsImV4cCI6MTc0MzkyNDI3M30.KTPTCUGxfGuTY6mGR5BfEy5KGx3UsPLIhdsgSUym4V4",
+              "type": "string"
+            }
+          ]
+        },
+        "method": "DELETE",
+        "header": [],
+        "url": {
+          "raw": "http://localhost:8105/deletesystem/1",
+          "protocol": "http",
+          "host": [
+            "localhost"
+          ],
+          "port": "8105",
+          "path": [
+            "deletesystem",
+            "1"
+          ]
+        }
+      },
+      "response": []
+    },
+    {
+      "name": "PlansBySectionId",
+      "request": {
+        "auth": {
+          "type": "bearer",
+          "bearer": [
+            {
+              "key": "token",
+              "value": "eyJhbGciOiJIUzI1NiJ9.eyJzdWIiOiJhZG1pbkBnbWFpbC5jb20iLCJpYXQiOjE3NDM3NjcxNTYsImV4cCI6MTc0Mzg1MzU1Nn0.kxv9asYsDTD6N4qD4_d4UlX9JRhCVWOC-xbRSEuyWuk",
+              "type": "string"
+            }
+          ]
+        },
+        "method": "GET",
+        "header": [],
+        "url": {
+          "raw": "http://localhost:8105/PlansBySectionId?sectionId=1",
+          "protocol": "http",
+          "host": [
+            "localhost"
+          ],
+          "port": "8105",
+          "path": [
+            "PlansBySectionId"
+          ],
+          "query": [
+            {
+              "key": "sectionId",
+              "value": "1"
+            }
+          ]
+        }
+      },
+      "response": []
+    },
+    {
+      "name": "clientmailExist",
+      "request": {
+        "auth": {
+          "type": "bearer",
+          "bearer": [
+            {
+              "key": "token",
+              "value": "eyJhbGciOiJIUzI1NiJ9.eyJzdWIiOiJhZG1pbkBnbWFpbC5jb20iLCJpYXQiOjE3NDcyOTIwMDcsImV4cCI6MTc0NzM3ODQwN30.MjnyYSYx-i43NceaDOxZhBLOUjFr88Xn2TGa-66HHlI",
+              "type": "string"
+            }
+          ]
+        },
+        "method": "GET",
+        "header": [],
+        "url": {
+          "raw": "http://localhost:8105/clientEmailExist?email=pune@gmail.com",
+          "protocol": "http",
+          "host": [
+            "localhost"
+          ],
+          "port": "8105",
+          "path": [
+            "clientEmailExist"
+          ],
+          "query": [
+            {
+              "key": "email",
+              "value": "pune@gmail.com"
+            }
+          ]
+        }
+      },
+      "response": []
+    },
+    {
+      "name": "uploadMou",
+      "request": {
+        "auth": {
+          "type": "bearer",
+          "bearer": [
+            {
+              "key": "token",
+              "value": "eyJhbGciOiJIUzI1NiJ9.eyJzdWIiOiJwb29qYUBnbWFpbC5jb20iLCJpYXQiOjE3NTg2MDQ1MzUsImV4cCI6MTc1ODY5MDkzNX0.GOVuo3PFj5qeyNBo05IVTqN62zp2pA8UW044VyBHATU",
+              "type": "string"
+            }
+          ]
+        },
+        "method": "POST",
+        "header": [],
+        "body": {
+          "mode": "formdata",
+          "formdata": [
+            {
+              "key": "id",
+              "value": "5",
+              "type": "text",
+              "uuid": "823004f2-e746-45fe-b2ad-2c6a3fdfa537"
+            },
+            {
+              "key": "file",
+              "type": "file",
+              "uuid": "c8018684-b0aa-40cd-aa86-cdf763192449",
+              "src": "/C:/Users/hp/Downloads/computer_info.pdf"
+            }
+          ]
+        },
+        "url": {
+          "raw": "http://localhost:8105/uploadMou",
+          "protocol": "http",
+          "host": [
+            "localhost"
+          ],
+          "port": "8105",
+          "path": [
+            "uploadMou"
+          ]
+        }
+      },
+      "response": []
+    },
+    {
+      "name": "getLayerClientByClientEmail",
+      "protocolProfileBehavior": {
+        "disableBodyPruning": true
+      },
+      "request": {
+        "auth": {
+          "type": "bearer",
+          "bearer": [
+            {
+              "key": "token",
+              "value": "eyJhbGciOiJIUzI1NiJ9.eyJzdWIiOiJwb29qYUBnbWFpbC5jb20iLCJpYXQiOjE3NTg2MDQ1MzUsImV4cCI6MTc1ODY5MDkzNX0.GOVuo3PFj5qeyNBo05IVTqN62zp2pA8UW044VyBHATU",
+              "type": "string"
+            }
+          ]
+        },
+        "method": "GET",
+        "header": [],
+        "body": {
+          "mode": "formdata",
+          "formdata": []
+        },
+        "url": {
+          "raw": "http://localhost:8105/getLayerClientByClientEmail?email=pune@gmail.com",
+          "protocol": "http",
+          "host": [
+            "localhost"
+          ],
+          "port": "8105",
+          "path": [
+            "getLayerClientByClientEmail"
+          ],
+          "query": [
+            {
+              "key": "email",
+              "value": "pune@gmail.com",
+              "type": "text"
+            }
+          ]
+        }
+      },
+      "response": []
+    },
+    {
+      "name": "verifyOtp",
+      "request": {
+        "method": "POST",
+        "header": [],
+        "url": {
+          "raw": "http://localhost:8105/verifyOtp?email=SP651985@gmail.com&otp=767707",
+          "protocol": "http",
+          "host": [
+            "localhost"
+          ],
+          "port": "8105",
+          "path": [
+            "verifyOtp"
+          ],
+          "query": [
+            {
+              "key": "email",
+              "value": "SP651985@gmail.com"
+            },
+            {
+              "key": "otp",
+              "value": "767707",
+              "type": "text"
+            }
+          ]
+        }
+      },
+      "response": []
+    },
+    {
+      "name": "sendOtpToInstitute",
+      "request": {
+        "method": "POST",
+        "header": [],
+        "url": {
+          "raw": "http://localhost:8105/sendOtpToInstitute?email=SP651985@gmail.com",
+          "protocol": "http",
+          "host": [
+            "localhost"
+          ],
+          "port": "8105",
+          "path": [
+            "sendOtpToInstitute"
+          ],
+          "query": [
+            {
+              "key": "email",
+              "value": "SP651985@gmail.com"
+            }
+          ]
+        }
+      },
+      "response": []
+    },
+    {
+      "name": "updateAdditionalAndSystemToSuperAdminHomePlan",
+      "request": {
+        "auth": {
+          "type": "bearer",
+          "bearer": [
+            {
+              "key": "token",
+              "value": "eyJhbGciOiJIUzI1NiJ9.eyJzdWIiOiJhZG1pbkBnbWFpbC5jb20iLCJpYXQiOjE3NjI3NTcyNTUsImV4cCI6MTc2Mjg0MzY1NX0.vuahoDKVxU4iNkv4buWdRi7xFZ_A_qQ4cw0ZYV_tT9Y",
+              "type": "string"
+            }
+          ]
+        },
+        "method": "PUT",
+        "header": [],
+        "body": {
+          "mode": "raw",
+          "raw": "{\r\n  \"planId\": 1,\r\n  \"systemEnableMap\": {\r\n    \"4\": true,\r\n    \"3\": true,\r\n    \"1\": true\r\n  },\r\n  \"featureEnableMap\": {\r\n    \"1\": true,\r\n    \"2\": true,\r\n    \"3\": true\r\n  }\r\n}\r\n",
+          "options": {
+            "raw": {
+              "language": "json"
+            }
+          }
+        },
+        "url": {
+          "raw": "http://localhost:8105/updateAdditionalAndSystemToSuperAdminHomePlan",
+          "protocol": "http",
+          "host": [
+            "localhost"
+          ],
+          "port": "8105",
+          "path": [
+            "updateAdditionalAndSystemToSuperAdminHomePlan"
+          ]
+        }
+      },
+      "response": []
+    },
+    {
+      "name": "New Request",
+      "request": {
+        "method": "GET",
+        "header": [],
+        "url": {
+          "raw": ""
+        }
+      },
+      "response": []
+    },
+    {
+      "name": "createCompany",
+      "request": {
+        "auth": {
+          "type": "bearer",
+          "bearer": [
+            {
+              "key": "token",
+              "value": "eyJhbGciOiJIUzI1NiJ9.eyJjYW5VcGRhdGUiOnRydWUsInJvbGUiOiJTVVBFUkFETUlOIiwiY2FuUmVhZCI6dHJ1ZSwibmFtZSI6ImFkbWluIiwiY2FuRGVsZXRlIjp0cnVlLCJjYW5DcmVhdGUiOnRydWUsImNhbkNyZWF0ZUhyIjp0cnVlLCJzdWIiOiJmYXN0aGlyZWFkbWluQGdtYWlsLmNvbSIsImlhdCI6MTc2NDIzNzI2MCwiZXhwIjoxNzY0MzIzNjYwfQ.jHBfoYCFs4mChRKv_Q8xKOADtyHkfOpdT3IFowrxmgM",
+              "type": "string"
+            }
+          ]
+        },
+        "method": "POST",
+        "header": [],
+        "body": {
+          "mode": "formdata",
+          "formdata": [
+            {
+              "key": "company",
+              "value": "{ \"companyName\":\"fgsadgjkaf Pvt Ltd\", \"industry\":\"IT Services\", \"location\":\"Bangalore\", \"description\":\"Leading IT recruitment company\", \"perks\":\"Health Insurance, Work From Home\", \"employeeSize\":\"200+ employees\", \"foundedYear\":2015, \"rating\":4.5, \"reviewCount\":150, \"availableJobs\":30 }",
+              "type": "text",
+              "uuid": "453b0a49-2faa-4037-b78f-24861342245c"
+            },
+            {
+              "key": "logoFile",
+              "type": "file",
+              "uuid": "7b53bd80-457c-429c-9e30-7e8e8fb0adfe",
+              "src": "/C:/Users/hp/Downloads/12345.jpg"
+            }
+          ]
+        },
+        "url": {
+          "raw": "http://localhost:8080/createCompany",
+          "protocol": "http",
+          "host": [
+            "localhost"
+          ],
+          "port": "8080",
+          "path": [
+            "createCompany"
+          ]
+        }
+      },
+      "response": []
+    },
+    {
+      "name": "http://localhost:8090/getAllCompanies",
+      "request": {
+        "method": "GET",
+        "header": [],
+        "url": {
+          "raw": "http://localhost:8090/getAllCompanies",
+          "protocol": "http",
+          "host": [
+            "localhost"
+          ],
+          "port": "8090",
+          "path": [
+            "getAllCompanies"
+          ]
+        }
+      },
+      "response": []
+    }
+  ],
+  "auth": {
+    "type": "bearer",
+    "bearer": [
+      {
+        "key": "token",
+        "value": "eyJhbGciOiJIUzI1NiJ9.eyJzdWIiOiJhZG1pbkBnbWFpbC5jb20iLCJpYXQiOjE3Nzk1MzYxOTMsImV4cCI6MTc3OTYyMjU5M30.HX3sG-2tV2d-72NcKVb1I8FgefVTpAPj8fGnzNWYqyY",
+        "type": "string"
+      }
+    ]
+  },
+  "event": [
+    {
+      "listen": "prerequest",
+      "script": {
+        "type": "text/javascript",
+        "packages": {},
+        "requests": {},
+        "exec": [
+          ""
+        ]
+      }
+    },
+    {
+      "listen": "test",
+      "script": {
+        "type": "text/javascript",
+        "packages": {},
+        "requests": {},
+        "exec": [
+          ""
+        ]
+      }
+    }
+  ]
+}

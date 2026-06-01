@@ -1,0 +1,2114 @@
+{
+  "info": {
+    "_postman_id": "029ed5b7-d885-4dfb-89a8-b20572c64aea",
+    "name": "ClientSuperadmin",
+    "schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+    "_exporter_id": "54335742",
+    "_collection_link": "https://go.postman.co/collection/54335742-029ed5b7-d885-4dfb-89a8-b20572c64aea?source=collection_link"
+  },
+  "item": [
+    {
+      "name": "createClientBranch",
+      "request": {
+        "method": "POST",
+        "header": [],
+        "body": {
+          "mode": "raw",
+          "raw": "{\n    \"branchName\": \"Adgoan Branch\",\n    \"branchEmail\": \"branch@gmail.com\",\n    \"contact\": \"9876576533\",\n    \"branchHeadName\": \"Nidhi Vavekar\",\n    \"address\": \"123 Main St\",\n    \"city\": \"Mumbai City\",\n    \"state\": \"Maharastra State\",\n    \"country\": \"India Country\",\n    \"pincode\": 123456,\n    \"status\": \"Active\",\n    \"branchImage\": \"image_url\",\n    \"password\": \"12345\",\n    \"instituteEmail\": \"institute@gmail.com\",\n      \"gmapLink\": \"https://maps.google.com/xyz\",\n  \"websiteLink\": \"https://abc.com/pune\",\n    \"systems\": [\n    { \"id\": 1 }\n  ],\n   \"bankDetails\": [\n    {\n      \"bankName\": \"HDFC Bank\",\n      \"ifscCode\": \"HDFC0001234\",\n      \"bankBranchName\": \"MG Road Pune\",\n      \"accountHolderName\": \"ABC Pvt Ltd\",\n      \"paymentGatewayType\": \"Razorpay\",\n      \"merchantKey\": \"rzp_test_123\",\n      \"secretKey\": \"secret123\"\n    },\n    \n    {\n      \"bankName\": \"ICICI Bank\",\n      \"ifscCode\": \"ICIC0005678\",\n      \"bankBranchName\": \"Shivaji Nagar\",\n      \"accountHolderName\": \"ABC Pvt Ltd\",\n      \"paymentGatewayType\": \"Cashfree\",\n      \"merchantKey\": \"cf_test_456\",\n      \"secretKey\": \"secret456\"\n    }\n  ]\n   \n}\n",
+          "options": {
+            "raw": {
+              "language": "json"
+            }
+          }
+        },
+        "url": {
+          "raw": "http://localhost:8106/createClientBranch",
+          "protocol": "http",
+          "host": [
+            "localhost"
+          ],
+          "port": "8106",
+          "path": [
+            "createClientBranch"
+          ]
+        }
+      },
+      "response": []
+    },
+    {
+      "name": "getAllClientBranches",
+      "request": {
+        "auth": {
+          "type": "bearer",
+          "bearer": [
+            {
+              "key": "token",
+              "value": "eyJhbGciOiJIUzI1NiJ9.eyJzdWIiOiJUZXN0aW5nQGdtYWlsLmNvbSIsImlhdCI6MTc0OTAzNjE3NSwiZXhwIjoxNzQ5MTIyNTc1fQ.0qGeDywkB8T1iQz6x4H7MWkNcxJ-NmYaOLkjAdgJZzo",
+              "type": "string"
+            }
+          ]
+        },
+        "method": "GET",
+        "header": [],
+        "url": {
+          "raw": "https://pjsofttech.in:43443/getAllClientBranches",
+          "protocol": "https",
+          "host": [
+            "pjsofttech",
+            "in"
+          ],
+          "port": "43443",
+          "path": [
+            "getAllClientBranches"
+          ]
+        }
+      },
+      "response": []
+    },
+    {
+      "name": "getCreatorByName",
+      "request": {
+        "auth": {
+          "type": "bearer",
+          "bearer": [
+            {
+              "key": "token",
+              "value": "eyJhbGciOiJIUzI1NiJ9.eyJzdWIiOiJUZXN0aW5nQGdtYWlsLmNvbSIsImlhdCI6MTc0OTAzNjE3NSwiZXhwIjoxNzQ5MTIyNTc1fQ.0qGeDywkB8T1iQz6x4H7MWkNcxJ-NmYaOLkjAdgJZzo",
+              "type": "string"
+            }
+          ]
+        },
+        "method": "GET",
+        "header": [],
+        "url": {
+          "raw": "https://pjsofttech.in:43443/getAllClientBranches",
+          "protocol": "https",
+          "host": [
+            "pjsofttech",
+            "in"
+          ],
+          "port": "43443",
+          "path": [
+            "getAllClientBranches"
+          ]
+        }
+      },
+      "response": []
+    },
+    {
+      "name": "getClientBranchById",
+      "request": {
+        "auth": {
+          "type": "bearer",
+          "bearer": [
+            {
+              "key": "token",
+              "value": "eyJhbGciOiJIUzI1NiJ9.eyJzdWIiOiJuYXNoaWtAZ21haWwuY29tIiwiaWF0IjoxNzY3MTcyMzA2LCJleHAiOjE3NjcyNTg3MDZ9.YzuFrNYlvUEt-ZrdMZ8rr2XdgnYvrDopg31sPYzP8wg",
+              "type": "string"
+            }
+          ]
+        },
+        "method": "GET",
+        "header": [],
+        "url": {
+          "raw": "http://localhost:8106/getClientBranchById/7",
+          "protocol": "http",
+          "host": [
+            "localhost"
+          ],
+          "port": "8106",
+          "path": [
+            "getClientBranchById",
+            "7"
+          ]
+        }
+      },
+      "response": []
+    },
+    {
+      "name": "updateClientBranch",
+      "request": {
+        "auth": {
+          "type": "bearer",
+          "bearer": [
+            {
+              "key": "token",
+              "value": "eyJhbGciOiJIUzI1NiJ9.eyJzdWIiOiJuYXNoaWtAZ21haWwuY29tIiwiaWF0IjoxNzY0MjI1NjU0LCJleHAiOjE3NjQzMTIwNTR9.hQxPGwVv1vcAt-q6XnUeiRej9sULV1tZpR68UB5Mm94",
+              "type": "string"
+            }
+          ]
+        },
+        "method": "PUT",
+        "header": [],
+        "body": {
+          "mode": "raw",
+          "raw": "{\n  \n \"systems\": [\n    // { \"id\": 1 },\n    { \"id\": 3 },\n    { \"id\": 4 }\n  ]\n   \n}\n",
+          "options": {
+            "raw": {
+              "language": "json"
+            }
+          }
+        },
+        "url": {
+          "raw": "http://localhost:8106/updateClientBranch/2",
+          "protocol": "http",
+          "host": [
+            "localhost"
+          ],
+          "port": "8106",
+          "path": [
+            "updateClientBranch",
+            "2"
+          ]
+        }
+      },
+      "response": []
+    },
+    {
+      "name": "deleteClientBranch",
+      "request": {
+        "method": "GET",
+        "header": [],
+        "url": {
+          "raw": ""
+        }
+      },
+      "response": []
+    },
+    {
+      "name": "forgotpasswordbranch",
+      "request": {
+        "method": "POST",
+        "header": [],
+        "body": {
+          "mode": "raw",
+          "raw": "",
+          "options": {
+            "raw": {
+              "language": "json"
+            }
+          }
+        },
+        "url": {
+          "raw": "http://localhost:8106/forgotpassword?email=sp651985@gmail.com",
+          "protocol": "http",
+          "host": [
+            "localhost"
+          ],
+          "port": "8106",
+          "path": [
+            "forgotpassword"
+          ],
+          "query": [
+            {
+              "key": "email",
+              "value": "sp651985@gmail.com"
+            }
+          ]
+        }
+      },
+      "response": []
+    },
+    {
+      "name": "resetpassword",
+      "request": {
+        "method": "POST",
+        "header": [],
+        "url": {
+          "raw": "http://localhost:8106/resetpassword?email=vatanwaikar@gmail.com&otp=749489&newPassword=password2110",
+          "protocol": "http",
+          "host": [
+            "localhost"
+          ],
+          "port": "8106",
+          "path": [
+            "resetpassword"
+          ],
+          "query": [
+            {
+              "key": "email",
+              "value": "vatanwaikar@gmail.com"
+            },
+            {
+              "key": "otp",
+              "value": "749489"
+            },
+            {
+              "key": "newPassword",
+              "value": "password2110"
+            }
+          ]
+        }
+      },
+      "response": []
+    },
+    {
+      "name": "auth/instituteLogin",
+      "request": {
+        "auth": {
+          "type": "noauth"
+        },
+        "method": "POST",
+        "header": [],
+        "body": {
+          "mode": "raw",
+          "raw": "",
+          "options": {
+            "raw": {
+              "language": "json"
+            }
+          }
+        },
+        "url": {
+          "raw": "http://localhost:8106/clientSuperAdminLogin?email=nashik@gmail.com&password=12345678",
+          "protocol": "http",
+          "host": [
+            "localhost"
+          ],
+          "port": "8106",
+          "path": [
+            "clientSuperAdminLogin"
+          ],
+          "query": [
+            {
+              "key": "email",
+              "value": "nashik@gmail.com"
+            },
+            {
+              "key": "password",
+              "value": "12345678"
+            }
+          ]
+        }
+      },
+      "response": []
+    },
+    {
+      "name": "getBranchLimit",
+      "request": {
+        "auth": {
+          "type": "bearer",
+          "bearer": [
+            {
+              "key": "token",
+              "value": "eyJhbGciOiJIUzI1NiJ9.eyJzdWIiOiJuYXNoaWtAZ21haWwuY29tIiwiaWF0IjoxNzQ0NjMxNzYyLCJleHAiOjE3NDQ3MTgxNjJ9.dyJOH5ZfO9-OCFwbfOTnyzQHi1gSCMAqPZoQX-pMhcI",
+              "type": "string"
+            }
+          ]
+        },
+        "method": "GET",
+        "header": [],
+        "url": {
+          "raw": "http://localhost:8080/getBranchLimit?instituteEmail=nashik@gmail.com",
+          "protocol": "http",
+          "host": [
+            "localhost"
+          ],
+          "port": "8080",
+          "path": [
+            "getBranchLimit"
+          ],
+          "query": [
+            {
+              "key": "instituteEmail",
+              "value": "nashik@gmail.com"
+            }
+          ]
+        }
+      },
+      "response": []
+    },
+    {
+      "name": "getBrachbyInstituteEmail",
+      "request": {
+        "auth": {
+          "type": "bearer",
+          "bearer": [
+            {
+              "key": "token",
+              "value": "eyJhbGciOiJIUzI1NiJ9.eyJzdWIiOiJzYXRwdXIyQGdtYWlsLmNvbSIsImlhdCI6MTc0NjY4NTIwOCwiZXhwIjoxNzQ2Njg4ODA4fQ.cZRhG10MeYA6_x0lhD6_qtl8r4lJYxvtb-cU4nTBmDI",
+              "type": "string"
+            }
+          ]
+        },
+        "method": "GET",
+        "header": [],
+        "url": {
+          "raw": "http://localhost:8106/getBrachbyInstituteEmail?instituteEmail=nashik@gmail.com",
+          "protocol": "http",
+          "host": [
+            "localhost"
+          ],
+          "port": "8106",
+          "path": [
+            "getBrachbyInstituteEmail"
+          ],
+          "query": [
+            {
+              "key": "instituteEmail",
+              "value": "nashik@gmail.com"
+            }
+          ]
+        }
+      },
+      "response": []
+    },
+    {
+      "name": "branchlogin",
+      "request": {
+        "auth": {
+          "type": "noauth"
+        },
+        "method": "POST",
+        "header": [],
+        "body": {
+          "mode": "raw",
+          "raw": "{\r\n    \"branchCode\":\"BCH729\",\r\n    \"email\":\"branch@gmail.com\",\r\n    \"password\":\"12345\"\r\n}\r\n\r\n// {\"branchCode\":\"BCH137\",\"email\":\"branchsc@gmail.com\",\"password\":\"123\"}\r\n",
+          "options": {
+            "raw": {
+              "language": "json"
+            }
+          }
+        },
+        "url": {
+          "raw": "http://localhost:8106/branchlogin",
+          "protocol": "http",
+          "host": [
+            "localhost"
+          ],
+          "port": "8106",
+          "path": [
+            "branchlogin"
+          ]
+        }
+      },
+      "response": []
+    },
+    {
+      "name": "createdepartment",
+      "request": {
+        "method": "POST",
+        "header": [],
+        "body": {
+          "mode": "raw",
+          "raw": "{\r\n    \"departmentName\": \"Aditi Department\",\r\n    \"departmentEmail\": \"dept@gmail.com\",\r\n    \"contact\": \"7788996655\",\r\n    \"password\": \"12345\",\r\n    \"candPost\": true,\r\n    \"candPut\": false,\r\n    \"candGet\": true,\r\n    \"candDelete\": false,\r\n    \"candForm\": false,\r\n    \"candstudentList\" : false,\r\n    \"candClassRoom\" : false,\r\n    \"candAttendance\": true,\r\n    \"candResult\" : false,\r\n    \"candTimeTable\" : false,\r\n    \"candHomeWork\" : true,\r\n    \"candTeacherSetting\" : false,\r\n    \"selectedSystemNames\":[\"Lead Management Software\"]\r\n    \r\n    \r\n}\r\n",
+          "options": {
+            "raw": {
+              "language": "json"
+            }
+          }
+        },
+        "url": {
+          "raw": "http://localhost:8106/createdepartment?clientBranchId=3",
+          "protocol": "http",
+          "host": [
+            "localhost"
+          ],
+          "port": "8106",
+          "path": [
+            "createdepartment"
+          ],
+          "query": [
+            {
+              "key": "clientBranchId",
+              "value": "3"
+            }
+          ]
+        }
+      },
+      "response": []
+    },
+    {
+      "name": "getallDepartment",
+      "request": {
+        "auth": {
+          "type": "bearer",
+          "bearer": [
+            {
+              "key": "token",
+              "value": "eyJhbGciOiJIUzI1NiJ9.eyJzdWIiOiJzYXRwdXIyQGdtYWlsLmNvbSIsImlhdCI6MTc1MzE3NDQ1OCwiZXhwIjoxNzUzMTc4MDU4fQ.WyLfQe2eRtzZK1_wWa_kDUh3pbxjhNQMoTehsTYwmKU",
+              "type": "string"
+            }
+          ]
+        },
+        "method": "GET",
+        "header": [],
+        "url": {
+          "raw": "http://localhost:8106/getallDepartment",
+          "protocol": "http",
+          "host": [
+            "localhost"
+          ],
+          "port": "8106",
+          "path": [
+            "getallDepartment"
+          ]
+        }
+      },
+      "response": []
+    },
+    {
+      "name": "getDepartmentById",
+      "request": {
+        "auth": {
+          "type": "bearer",
+          "bearer": [
+            {
+              "key": "token",
+              "value": "eyJhbGciOiJIUzI1NiJ9.eyJzdWIiOiJyZWNlcHRpb25AZ21haWwuY29tIiwiaWF0IjoxNzQ2NTk0NDE2LCJleHAiOjE3NDY1OTgwMTZ9.QBzpR1VEMUKc9ZvxwVmRR5aG7PDxudWNxDwqy2AUMgI",
+              "type": "string"
+            }
+          ]
+        },
+        "method": "GET",
+        "header": [],
+        "url": {
+          "raw": "http://localhost:8106/getDepartmentBy/11",
+          "protocol": "http",
+          "host": [
+            "localhost"
+          ],
+          "port": "8106",
+          "path": [
+            "getDepartmentBy",
+            "11"
+          ]
+        }
+      },
+      "response": []
+    },
+    {
+      "name": "updateDepartment",
+      "request": {
+        "method": "PUT",
+        "header": [],
+        "body": {
+          "mode": "raw",
+          "raw": "{\r\n        // \"contact\": \"6767676767\",\r\n    \"selectedSystemNames\":[\"Lead Management Software\"]\r\n    \r\n    \r\n}",
+          "options": {
+            "raw": {
+              "language": "json"
+            }
+          }
+        },
+        "url": {
+          "raw": "http://localhost:8106/updateDepartment/1",
+          "protocol": "http",
+          "host": [
+            "localhost"
+          ],
+          "port": "8106",
+          "path": [
+            "updateDepartment",
+            "1"
+          ]
+        }
+      },
+      "response": []
+    },
+    {
+      "name": "getDepartmentByBranchcode",
+      "request": {
+        "auth": {
+          "type": "bearer",
+          "bearer": [
+            {
+              "key": "token",
+              "value": "eyJhbGciOiJIUzI1NiJ9.eyJzdWIiOiJ3YWthZEBnbWFpbC5jb20iLCJpYXQiOjE3NDQ5NzYzMzEsImV4cCI6MTc0NDk3OTkzMX0.RBE75FZDY6ozc1zGxvn4Ga9Yrv8Ge-AufjD5E_KTjZc",
+              "type": "string"
+            }
+          ]
+        },
+        "method": "GET",
+        "header": [],
+        "url": {
+          "raw": "http://localhost:8106/getDepartmentByBranchcode?branchCode=BCH346",
+          "protocol": "http",
+          "host": [
+            "localhost"
+          ],
+          "port": "8106",
+          "path": [
+            "getDepartmentByBranchcode"
+          ],
+          "query": [
+            {
+              "key": "branchCode",
+              "value": "BCH346"
+            }
+          ]
+        }
+      },
+      "response": []
+    },
+    {
+      "name": "departmentlogin",
+      "request": {
+        "method": "POST",
+        "header": [],
+        "body": {
+          "mode": "raw",
+          "raw": "{\r\n    \"branchCode\":\"BCH528\",\r\n    \"email\":\"aditi@gmail.com\",\r\n    \"password\":\"12345678\"\r\n}",
+          "options": {
+            "raw": {
+              "language": "json"
+            }
+          }
+        },
+        "url": {
+          "raw": "http://localhost:8106/departmentlogin",
+          "protocol": "http",
+          "host": [
+            "localhost"
+          ],
+          "port": "8106",
+          "path": [
+            "departmentlogin"
+          ]
+        }
+      },
+      "response": []
+    },
+    {
+      "name": "createStaff",
+      "request": {
+        "method": "POST",
+        "header": [],
+        "body": {
+          "mode": "raw",
+          "raw": "{\r\n  \"staffName\": \" Pooja Patel\",\r\n  \"staffEmail\": \"staff@gmail.com\",\r\n  \"contact\": \"8877887788\",\r\n  \"password\": \"12345\",\r\n  \"cansGet\": true,\r\n  \"cansPut\": true,\r\n  \"cansPost\": true,\r\n  \"cansDelete\": true,\r\n  \"canscsvfile\": true,\r\n  \"cansdashBoard\": true,\r\n  \"canssetting\": false,\r\n  \"assignedSystem\": [\"Lead Management Software\"]\r\n\r\n}\r\n",
+          "options": {
+            "raw": {
+              "language": "json"
+            }
+          }
+        },
+        "url": {
+          "raw": "http://localhost:8106/createStaff?departmentId=1",
+          "protocol": "http",
+          "host": [
+            "localhost"
+          ],
+          "port": "8106",
+          "path": [
+            "createStaff"
+          ],
+          "query": [
+            {
+              "key": "departmentId",
+              "value": "1"
+            }
+          ]
+        }
+      },
+      "response": []
+    },
+    {
+      "name": "getcrudsvalueforDepartmentByemail",
+      "request": {
+        "auth": {
+          "type": "bearer",
+          "bearer": [
+            {
+              "key": "token",
+              "value": "eyJhbGciOiJIUzI1NiJ9.eyJzdWIiOiJhY2NvdW50QGdtYWlsLmNvbSIsImlhdCI6MTc0NDg3MzAwMiwiZXhwIjoxNzQ0ODc2NjAyfQ.nZpAXtQRWoofFL9bmgAaPt7Qjf_1TVuBesAcWUPG77Y",
+              "type": "string"
+            }
+          ]
+        },
+        "method": "GET",
+        "header": [],
+        "url": {
+          "raw": "http://localhost:8106/getcrudsvalueforDepartmentByemail?email=account@gmail.com",
+          "protocol": "http",
+          "host": [
+            "localhost"
+          ],
+          "port": "8106",
+          "path": [
+            "getcrudsvalueforDepartmentByemail"
+          ],
+          "query": [
+            {
+              "key": "email",
+              "value": "account@gmail.com"
+            }
+          ]
+        }
+      },
+      "response": []
+    },
+    {
+      "name": "getStaffbyDeptEmail",
+      "request": {
+        "auth": {
+          "type": "noauth"
+        },
+        "method": "GET",
+        "header": [],
+        "url": {
+          "raw": "http://localhost:8106/getStaffbyDeptEmail?departmentEmail=aditipotdar18@gmail.com",
+          "protocol": "http",
+          "host": [
+            "localhost"
+          ],
+          "port": "8106",
+          "path": [
+            "getStaffbyDeptEmail"
+          ],
+          "query": [
+            {
+              "key": "departmentEmail",
+              "value": "aditipotdar18@gmail.com"
+            }
+          ]
+        }
+      },
+      "response": []
+    },
+    {
+      "name": "getStaffbybranchCode",
+      "request": {
+        "auth": {
+          "type": "bearer",
+          "bearer": [
+            {
+              "key": "token",
+              "value": "eyJhbGciOiJIUzI1NiJ9.eyJzdWIiOiJhY2NvdW50QGdtYWlsLmNvbSIsImlhdCI6MTc0NDg4OTIzMywiZXhwIjoxNzQ0ODkyODMzfQ.YR7ciRdMtAdTTDWQ0kkY69SIPhWU6NzRpOKeyxtyvP8",
+              "type": "string"
+            }
+          ]
+        },
+        "method": "GET",
+        "header": [],
+        "url": {
+          "raw": "http://localhost:8106/getStaffbybranchCode?branchCode=BCH454",
+          "protocol": "http",
+          "host": [
+            "localhost"
+          ],
+          "port": "8106",
+          "path": [
+            "getStaffbybranchCode"
+          ],
+          "query": [
+            {
+              "key": "branchCode",
+              "value": "BCH454"
+            }
+          ]
+        }
+      },
+      "response": []
+    },
+    {
+      "name": "getStaffbyinstituteEmail",
+      "request": {
+        "auth": {
+          "type": "bearer",
+          "bearer": [
+            {
+              "key": "token",
+              "value": "eyJhbGciOiJIUzI1NiJ9.eyJzdWIiOiJtYW5zaUBnbWFpbC5jb20iLCJpYXQiOjE3NTI0ODIxNTMsImV4cCI6MTc1MjQ4NTc1M30.eTQr9nr2kycu2uynqh3NEAHkL2hKRQREncUwQF1ngKA",
+              "type": "string"
+            }
+          ]
+        },
+        "method": "GET",
+        "header": [],
+        "url": {
+          "raw": "http://localhost:8106/getLayerClientByClientEmail?email=nashik@gmail.com",
+          "protocol": "http",
+          "host": [
+            "localhost"
+          ],
+          "port": "8106",
+          "path": [
+            "getLayerClientByClientEmail"
+          ],
+          "query": [
+            {
+              "key": "email",
+              "value": "nashik@gmail.com"
+            }
+          ]
+        }
+      },
+      "response": []
+    },
+    {
+      "name": "stafflogin",
+      "request": {
+        "auth": {
+          "type": "noauth"
+        },
+        "method": "POST",
+        "header": [],
+        "body": {
+          "mode": "raw",
+          "raw": "{\r\n    \"email\":\"neha@gmail.com\",\r\n    \"password\":\"12345678\"\r\n}",
+          "options": {
+            "raw": {
+              "language": "json"
+            }
+          }
+        },
+        "url": {
+          "raw": "http://localhost:8106/stafflogin",
+          "protocol": "http",
+          "host": [
+            "localhost"
+          ],
+          "port": "8106",
+          "path": [
+            "stafflogin"
+          ]
+        }
+      },
+      "response": []
+    },
+    {
+      "name": "PermissionForStaff",
+      "protocolProfileBehavior": {
+        "disableBodyPruning": true
+      },
+      "request": {
+        "auth": {
+          "type": "bearer",
+          "bearer": [
+            {
+              "key": "token",
+              "value": "eyJhbGciOiJIUzI1NiJ9.eyJzdWIiOiJwcmFnYXRpQGdtYWlsLmNvbSIsImlhdCI6MTc0NTIxMjc4MywiZXhwIjoxNzQ1MjE2MzgzfQ.6-QD3JS3p1EZbSX15k6HaucHPhhZpYY-5ui9s6_CDTw",
+              "type": "string"
+            }
+          ]
+        },
+        "method": "GET",
+        "header": [],
+        "body": {
+          "mode": "formdata",
+          "formdata": []
+        },
+        "url": {
+          "raw": "http://localhost:8106/PermissionForStaff?staffEmail=pragati@gmail.com",
+          "protocol": "http",
+          "host": [
+            "localhost"
+          ],
+          "port": "8106",
+          "path": [
+            "PermissionForStaff"
+          ],
+          "query": [
+            {
+              "key": "staffEmail",
+              "value": "pragati@gmail.com"
+            }
+          ]
+        }
+      },
+      "response": []
+    },
+    {
+      "name": "updateBranchImage",
+      "request": {
+        "auth": {
+          "type": "bearer",
+          "bearer": [
+            {
+              "key": "token",
+              "value": "eyJhbGciOiJIUzI1NiJ9.eyJzdWIiOiJ3YWthZEBnbWFpbC5jb20iLCJpYXQiOjE3NDUyMjE1NDQsImV4cCI6MTc0NTIyNTE0NH0.eFAVOWKynx4-lpz9m7UhPwd2pzPH-8RCR0DTPqKLd88",
+              "type": "string"
+            }
+          ]
+        },
+        "method": "PUT",
+        "header": [],
+        "body": {
+          "mode": "formdata",
+          "formdata": [
+            {
+              "key": "branchEmail",
+              "value": "nigdi@gmail.com",
+              "type": "text",
+              "uuid": "2c31fa8e-cbcb-4ac6-ac0a-cbc16223bfac"
+            },
+            {
+              "key": "imageFile",
+              "type": "file",
+              "uuid": "791e7ec9-8805-4329-a665-e0b45cc51576",
+              "src": "/C:/Users/hp/Desktop/PoojaOldPCData/Data/1.jpeg"
+            }
+          ]
+        },
+        "url": {
+          "raw": "http://localhost:8106/updateBranchImage",
+          "protocol": "http",
+          "host": [
+            "localhost"
+          ],
+          "port": "8106",
+          "path": [
+            "updateBranchImage"
+          ]
+        }
+      },
+      "response": []
+    },
+    {
+      "name": "updateDepartmentImage",
+      "request": {
+        "auth": {
+          "type": "bearer",
+          "bearer": [
+            {
+              "key": "token",
+              "value": "eyJhbGciOiJIUzI1NiJ9.eyJzdWIiOiJ0ZWFjaGVyQGdtYWlsLmNvbSIsImlhdCI6MTc0NTIyNzM2MSwiZXhwIjoxNzQ1MjMwOTYxfQ.jswuBzc0tko1i4tq1ylcSFghi-gljJI5ME-U6J6bZGw",
+              "type": "string"
+            }
+          ]
+        },
+        "method": "PUT",
+        "header": [],
+        "body": {
+          "mode": "formdata",
+          "formdata": [
+            {
+              "key": "departmentEmail",
+              "value": "account@gmail.com",
+              "type": "text",
+              "uuid": "c5152725-5cbc-4394-bc71-15f06d2729fc"
+            },
+            {
+              "key": "imageFile",
+              "type": "file",
+              "uuid": "4df4d12c-06e0-4a13-90a0-5b14a72f17b9",
+              "src": "/C:/Users/hp/Desktop/PoojaOldPCData/Data/image.jpg"
+            }
+          ]
+        },
+        "url": {
+          "raw": "http://localhost:8106/updateDepartmentImage",
+          "protocol": "http",
+          "host": [
+            "localhost"
+          ],
+          "port": "8106",
+          "path": [
+            "updateDepartmentImage"
+          ]
+        }
+      },
+      "response": []
+    },
+    {
+      "name": "updateStaffImage",
+      "request": {
+        "auth": {
+          "type": "bearer",
+          "bearer": [
+            {
+              "key": "token",
+              "value": "eyJhbGciOiJIUzI1NiJ9.eyJzdWIiOiJwcmFnYXRpQGdtYWlsLmNvbSIsImlhdCI6MTc0NTIzMTUyMSwiZXhwIjoxNzQ1MjM1MTIxfQ.ZE3EOlzarGPMcKzjdwGHE1Lg9kqi68FomzcsnpEoxSc",
+              "type": "string"
+            }
+          ]
+        },
+        "method": "PUT",
+        "header": [],
+        "body": {
+          "mode": "formdata",
+          "formdata": [
+            {
+              "key": "staffEmail",
+              "value": "pragati@gmail.com",
+              "type": "text",
+              "uuid": "44828a19-432a-4d03-8fc1-dbef84fc4525"
+            },
+            {
+              "key": "imageFile",
+              "type": "file",
+              "uuid": "03ecb318-c1a0-4c7c-a0ce-f8668f253131",
+              "src": "/C:/Users/hp/Desktop/PoojaOldPCData/Data/images.jpeg"
+            }
+          ]
+        },
+        "url": {
+          "raw": "http://localhost:8106/updateStaffImage",
+          "protocol": "http",
+          "host": [
+            "localhost"
+          ],
+          "port": "8106",
+          "path": [
+            "updateStaffImage"
+          ]
+        }
+      },
+      "response": []
+    },
+    {
+      "name": "updateStaff",
+      "request": {
+        "auth": {
+          "type": "bearer",
+          "bearer": [
+            {
+              "key": "token",
+              "value": "eyJhbGciOiJIUzI1NiJ9.eyJzdWIiOiJqa2lsZXllQGdtYWlsLmNvbSIsImlhdCI6MTc1MjU1NDM4NCwiZXhwIjoxNzUyNTU3OTg0fQ.63bqIX5NVThjpY2CShZ6woguQD5YTxPRo6KFVU2HtCc",
+              "type": "string"
+            }
+          ]
+        },
+        "method": "PUT",
+        "header": [],
+        "body": {
+          "mode": "raw",
+          "raw": "{\r\n\r\n    \"assignedSystem\": [\"New Student System\",\"New Student Management System\"]\r\n\r\n}",
+          "options": {
+            "raw": {
+              "language": "json"
+            }
+          }
+        },
+        "url": {
+          "raw": "http://localhost:8106/updateStaff/12",
+          "protocol": "http",
+          "host": [
+            "localhost"
+          ],
+          "port": "8106",
+          "path": [
+            "updateStaff",
+            "12"
+          ]
+        }
+      },
+      "response": []
+    },
+    {
+      "name": "branchlogin",
+      "request": {
+        "auth": {
+          "type": "noauth"
+        },
+        "method": "POST",
+        "header": [],
+        "url": {
+          "raw": "http://localhost:8106/branchlogin",
+          "protocol": "http",
+          "host": [
+            "localhost"
+          ],
+          "port": "8106",
+          "path": [
+            "branchlogin"
+          ]
+        }
+      },
+      "response": []
+    },
+    {
+      "name": "getIntituteByemail",
+      "protocolProfileBehavior": {
+        "disableBodyPruning": true
+      },
+      "request": {
+        "auth": {
+          "type": "bearer",
+          "bearer": [
+            {
+              "key": "token",
+              "value": "eyJhbGciOiJIUzI1NiJ9.eyJzdWIiOiJuYXNoaWtAZ21haWwuY29tIiwiaWF0IjoxNzUwOTE3NDIxLCJleHAiOjE3NTEwMDM4MjF9.ZzfhCIooOfvgsVCIstXByRnBxLIQ2P5ju7eV-b8UJXY",
+              "type": "string"
+            }
+          ]
+        },
+        "method": "GET",
+        "header": [],
+        "body": {
+          "mode": "raw",
+          "raw": "{\r\n    \"email\":\"patel@gmail.com\",\r\n    \"password\":\"12345\"\r\n}"
+        },
+        "url": {
+          "raw": "http://localhost:8106/getIntituteByemail?email=nashik@gmail.com",
+          "protocol": "http",
+          "host": [
+            "localhost"
+          ],
+          "port": "8106",
+          "path": [
+            "getIntituteByemail"
+          ],
+          "query": [
+            {
+              "key": "email",
+              "value": "nashik@gmail.com"
+            }
+          ]
+        }
+      },
+      "response": []
+    },
+    {
+      "name": "GetAllSection",
+      "request": {
+        "auth": {
+          "type": "bearer",
+          "bearer": [
+            {
+              "key": "token",
+              "value": "eyJhbGciOiJIUzI1NiJ9.eyJzdWIiOiJhZG1pbkBnbWFpbC5jb20iLCJpYXQiOjE3NDY2ODE5MjksImV4cCI6MTc0Njc2ODMyOX0.mRVGIpHr7ATE0wY_JB76fkDvl4Y4zsVbTAEZYycL8JI",
+              "type": "string"
+            }
+          ]
+        },
+        "method": "GET",
+        "header": [],
+        "url": {
+          "raw": "http://localhost:8106/getAllLayerSections",
+          "protocol": "http",
+          "host": [
+            "localhost"
+          ],
+          "port": "8106",
+          "path": [
+            "getAllLayerSections"
+          ]
+        }
+      },
+      "response": []
+    },
+    {
+      "name": "getPlansBySectionId",
+      "request": {
+        "auth": {
+          "type": "bearer",
+          "bearer": [
+            {
+              "key": "token",
+              "value": "eyJhbGciOiJIUzI1NiJ9.eyJzdWIiOiJhZG1pbkBnbWFpbC5jb20iLCJpYXQiOjE3NDY2ODE5MjksImV4cCI6MTc0Njc2ODMyOX0.mRVGIpHr7ATE0wY_JB76fkDvl4Y4zsVbTAEZYycL8JI",
+              "type": "string"
+            }
+          ]
+        },
+        "method": "GET",
+        "header": [],
+        "url": {
+          "raw": "http://localhost:8106/getLayerPlansBySectionId?sectionId=1",
+          "protocol": "http",
+          "host": [
+            "localhost"
+          ],
+          "port": "8106",
+          "path": [
+            "getLayerPlansBySectionId"
+          ],
+          "query": [
+            {
+              "key": "sectionId",
+              "value": "1"
+            }
+          ]
+        }
+      },
+      "response": []
+    },
+    {
+      "name": "getBranchCodesByinstituteEmail",
+      "request": {
+        "auth": {
+          "type": "bearer",
+          "bearer": [
+            {
+              "key": "token",
+              "value": "eyJhbGciOiJIUzI1NiJ9.eyJzdWIiOiJhZGdvYW5AZ21haWwuY29tIiwiaWF0IjoxNzYyODQyMTE3LCJleHAiOjE3NjI4NDU3MTd9.hYB7YBD-3pJHZwF-b25Wodj1PtfVeNn9xEF3HxwUCsc",
+              "type": "string"
+            }
+          ]
+        },
+        "method": "GET",
+        "header": [],
+        "url": {
+          "raw": "http://localhost:8106/getBranchCodesByinstituteEmail?instituteEmail=nashik@gmail.com",
+          "protocol": "http",
+          "host": [
+            "localhost"
+          ],
+          "port": "8106",
+          "path": [
+            "getBranchCodesByinstituteEmail"
+          ],
+          "query": [
+            {
+              "key": "instituteEmail",
+              "value": "nashik@gmail.com"
+            }
+          ]
+        }
+      },
+      "response": []
+    },
+    {
+      "name": "New Request",
+      "request": {
+        "method": "GET",
+        "header": [],
+        "url": {
+          "raw": ""
+        }
+      },
+      "response": []
+    },
+    {
+      "name": "sendPersonalMail",
+      "request": {
+        "auth": {
+          "type": "bearer",
+          "bearer": [
+            {
+              "key": "token",
+              "value": "eyJhbGciOiJIUzI1NiJ9.eyJzdWIiOiJzYXRwdXIyQGdtYWlsLmNvbSIsImlhdCI6MTc0OTExMzUyOSwiZXhwIjoxNzQ5MTE3MTI5fQ.qbU4jf2I4qHAFuzg8K_0NyO4vF4nK1X_Nfr01tSW4Ew",
+              "type": "string"
+            }
+          ]
+        },
+        "method": "POST",
+        "header": [],
+        "body": {
+          "mode": "raw",
+          "raw": "{\r\n  \"branchEmail\": \"ambad@gmail.com\",\r\n  \"toEmails\": [\r\n    \"sp651985@gmail.com\"\r\n  ],\r\n  \"subject\": \"Test Personal Mail\",\r\n  \"message\": \"Mail ala ki nahi te check karuya <strong>Personal Mail</strong>\",\r\n  \"scheduleTime\":\"14:55\",\r\n    \"scheduleDate\": \"2025-06-05\"\r\n\r\n\r\n}\r\n",
+          "options": {
+            "raw": {
+              "language": "json"
+            }
+          }
+        },
+        "url": {
+          "raw": "http://localhost:8106/sendPersonalMail",
+          "protocol": "http",
+          "host": [
+            "localhost"
+          ],
+          "port": "8106",
+          "path": [
+            "sendPersonalMail"
+          ]
+        }
+      },
+      "response": []
+    },
+    {
+      "name": "sendMailToAllStaff",
+      "request": {
+        "auth": {
+          "type": "bearer",
+          "bearer": [
+            {
+              "key": "token",
+              "value": "eyJhbGciOiJIUzI1NiJ9.eyJzdWIiOiJzYXRwdXIyQGdtYWlsLmNvbSIsImlhdCI6MTc0OTExMzUyOSwiZXhwIjoxNzQ5MTE3MTI5fQ.qbU4jf2I4qHAFuzg8K_0NyO4vF4nK1X_Nfr01tSW4Ew",
+              "type": "string"
+            }
+          ]
+        },
+        "method": "POST",
+        "header": [],
+        "body": {
+          "mode": "raw",
+          "raw": "{\r\n  \"branchEmail\": \"ambad@gmail.com\",\r\n  \"branchCode\": \"BCH743\",\r\n  \"subject\": \"Staff Meeting Reminder\",\r\n  \"message\": \"Email send to <strong> All Staff Mail</strong>\",\r\n    \"scheduleTime\":\"15:02\",\r\n    \"scheduleDate\": \"2025-06-05\"\r\n}\r\n",
+          "options": {
+            "raw": {
+              "language": "json"
+            }
+          }
+        },
+        "url": {
+          "raw": "http://localhost:8106/sendMailToAllStaff",
+          "protocol": "http",
+          "host": [
+            "localhost"
+          ],
+          "port": "8106",
+          "path": [
+            "sendMailToAllStaff"
+          ]
+        }
+      },
+      "response": []
+    },
+    {
+      "name": "sendMailToAllDepartment",
+      "request": {
+        "auth": {
+          "type": "bearer",
+          "bearer": [
+            {
+              "key": "token",
+              "value": "eyJhbGciOiJIUzI1NiJ9.eyJzdWIiOiJzYXRwdXIyQGdtYWlsLmNvbSIsImlhdCI6MTc0OTExMzUyOSwiZXhwIjoxNzQ5MTE3MTI5fQ.qbU4jf2I4qHAFuzg8K_0NyO4vF4nK1X_Nfr01tSW4Ew",
+              "type": "string"
+            }
+          ]
+        },
+        "method": "POST",
+        "header": [],
+        "body": {
+          "mode": "raw",
+          "raw": "{\r\n  \"branchEmail\": \"ambad@gmail.com\",\r\n  \"branchCode\": \"BCH743\",\r\n  \"subject\": \"Department Update\",\r\n  \"message\": \"Mail Send To <strong>all Departments</strong>.\",\r\n    \"scheduleTime\":\"15:04\",\r\n    \"scheduleDate\": \"2025-06-05\"\r\n}\r\n",
+          "options": {
+            "raw": {
+              "language": "json"
+            }
+          }
+        },
+        "url": {
+          "raw": "http://localhost:8106/sendMailToAllDepartment",
+          "protocol": "http",
+          "host": [
+            "localhost"
+          ],
+          "port": "8106",
+          "path": [
+            "sendMailToAllDepartment"
+          ]
+        }
+      },
+      "response": []
+    },
+    {
+      "name": "sendMailToBoth",
+      "request": {
+        "auth": {
+          "type": "bearer",
+          "bearer": [
+            {
+              "key": "token",
+              "value": "eyJhbGciOiJIUzI1NiJ9.eyJzdWIiOiJzYXRwdXIyQGdtYWlsLmNvbSIsImlhdCI6MTc0OTExMzUyOSwiZXhwIjoxNzQ5MTE3MTI5fQ.qbU4jf2I4qHAFuzg8K_0NyO4vF4nK1X_Nfr01tSW4Ew",
+              "type": "string"
+            }
+          ]
+        },
+        "method": "POST",
+        "header": [],
+        "body": {
+          "mode": "raw",
+          "raw": "{\r\n  \"branchEmail\": \"ambad@gmail.com\",\r\n  \"branchCode\": \"BCH743\",\r\n  \"subject\": \"Department Update\",\r\n  \"message\": \"Mail Send to <strong>All Department and Staff </strong>.\",\r\n    \"scheduleTime\":\"15:00\",\r\n    \"scheduleDate\": \"2025-06-05\"\r\n}\r\n",
+          "options": {
+            "raw": {
+              "language": "json"
+            }
+          }
+        },
+        "url": {
+          "raw": "http://localhost:8106/sendMailToBoth",
+          "protocol": "http",
+          "host": [
+            "localhost"
+          ],
+          "port": "8106",
+          "path": [
+            "sendMailToBoth"
+          ]
+        }
+      },
+      "response": []
+    },
+    {
+      "name": "getAllByClientEmail",
+      "request": {
+        "auth": {
+          "type": "bearer",
+          "bearer": [
+            {
+              "key": "token",
+              "value": "eyJhbGciOiJIUzI1NiJ9.eyJzdWIiOiJuYXNoaWtAZ21haWwuY29tIiwiaWF0IjoxNzUwOTE3NDIxLCJleHAiOjE3NTEwMDM4MjF9.ZzfhCIooOfvgsVCIstXByRnBxLIQ2P5ju7eV-b8UJXY",
+              "type": "string"
+            }
+          ]
+        },
+        "method": "GET",
+        "header": [],
+        "url": {
+          "raw": "http://localhost:8106/getAllByClientEmail?instituteEmail=nashik@gmail.com&branchCode=BCH194&page=0&size=10",
+          "protocol": "http",
+          "host": [
+            "localhost"
+          ],
+          "port": "8106",
+          "path": [
+            "getAllByClientEmail"
+          ],
+          "query": [
+            {
+              "key": "instituteEmail",
+              "value": "nashik@gmail.com"
+            },
+            {
+              "key": "branchCode",
+              "value": "BCH194"
+            },
+            {
+              "key": "page",
+              "value": "0"
+            },
+            {
+              "key": "size",
+              "value": "10"
+            }
+          ]
+        }
+      },
+      "response": []
+    },
+    {
+      "name": "getAllSuperAdminHomeLayerSections",
+      "request": {
+        "method": "GET",
+        "header": [],
+        "url": {
+          "raw": "http://localhost:8106/getAllSuperAdminHomeLayerSections",
+          "protocol": "http",
+          "host": [
+            "localhost"
+          ],
+          "port": "8106",
+          "path": [
+            "getAllSuperAdminHomeLayerSections"
+          ]
+        }
+      },
+      "response": []
+    },
+    {
+      "name": "branchAddressDetailsByBranchCode",
+      "protocolProfileBehavior": {
+        "disableBodyPruning": true
+      },
+      "request": {
+        "auth": {
+          "type": "noauth"
+        },
+        "method": "GET",
+        "header": [],
+        "body": {
+          "mode": "raw",
+          "raw": "{\r\n  \"amount\": 500.0,\r\n//   \"invoice\": \"INV-20250703-001\",\r\n//   \"duedate\": \"2025-07-10\",\r\n  \"paymentMode\": \"Online\",\r\n  \"feesPaymentType\": \"Installment\",\r\n  \"status\": \"Incompleted\",\r\n  \"tuitionFee\": 100.0,\r\n  \"admissionFee\": 0.0,\r\n  \"practicalFee\": 0.0,\r\n//   \"computerClassFee\": 0.0,\r\n//   \"examFees\": 0.0,\r\n//   \"uniformFee\": 0.0,\r\n//   \"transportBusFee\": 0.0,\r\n//   \"hostelFee\": 0.0,\r\n//   \"buildingFundFee\": 00.0,\r\n//   \"libraryFees\": 500.0,\r\n  \"sportFees\": 500.0,\r\n\r\n//   \"discount\": 1000.0,\r\n  \"studentFees\": {\r\n    \"fid\": 3\r\n  }\r\n}\r\n"
+        },
+        "url": {
+          "raw": "http://localhost:8110/branchAddressDetailsByBranchCode?branchCode=BCH193",
+          "protocol": "http",
+          "host": [
+            "localhost"
+          ],
+          "port": "8110",
+          "path": [
+            "branchAddressDetailsByBranchCode"
+          ],
+          "query": [
+            {
+              "key": "branchCode",
+              "value": "BCH193"
+            }
+          ]
+        }
+      },
+      "response": []
+    },
+    {
+      "name": "instituteEmailByBranchCode",
+      "request": {
+        "method": "GET",
+        "header": [],
+        "url": {
+          "raw": "http://localhost:8106/instituteEmailByBranchCode?branchCode=BCH193",
+          "protocol": "http",
+          "host": [
+            "localhost"
+          ],
+          "port": "8106",
+          "path": [
+            "instituteEmailByBranchCode"
+          ],
+          "query": [
+            {
+              "key": "branchCode",
+              "value": "BCH193"
+            }
+          ]
+        }
+      },
+      "response": []
+    },
+    {
+      "name": "getLayerClientByClientEmail",
+      "request": {
+        "auth": {
+          "type": "bearer",
+          "bearer": [
+            {
+              "key": "token",
+              "value": "eyJhbGciOiJIUzI1NiJ9.eyJzdWIiOiJuYXNoaWtAZ21haWwuY29tIiwiaWF0IjoxNzU4NjA1OTQwLCJleHAiOjE3NTg2OTIzNDB9.e_z2S1q4lzd7VRFzo-2D6Z4BUliy9Wz6fllFgBc6Oq8",
+              "type": "string"
+            }
+          ]
+        },
+        "method": "GET",
+        "header": [],
+        "url": {
+          "raw": "http://localhost:8106/getLayerClientByClientEmail?email=pune@gmail.com",
+          "protocol": "http",
+          "host": [
+            "localhost"
+          ],
+          "port": "8106",
+          "path": [
+            "getLayerClientByClientEmail"
+          ],
+          "query": [
+            {
+              "key": "email",
+              "value": "pune@gmail.com"
+            }
+          ]
+        }
+      },
+      "response": []
+    },
+    {
+      "name": "instituteEmailByBranchCode",
+      "request": {
+        "auth": {
+          "type": "noauth"
+        },
+        "method": "GET",
+        "header": [],
+        "url": {
+          "raw": "http://localhost:8106/instituteEmailByBranchCode?branchCode=BCH193",
+          "protocol": "http",
+          "host": [
+            "localhost"
+          ],
+          "port": "8106",
+          "path": [
+            "instituteEmailByBranchCode"
+          ],
+          "query": [
+            {
+              "key": "branchCode",
+              "value": "BCH193"
+            }
+          ]
+        }
+      },
+      "response": []
+    },
+    {
+      "name": "deleteClientBranch",
+      "request": {
+        "method": "DELETE",
+        "header": [],
+        "url": {
+          "raw": "http://localhost:8106/deleteClientBranch/1",
+          "protocol": "http",
+          "host": [
+            "localhost"
+          ],
+          "port": "8106",
+          "path": [
+            "deleteClientBranch",
+            "1"
+          ]
+        }
+      },
+      "response": []
+    },
+    {
+      "name": "upcomingEmployeeBirthdays",
+      "protocolProfileBehavior": {
+        "disableBodyPruning": true
+      },
+      "request": {
+        "auth": {
+          "type": "bearer",
+          "bearer": [
+            {
+              "key": "token",
+              "value": "eyJhbGciOiJIUzI1NiJ9.eyJzdWIiOiJhbWJhZEBnbWFpbC5jb20iLCJpYXQiOjE3NjQ4MjMxNDgsImV4cCI6MTc2NDgyNjc0OH0.hd1Q47PuxqRcLk6b5gAJb0YKno1tdndTysUtp4CyiGc",
+              "type": "string"
+            }
+          ]
+        },
+        "method": "GET",
+        "header": [],
+        "body": {
+          "mode": "raw",
+          "raw": "{\r\n    \"email\":\"sp651985@gmail.com\",\r\n    \"password\":\"12345678\"\r\n}"
+        },
+        "url": {
+          "raw": "http://localhost:8106/upcomingEmployeeBirthdays?branchCode=BCH193",
+          "protocol": "http",
+          "host": [
+            "localhost"
+          ],
+          "port": "8106",
+          "path": [
+            "upcomingEmployeeBirthdays"
+          ],
+          "query": [
+            {
+              "key": "branchCode",
+              "value": "BCH193"
+            }
+          ]
+        }
+      },
+      "response": []
+    },
+    {
+      "name": "createMarquee",
+      "request": {
+        "auth": {
+          "type": "bearer",
+          "bearer": [
+            {
+              "key": "token",
+              "value": "eyJhbGciOiJIUzI1NiJ9.eyJzdWIiOiJuYXNoaWtAZ21haWwuY29tIiwiaWF0IjoxNzYxNTU1MTg0LCJleHAiOjE3NjE2NDE1ODR9.y1P6ZgaDIZfQs2YwnMpz-batG15NNVx4FxFDCcBCVSg",
+              "type": "string"
+            }
+          ]
+        },
+        "method": "POST",
+        "header": [],
+        "body": {
+          "mode": "raw",
+          "raw": "{\r\n    \"message\":\"wertyu FGgM,J. AMSJD, KJOI\"\r\n}",
+          "options": {
+            "raw": {
+              "language": "json"
+            }
+          }
+        },
+        "url": {
+          "raw": "http://localhost:8106/createMarquee?branchCode=BCH193",
+          "protocol": "http",
+          "host": [
+            "localhost"
+          ],
+          "port": "8106",
+          "path": [
+            "createMarquee"
+          ],
+          "query": [
+            {
+              "key": "branchCode",
+              "value": "BCH193"
+            }
+          ]
+        }
+      },
+      "response": []
+    },
+    {
+      "name": "getMarqueeByBranchCode",
+      "protocolProfileBehavior": {
+        "disableBodyPruning": true
+      },
+      "request": {
+        "auth": {
+          "type": "bearer",
+          "bearer": [
+            {
+              "key": "token",
+              "value": "eyJhbGciOiJIUzI1NiJ9.eyJzdWIiOiJhbWJhZEBnbWFpbC5jb20iLCJpYXQiOjE3NTc2NjA2MzMsImV4cCI6MTc1NzY2NDIzM30.32EwpX3g_48lUDRilrwHdF_XsPkFqNcqKl9tfE-nVkQ",
+              "type": "string"
+            }
+          ]
+        },
+        "method": "GET",
+        "header": [],
+        "body": {
+          "mode": "raw",
+          "raw": ""
+        },
+        "url": {
+          "raw": "http://localhost:8106/getMarqueeByBranchCode?branchCode=BCH193",
+          "protocol": "http",
+          "host": [
+            "localhost"
+          ],
+          "port": "8106",
+          "path": [
+            "getMarqueeByBranchCode"
+          ],
+          "query": [
+            {
+              "key": "branchCode",
+              "value": "BCH193"
+            }
+          ]
+        }
+      },
+      "response": []
+    },
+    {
+      "name": "resetInstitutePassword",
+      "request": {
+        "method": "POST",
+        "header": [],
+        "url": {
+          "raw": "http://localhost:8105/resetInstitutePassword?email=SP651985@gmail.com&newPassword=Pooja@123",
+          "protocol": "http",
+          "host": [
+            "localhost"
+          ],
+          "port": "8105",
+          "path": [
+            "resetInstitutePassword"
+          ],
+          "query": [
+            {
+              "key": "email",
+              "value": "SP651985@gmail.com"
+            },
+            {
+              "key": "newPassword",
+              "value": "Pooja@123"
+            }
+          ]
+        }
+      },
+      "response": []
+    },
+    {
+      "name": "resetClientPassword",
+      "request": {
+        "method": "POST",
+        "header": [],
+        "url": {
+          "raw": "http://localhost:8106/resetClientPassword?newPassword=Rush@123&email=rushabhshete188@gmail.com",
+          "protocol": "http",
+          "host": [
+            "localhost"
+          ],
+          "port": "8106",
+          "path": [
+            "resetClientPassword"
+          ],
+          "query": [
+            {
+              "key": "newPassword",
+              "value": "Rush@123"
+            },
+            {
+              "key": "email",
+              "value": "rushabhshete188@gmail.com"
+            }
+          ]
+        }
+      },
+      "response": []
+    },
+    {
+      "name": "verifyClientOtp",
+      "request": {
+        "method": "POST",
+        "header": [],
+        "body": {
+          "mode": "raw",
+          "raw": "{\r\n    \"email\":\"sp651985@gmail.com\",\r\n    \"password\":\"12345678\"\r\n}"
+        },
+        "url": {
+          "raw": "http://localhost:8106/verifyClientOtp?otp=508702&email=rushabhshete188@gmail.com",
+          "protocol": "http",
+          "host": [
+            "localhost"
+          ],
+          "port": "8106",
+          "path": [
+            "verifyClientOtp"
+          ],
+          "query": [
+            {
+              "key": "otp",
+              "value": "508702",
+              "type": "text"
+            },
+            {
+              "key": "email",
+              "value": "rushabhshete188@gmail.com",
+              "type": "text"
+            }
+          ]
+        }
+      },
+      "response": []
+    },
+    {
+      "name": "sendClientOtp",
+      "request": {
+        "method": "POST",
+        "header": [],
+        "body": {
+          "mode": "raw",
+          "raw": "{\r\n    \"email\":\"sp651985@gmail.com\",\r\n    \"password\":\"12345678\"\r\n}"
+        },
+        "url": {
+          "raw": "http://localhost:8106/sendClientOtp?email=rushabhshete188@gmail.com",
+          "protocol": "http",
+          "host": [
+            "localhost"
+          ],
+          "port": "8106",
+          "path": [
+            "sendClientOtp"
+          ],
+          "query": [
+            {
+              "key": "email",
+              "value": "rushabhshete188@gmail.com",
+              "type": "text"
+            }
+          ]
+        }
+      },
+      "response": []
+    },
+    {
+      "name": "getLayerSuperAdminHomePlansBySectionId",
+      "request": {
+        "auth": {
+          "type": "bearer",
+          "bearer": [
+            {
+              "key": "token",
+              "value": "eyJhbGciOiJIUzI1NiJ9.eyJzdWIiOiJuYXNoaWtAZ21haWwuY29tIiwiaWF0IjoxNzU5OTg2MjA5LCJleHAiOjE3NjAwNzI2MDl9.tbYWcicfQNfoYcc61lyJ71oYPVz9cP5wonH-3xeiHJs",
+              "type": "string"
+            }
+          ]
+        },
+        "method": "GET",
+        "header": [],
+        "url": {
+          "raw": "http://localhost:8106/getLayerSuperAdminHomePlansBySectionId?sectionId=1",
+          "protocol": "http",
+          "host": [
+            "localhost"
+          ],
+          "port": "8106",
+          "path": [
+            "getLayerSuperAdminHomePlansBySectionId"
+          ],
+          "query": [
+            {
+              "key": "sectionId",
+              "value": "1"
+            }
+          ]
+        }
+      },
+      "response": []
+    },
+    {
+      "name": "deleteMarquee",
+      "request": {
+        "auth": {
+          "type": "bearer",
+          "bearer": [
+            {
+              "key": "token",
+              "value": "eyJhbGciOiJIUzI1NiJ9.eyJzdWIiOiJuYXNoaWtAZ21haWwuY29tIiwiaWF0IjoxNzYxNTU1MTg0LCJleHAiOjE3NjE2NDE1ODR9.y1P6ZgaDIZfQs2YwnMpz-batG15NNVx4FxFDCcBCVSg",
+              "type": "string"
+            }
+          ]
+        },
+        "method": "DELETE",
+        "header": [],
+        "url": {
+          "raw": "http://localhost:8106/deleteMarquee/2",
+          "protocol": "http",
+          "host": [
+            "localhost"
+          ],
+          "port": "8106",
+          "path": [
+            "deleteMarquee",
+            "2"
+          ]
+        }
+      },
+      "response": []
+    },
+    {
+      "name": "updateMarquee",
+      "request": {
+        "auth": {
+          "type": "bearer",
+          "bearer": [
+            {
+              "key": "token",
+              "value": "eyJhbGciOiJIUzI1NiJ9.eyJzdWIiOiJuYXNoaWtAZ21haWwuY29tIiwiaWF0IjoxNzYxNTQ5MDY0LCJleHAiOjE3NjE2MzU0NjR9.CjHcioxg7GeGkidnBMufT3OlQ4Pv5XmwMh18owvglKY",
+              "type": "string"
+            }
+          ]
+        },
+        "method": "PUT",
+        "header": [],
+        "body": {
+          "mode": "raw",
+          "raw": "{\r\n    \"message\":\"update Sucessfully\"\r\n}",
+          "options": {
+            "raw": {
+              "language": "json"
+            }
+          }
+        },
+        "url": {
+          "raw": "http://localhost:8106/updateMarquee/1",
+          "protocol": "http",
+          "host": [
+            "localhost"
+          ],
+          "port": "8106",
+          "path": [
+            "updateMarquee",
+            "1"
+          ]
+        }
+      },
+      "response": []
+    },
+    {
+      "name": "instituteEmailByBranchCode",
+      "request": {
+        "auth": {
+          "type": "noauth"
+        },
+        "method": "GET",
+        "header": [],
+        "url": {
+          "raw": "http://localhost:8106/instituteEmailByBranchCode?branchCode=BCH193",
+          "protocol": "http",
+          "host": [
+            "localhost"
+          ],
+          "port": "8106",
+          "path": [
+            "instituteEmailByBranchCode"
+          ],
+          "query": [
+            {
+              "key": "branchCode",
+              "value": "BCH193"
+            },
+            {
+              "key": "email",
+              "value": "sonali@gmail.com",
+              "disabled": true
+            },
+            {
+              "key": "classId",
+              "value": "3",
+              "disabled": true
+            }
+          ]
+        }
+      },
+      "response": []
+    },
+    {
+      "name": "createAccountForPaymentGateway",
+      "request": {
+        "auth": {
+          "type": "bearer",
+          "bearer": [
+            {
+              "key": "token",
+              "value": "eyJhbGciOiJIUzI1NiJ9.eyJzdWIiOiJuYXNoaWtAZ21haWwuY29tIiwiaWF0IjoxNzY3MDg1NjY1LCJleHAiOjE3NjcxNzIwNjV9.BkKZ_ShCXX6ib8IHi7zPOl9ZRf4AeZQgCRXUIHrvCPI",
+              "type": "string"
+            }
+          ]
+        },
+        "method": "POST",
+        "header": [],
+        "body": {
+          "mode": "raw",
+          "raw": "{\r\n  \"instituteEmail\": \"ambad@gmail.com\",\r\n  \"branchCode\": \"BCH193\",\r\n  \"gatewayName\": \"RAZORPAY\",\r\n  \"keyId\": \"rzp_test_RvPyny2r9zrB6F\",\r\n  \"secretKey\": \"vaCn3oo5Wj7LdQXUGRtjdCRe\"\r\n}\r\n",
+          "options": {
+            "raw": {
+              "language": "json"
+            }
+          }
+        },
+        "url": {
+          "raw": "http://localhost:8106/createAccountForPaymentGateway",
+          "protocol": "http",
+          "host": [
+            "localhost"
+          ],
+          "port": "8106",
+          "path": [
+            "createAccountForPaymentGateway"
+          ]
+        }
+      },
+      "response": []
+    },
+    {
+      "name": "mapSystemToGateway",
+      "request": {
+        "auth": {
+          "type": "bearer",
+          "bearer": [
+            {
+              "key": "token",
+              "value": "eyJhbGciOiJIUzI1NiJ9.eyJzdWIiOiJuYXNoaWtAZ21haWwuY29tIiwiaWF0IjoxNzY3MDg1NjY1LCJleHAiOjE3NjcxNzIwNjV9.BkKZ_ShCXX6ib8IHi7zPOl9ZRf4AeZQgCRXUIHrvCPI",
+              "type": "string"
+            }
+          ]
+        },
+        "method": "POST",
+        "header": [],
+        "body": {
+          "mode": "raw",
+          "raw": "{\r\n  \"gatewayId\": 1,\r\n  \"branchCode\": \"BCH193\",\r\n  \"systems\": [\"Attendance Management System\"]\r\n}\r\n",
+          "options": {
+            "raw": {
+              "language": "json"
+            }
+          }
+        },
+        "url": {
+          "raw": "http://localhost:8106/mapSystemToGateway",
+          "protocol": "http",
+          "host": [
+            "localhost"
+          ],
+          "port": "8106",
+          "path": [
+            "mapSystemToGateway"
+          ]
+        }
+      },
+      "response": []
+    },
+    {
+      "name": "createOrder",
+      "request": {
+        "auth": {
+          "type": "bearer",
+          "bearer": [
+            {
+              "key": "token",
+              "value": "eyJhbGciOiJIUzI1NiJ9.eyJzdWIiOiJuYXNoaWtAZ21haWwuY29tIiwiaWF0IjoxNzY3MDg5OTA1LCJleHAiOjE3NjcxNzYzMDV9.QWUb3b9qkaib1o3TOJOD9rzHy7FDQe8Hg2o0nGXQzOM",
+              "type": "string"
+            }
+          ]
+        },
+        "method": "POST",
+        "header": [],
+        "body": {
+          "mode": "raw",
+          "raw": "{\r\n  \"gatewayId\": 1,\r\n  \"branchCode\": \"BCH193\",\r\n  \"systems\": [\"Attendance Management System\"]\r\n}\r\n"
+        },
+        "url": {
+          "raw": "http://localhost:8106/createOrder?branchCode=BCH193&systemName=Attendance_management_system&amount=10",
+          "protocol": "http",
+          "host": [
+            "localhost"
+          ],
+          "port": "8106",
+          "path": [
+            "createOrder"
+          ],
+          "query": [
+            {
+              "key": "branchCode",
+              "value": "BCH193"
+            },
+            {
+              "key": "systemName",
+              "value": "Attendance_management_system"
+            },
+            {
+              "key": "amount",
+              "value": "10"
+            }
+          ]
+        }
+      },
+      "response": []
+    },
+    {
+      "name": "updateAccountForPaymentGateway",
+      "request": {
+        "auth": {
+          "type": "bearer",
+          "bearer": [
+            {
+              "key": "token",
+              "value": "eyJhbGciOiJIUzI1NiJ9.eyJzdWIiOiJuYXNoaWtAZ21haWwuY29tIiwiaWF0IjoxNzY3MTYwNDU5LCJleHAiOjE3NjcyNDY4NTl9.bMdtvw6cD4LDSQjSSQGC9ho7o6ML749X80FVb8Nj5Yw",
+              "type": "string"
+            }
+          ]
+        },
+        "method": "PUT",
+        "header": [],
+        "body": {
+          "mode": "raw",
+          "raw": "{\r\n  \"instituteEmail\": \"nashik@gmail.com\"\r\n//   \"branchCode\": \"BCH193\",\r\n//   \"gatewayName\": \"RAZORPAY\",\r\n//   \"keyId\": \"rzp_test_RvPyny2r9zrB6F\",\r\n//   \"secretKey\": \"vaCn3oo5Wj7LdQXUGRtjdCRe\"\r\n}\r\n",
+          "options": {
+            "raw": {
+              "language": "json"
+            }
+          }
+        },
+        "url": {
+          "raw": "http://localhost:8106/updateAccountForPaymentGateway/1",
+          "protocol": "http",
+          "host": [
+            "localhost"
+          ],
+          "port": "8106",
+          "path": [
+            "updateAccountForPaymentGateway",
+            "1"
+          ]
+        }
+      },
+      "response": []
+    }
+  ],
+  "auth": {
+    "type": "bearer",
+    "bearer": [
+      {
+        "key": "token",
+        "value": "eyJhbGciOiJIUzI1NiJ9.eyJzdWIiOiJicmFuY2hAZ21haWwuY29tIiwiaWF0IjoxNzc5NjkyMzc1LCJleHAiOjE3Nzk2OTU5NzV9.LeF4Aa6pnM3Z6qBYvRdbu9TqSyLNAevzrIrpzeYcifE",
+        "type": "string"
+      }
+    ]
+  },
+  "event": [
+    {
+      "listen": "prerequest",
+      "script": {
+        "type": "text/javascript",
+        "packages": {},
+        "requests": {},
+        "exec": [
+          ""
+        ]
+      }
+    },
+    {
+      "listen": "test",
+      "script": {
+        "type": "text/javascript",
+        "packages": {},
+        "requests": {},
+        "exec": [
+          ""
+        ]
+      }
+    }
+  ]
+}

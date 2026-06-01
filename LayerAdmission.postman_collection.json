@@ -1,0 +1,4692 @@
+{
+  "info": {
+    "_postman_id": "9371f102-d100-4570-b424-fdf0e0bca551",
+    "name": "LayerAdmission",
+    "schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+    "_exporter_id": "54335742",
+    "_collection_link": "https://go.postman.co/collection/54335742-9371f102-d100-4570-b424-fdf0e0bca551?source=collection_link"
+  },
+  "item": [
+    {
+      "name": "stafflogin",
+      "request": {
+        "auth": {
+          "type": "noauth"
+        },
+        "method": "POST",
+        "header": [],
+        "body": {
+          "mode": "raw",
+          "raw": "{\n  \"email\": \"neha@gmail.com\",\n  \"password\": \"12345678\"\n}\n// {\n//     \"email\": \"Pentagoninstituteshrirampur@gmail.com\",\n//     \"password\":\"123\"\n// }\n",
+          "options": {
+            "raw": {
+              "language": "json"
+            }
+          }
+        },
+        "url": {
+          "raw": "{{admissions_URL}}/stafflogin",
+          "host": [
+            "{{admissions_URL}}"
+          ],
+          "path": [
+            "stafflogin"
+          ]
+        }
+      },
+      "response": []
+    },
+    {
+      "name": "permissionForStaff",
+      "protocolProfileBehavior": {
+        "disableBodyPruning": true
+      },
+      "request": {
+        "method": "GET",
+        "header": [],
+        "body": {
+          "mode": "raw",
+          "raw": "",
+          "options": {
+            "raw": {
+              "language": "json"
+            }
+          }
+        },
+        "url": {
+          "raw": "{{admissions_URL}}/permissionForStaff?staffEmail=neha@gmail.com",
+          "host": [
+            "{{admissions_URL}}"
+          ],
+          "path": [
+            "permissionForStaff"
+          ],
+          "query": [
+            {
+              "key": "staffEmail",
+              "value": "neha@gmail.com"
+            }
+          ]
+        }
+      },
+      "response": []
+    },
+    {
+      "name": "permissionForDepartment",
+      "request": {
+        "auth": {
+          "type": "bearer",
+          "bearer": [
+            {
+              "key": "token",
+              "value": "eyJhbGciOiJIUzI1NiJ9.eyJzdWIiOiJzdGFmQGdtYWlsLmNvbSIsImlhdCI6MTc0ODQyNzc1NywiZXhwIjoxNzQ4NDMxMzU3fQ.JwSYc5yPHtTY1oS18iw8pUW0a2nlmXnr-TJ_gE5F_T4",
+              "type": "string"
+            }
+          ]
+        },
+        "method": "GET",
+        "header": [],
+        "url": {
+          "raw": "{{admissions_URL}}/permissionForDepartment?departmentEmail=department@gmail.com",
+          "host": [
+            "{{admissions_URL}}"
+          ],
+          "path": [
+            "permissionForDepartment"
+          ],
+          "query": [
+            {
+              "key": "departmentEmail",
+              "value": "department@gmail.com"
+            }
+          ]
+        }
+      },
+      "response": []
+    },
+    {
+      "name": "createMedium",
+      "request": {
+        "method": "POST",
+        "header": [],
+        "body": {
+          "mode": "raw",
+          "raw": "{\n  \"mediumName\": \"English\"\n}\n",
+          "options": {
+            "raw": {
+              "language": "json"
+            }
+          }
+        },
+        "url": {
+          "raw": "{{admissions_URL}}/createMedium?role=staff&email=neha@gmail.com",
+          "host": [
+            "{{admissions_URL}}"
+          ],
+          "path": [
+            "createMedium"
+          ],
+          "query": [
+            {
+              "key": "role",
+              "value": "staff"
+            },
+            {
+              "key": "email",
+              "value": "neha@gmail.com"
+            }
+          ]
+        }
+      },
+      "response": []
+    },
+    {
+      "name": "getAllMediums",
+      "request": {
+        "method": "GET",
+        "header": [],
+        "url": {
+          "raw": "{{admissions_URL}}/getAllMediums?role=staff&email=neha@gmail.com&branchCode=BCH729",
+          "host": [
+            "{{admissions_URL}}"
+          ],
+          "path": [
+            "getAllMediums"
+          ],
+          "query": [
+            {
+              "key": "role",
+              "value": "staff"
+            },
+            {
+              "key": "email",
+              "value": "neha@gmail.com"
+            },
+            {
+              "key": "branchCode",
+              "value": "BCH729"
+            }
+          ]
+        }
+      },
+      "response": []
+    },
+    {
+      "name": "getDepartmentByBranchCode",
+      "request": {
+        "method": "GET",
+        "header": [],
+        "url": {
+          "raw": "{{admissions_URL}}/getDepartmentByBranchCode?role=superadmin&email=vaishu@gmail.com&branchCode=BCH729",
+          "host": [
+            "{{admissions_URL}}"
+          ],
+          "path": [
+            "getDepartmentByBranchCode"
+          ],
+          "query": [
+            {
+              "key": "role",
+              "value": "superadmin"
+            },
+            {
+              "key": "email",
+              "value": "vaishu@gmail.com"
+            },
+            {
+              "key": "branchCode",
+              "value": "BCH729"
+            }
+          ]
+        }
+      },
+      "response": []
+    },
+    {
+      "name": "getMediumById",
+      "request": {
+        "auth": {
+          "type": "bearer",
+          "bearer": [
+            {
+              "key": "token",
+              "value": "eyJhbGciOiJIUzI1NiJ9.eyJzdWIiOiJwcmFnYXRpQGdtYWlsLmNvbSIsImlhdCI6MTc0NTQxMDg5NywiZXhwIjoxNzQ1NDE0NDk3fQ.1-ZatJtuG0-Kpxbb154hUvsafQvLTIVvWGqJ_KIacuI",
+              "type": "string"
+            }
+          ]
+        },
+        "method": "GET",
+        "header": [],
+        "url": {
+          "raw": "{{admissions_URL}}/getMediumById/2?role=branch&email=kothrud@gmail.com",
+          "host": [
+            "{{admissions_URL}}"
+          ],
+          "path": [
+            "getMediumById",
+            "2"
+          ],
+          "query": [
+            {
+              "key": "role",
+              "value": "branch"
+            },
+            {
+              "key": "email",
+              "value": "kothrud@gmail.com"
+            }
+          ]
+        }
+      },
+      "response": []
+    },
+    {
+      "name": "updateMedium",
+      "request": {
+        "auth": {
+          "type": "bearer",
+          "bearer": [
+            {
+              "key": "token",
+              "value": "eyJhbGciOiJIUzI1NiJ9.eyJzdWIiOiJwcmFnYXRpQGdtYWlsLmNvbSIsImlhdCI6MTc0NTQ3OTcxOCwiZXhwIjoxNzQ1NDgzMzE4fQ.cS2x7jQEEFWyUoC4a92MQ5TNhmPrIiR-xzJoBnKRDcg",
+              "type": "string"
+            }
+          ]
+        },
+        "method": "PUT",
+        "header": [],
+        "body": {
+          "mode": "raw",
+          "raw": "{\n  \"mediumName\": \"Offline\"\n \n}\n",
+          "options": {
+            "raw": {
+              "language": "json"
+            }
+          }
+        },
+        "url": {
+          "raw": "{{admissions_URL}}/updateMedium/3?role=branch&email=nigdi@gmail.com",
+          "host": [
+            "{{admissions_URL}}"
+          ],
+          "path": [
+            "updateMedium",
+            "3"
+          ],
+          "query": [
+            {
+              "key": "role",
+              "value": "branch"
+            },
+            {
+              "key": "email",
+              "value": "nigdi@gmail.com"
+            }
+          ]
+        }
+      },
+      "response": []
+    },
+    {
+      "name": "deleteMedium",
+      "request": {
+        "auth": {
+          "type": "bearer",
+          "bearer": [
+            {
+              "key": "token",
+              "value": "eyJhbGciOiJIUzI1NiJ9.eyJzdWIiOiJwcmFnYXRpQGdtYWlsLmNvbSIsImlhdCI6MTc0NTQ3OTcxOCwiZXhwIjoxNzQ1NDgzMzE4fQ.cS2x7jQEEFWyUoC4a92MQ5TNhmPrIiR-xzJoBnKRDcg",
+              "type": "string"
+            }
+          ]
+        },
+        "method": "DELETE",
+        "header": [],
+        "url": {
+          "raw": "{{admissions_URL}}/deleteMedium/1?role=branch&email=pragati@gmail.com",
+          "host": [
+            "{{admissions_URL}}"
+          ],
+          "path": [
+            "deleteMedium",
+            "1"
+          ],
+          "query": [
+            {
+              "key": "role",
+              "value": "branch"
+            },
+            {
+              "key": "email",
+              "value": "pragati@gmail.com"
+            }
+          ]
+        }
+      },
+      "response": []
+    },
+    {
+      "name": "createSourceBy",
+      "request": {
+        "auth": {
+          "type": "bearer",
+          "bearer": [
+            {
+              "key": "token",
+              "value": "eyJhbGciOiJIUzI1NiJ9.eyJzdWIiOiJzdGFmQGdtYWlsLmNvbSIsImlhdCI6MTc0ODQyNzc1NywiZXhwIjoxNzQ4NDMxMzU3fQ.JwSYc5yPHtTY1oS18iw8pUW0a2nlmXnr-TJ_gE5F_T4",
+              "type": "string"
+            }
+          ]
+        },
+        "method": "POST",
+        "header": [],
+        "body": {
+          "mode": "raw",
+          "raw": "{\n  \"sourceBy\": \"Onlineeee\"\n}\n",
+          "options": {
+            "raw": {
+              "language": "json"
+            }
+          }
+        },
+        "url": {
+          "raw": "{{admissions_URL}}/createSourceBy?role=staff&email=staf@gmail.com",
+          "host": [
+            "{{admissions_URL}}"
+          ],
+          "path": [
+            "createSourceBy"
+          ],
+          "query": [
+            {
+              "key": "role",
+              "value": "staff"
+            },
+            {
+              "key": "email",
+              "value": "staf@gmail.com"
+            }
+          ]
+        }
+      },
+      "response": []
+    },
+    {
+      "name": "getAllSourceBy",
+      "request": {
+        "auth": {
+          "type": "bearer",
+          "bearer": [
+            {
+              "key": "token",
+              "value": "eyJhbGciOiJIUzI1NiJ9.eyJzdWIiOiJkZXB0QGdtYWlsLmNvbSIsImlhdCI6MTc0NzAyMjc0NywiZXhwIjoxNzQ3MDI2MzQ3fQ.F-vAnc0vsaaPEcXFfyHP5-Qsu7ONc2D8ZT37LrFYdoY",
+              "type": "string"
+            }
+          ]
+        },
+        "method": "GET",
+        "header": [],
+        "url": {
+          "raw": "https://pjsofttech.in:46443/getAllSourceBy?role=staff&email=staff@gmail.com&branchCode=BCH186",
+          "protocol": "https",
+          "host": [
+            "pjsofttech",
+            "in"
+          ],
+          "port": "46443",
+          "path": [
+            "getAllSourceBy"
+          ],
+          "query": [
+            {
+              "key": "role",
+              "value": "staff"
+            },
+            {
+              "key": "email",
+              "value": "staff@gmail.com"
+            },
+            {
+              "key": "branchCode",
+              "value": "BCH186"
+            }
+          ]
+        }
+      },
+      "response": []
+    },
+    {
+      "name": "getSourceById",
+      "request": {
+        "auth": {
+          "type": "bearer",
+          "bearer": [
+            {
+              "key": "token",
+              "value": "eyJhbGciOiJIUzI1NiJ9.eyJzdWIiOiJwcmFnYXRpQGdtYWlsLmNvbSIsImlhdCI6MTc0NTQ4NzY2MCwiZXhwIjoxNzQ1NDkxMjYwfQ.eVxBCLoU4uimLPpF9bsDGUbp9gJ4jew_xJjy3Dh0kck",
+              "type": "string"
+            }
+          ]
+        },
+        "method": "GET",
+        "header": [],
+        "url": {
+          "raw": "{{admissions_URL}}/getSourceById/4?role=staff&email=pragati@gmail.com",
+          "host": [
+            "{{admissions_URL}}"
+          ],
+          "path": [
+            "getSourceById",
+            "4"
+          ],
+          "query": [
+            {
+              "key": "role",
+              "value": "staff"
+            },
+            {
+              "key": "email",
+              "value": "pragati@gmail.com"
+            }
+          ]
+        }
+      },
+      "response": []
+    },
+    {
+      "name": "updateSourceBy",
+      "request": {
+        "auth": {
+          "type": "bearer",
+          "bearer": [
+            {
+              "key": "token",
+              "value": "eyJhbGciOiJIUzI1NiJ9.eyJzdWIiOiJwcmFnYXRpQGdtYWlsLmNvbSIsImlhdCI6MTc0NTQ4NzY2MCwiZXhwIjoxNzQ1NDkxMjYwfQ.eVxBCLoU4uimLPpF9bsDGUbp9gJ4jew_xJjy3Dh0kck",
+              "type": "string"
+            }
+          ]
+        },
+        "method": "PUT",
+        "header": [],
+        "body": {
+          "mode": "raw",
+          "raw": "{\n  \"sourceBy\": \"offline Ads\"\n}\n",
+          "options": {
+            "raw": {
+              "language": "json"
+            }
+          }
+        },
+        "url": {
+          "raw": "{{admissions_URL}}/updateSourceBy/4?role=branch&email=xyz@gmail.com",
+          "host": [
+            "{{admissions_URL}}"
+          ],
+          "path": [
+            "updateSourceBy",
+            "4"
+          ],
+          "query": [
+            {
+              "key": "role",
+              "value": "branch"
+            },
+            {
+              "key": "email",
+              "value": "xyz@gmail.com"
+            }
+          ]
+        }
+      },
+      "response": []
+    },
+    {
+      "name": "deleteSourceBy",
+      "request": {
+        "auth": {
+          "type": "bearer",
+          "bearer": [
+            {
+              "key": "token",
+              "value": "eyJhbGciOiJIUzI1NiJ9.eyJzdWIiOiJwcmFnYXRpQGdtYWlsLmNvbSIsImlhdCI6MTc0NTQ5MDM1NiwiZXhwIjoxNzQ1NDkzOTU2fQ.vL5YXLOHy8rpB_7ym9B5dvxEGUwTTPqsLooT9K-i3YE",
+              "type": "string"
+            }
+          ]
+        },
+        "method": "DELETE",
+        "header": [],
+        "url": {
+          "raw": "{{admissions_URL}}/deleteSourceBy/2?role=branch&email=xyz@gmail.com",
+          "host": [
+            "{{admissions_URL}}"
+          ],
+          "path": [
+            "deleteSourceBy",
+            "2"
+          ],
+          "query": [
+            {
+              "key": "role",
+              "value": "branch"
+            },
+            {
+              "key": "email",
+              "value": "xyz@gmail.com"
+            }
+          ]
+        }
+      },
+      "response": []
+    },
+    {
+      "name": "createConductBy",
+      "request": {
+        "auth": {
+          "type": "bearer",
+          "bearer": [
+            {
+              "key": "token",
+              "value": "eyJhbGciOiJIUzI1NiJ9.eyJzdWIiOiJzdGFmQGdtYWlsLmNvbSIsImlhdCI6MTc0ODQyNzc1NywiZXhwIjoxNzQ4NDMxMzU3fQ.JwSYc5yPHtTY1oS18iw8pUW0a2nlmXnr-TJ_gE5F_T4",
+              "type": "string"
+            }
+          ]
+        },
+        "method": "POST",
+        "header": [],
+        "body": {
+          "mode": "raw",
+          "raw": "{\n  \"guideName\": \"shon\"\n}",
+          "options": {
+            "raw": {
+              "language": "json"
+            }
+          }
+        },
+        "url": {
+          "raw": "{{admissions_URL}}/createConductBy?role=staff&email=staf@gmail.com",
+          "host": [
+            "{{admissions_URL}}"
+          ],
+          "path": [
+            "createConductBy"
+          ],
+          "query": [
+            {
+              "key": "role",
+              "value": "staff"
+            },
+            {
+              "key": "email",
+              "value": "staf@gmail.com"
+            }
+          ]
+        }
+      },
+      "response": []
+    },
+    {
+      "name": "getAllConductBy",
+      "request": {
+        "auth": {
+          "type": "bearer",
+          "bearer": [
+            {
+              "key": "token",
+              "value": "eyJhbGciOiJIUzI1NiJ9.eyJzdWIiOiJwcmFnYXRpQGdtYWlsLmNvbSIsImlhdCI6MTc0NTQ5NTk2NCwiZXhwIjoxNzQ1NDk5NTY0fQ.xDLMYeBpY1_L_ypL4Je7Uk0K_iwHYzHEgArEPH7EF9Q",
+              "type": "string"
+            }
+          ]
+        },
+        "method": "GET",
+        "header": [],
+        "url": {
+          "raw": "{{admissions_URL}}/getAllConductBy?role=staff&email=pragati@gmail.com&branchCode=BCH684",
+          "host": [
+            "{{admissions_URL}}"
+          ],
+          "path": [
+            "getAllConductBy"
+          ],
+          "query": [
+            {
+              "key": "role",
+              "value": "staff"
+            },
+            {
+              "key": "email",
+              "value": "pragati@gmail.com"
+            },
+            {
+              "key": "branchCode",
+              "value": "BCH684"
+            }
+          ]
+        }
+      },
+      "response": []
+    },
+    {
+      "name": "getConductById",
+      "request": {
+        "auth": {
+          "type": "bearer",
+          "bearer": [
+            {
+              "key": "token",
+              "value": "eyJhbGciOiJIUzI1NiJ9.eyJzdWIiOiJwcmFnYXRpQGdtYWlsLmNvbSIsImlhdCI6MTc0NTQ5NTk2NCwiZXhwIjoxNzQ1NDk5NTY0fQ.xDLMYeBpY1_L_ypL4Je7Uk0K_iwHYzHEgArEPH7EF9Q",
+              "type": "string"
+            }
+          ]
+        },
+        "method": "GET",
+        "header": [],
+        "url": {
+          "raw": "{{admissions_URL}}/getConductById/1?role=staff&email=pragati@gmail.com",
+          "host": [
+            "{{admissions_URL}}"
+          ],
+          "path": [
+            "getConductById",
+            "1"
+          ],
+          "query": [
+            {
+              "key": "role",
+              "value": "staff"
+            },
+            {
+              "key": "email",
+              "value": "pragati@gmail.com"
+            }
+          ]
+        }
+      },
+      "response": []
+    },
+    {
+      "name": "updateConductBy",
+      "request": {
+        "auth": {
+          "type": "bearer",
+          "bearer": [
+            {
+              "key": "token",
+              "value": "eyJhbGciOiJIUzI1NiJ9.eyJzdWIiOiJwcmFnYXRpQGdtYWlsLmNvbSIsImlhdCI6MTc0NTQ5NjgzOCwiZXhwIjoxNzQ1NTAwNDM4fQ.8dgAGKdw8FcA-Aw4lCkqjCScpVp6Md2v_DMCjh6F2VQ",
+              "type": "string"
+            }
+          ]
+        },
+        "method": "PUT",
+        "header": [],
+        "body": {
+          "mode": "raw",
+          "raw": "{\n  \"guideName\": \"updated Doe\"\n}",
+          "options": {
+            "raw": {
+              "language": "json"
+            }
+          }
+        },
+        "url": {
+          "raw": "{{admissions_URL}}/updateConductBy/2?role=branch&email=nixzzci@gmail.com",
+          "host": [
+            "{{admissions_URL}}"
+          ],
+          "path": [
+            "updateConductBy",
+            "2"
+          ],
+          "query": [
+            {
+              "key": "role",
+              "value": "branch"
+            },
+            {
+              "key": "email",
+              "value": "nixzzci@gmail.com"
+            }
+          ]
+        }
+      },
+      "response": []
+    },
+    {
+      "name": "deleteConductBy",
+      "request": {
+        "auth": {
+          "type": "bearer",
+          "bearer": [
+            {
+              "key": "token",
+              "value": "eyJhbGciOiJIUzI1NiJ9.eyJzdWIiOiJwcmFnYXRpQGdtYWlsLmNvbSIsImlhdCI6MTc0NTQ5NjgzOCwiZXhwIjoxNzQ1NTAwNDM4fQ.8dgAGKdw8FcA-Aw4lCkqjCScpVp6Md2v_DMCjh6F2VQ",
+              "type": "string"
+            }
+          ]
+        },
+        "method": "DELETE",
+        "header": [],
+        "url": {
+          "raw": "{{admissions_URL}}/deleteConductBy/1?role=branch&email=nigdi@gmail.com",
+          "host": [
+            "{{admissions_URL}}"
+          ],
+          "path": [
+            "deleteConductBy",
+            "1"
+          ],
+          "query": [
+            {
+              "key": "role",
+              "value": "branch"
+            },
+            {
+              "key": "email",
+              "value": "nigdi@gmail.com"
+            }
+          ]
+        }
+      },
+      "response": []
+    },
+    {
+      "name": "getAllCourses",
+      "request": {
+        "auth": {
+          "type": "bearer",
+          "bearer": [
+            {
+              "key": "token",
+              "value": "eyJhbGciOiJIUzI1NiJ9.eyJzdWIiOiJwcmFnYXRpQGdtYWlsLmNvbSIsImlhdCI6MTc0NTQ5NzkxNywiZXhwIjoxNzQ1NTAxNTE3fQ.9w_NWMEeTBuKCcENq8GKHJY5_grhixwimzLYWKDPl2g",
+              "type": "string"
+            }
+          ]
+        },
+        "method": "GET",
+        "header": [],
+        "url": {
+          "raw": "{{admissions_URL}}/getAllCourses?role=staff&email=pragati@gmail.com&branchCode=BCH684",
+          "host": [
+            "{{admissions_URL}}"
+          ],
+          "path": [
+            "getAllCourses"
+          ],
+          "query": [
+            {
+              "key": "role",
+              "value": "staff"
+            },
+            {
+              "key": "email",
+              "value": "pragati@gmail.com"
+            },
+            {
+              "key": "branchCode",
+              "value": "BCH684"
+            }
+          ]
+        }
+      },
+      "response": []
+    },
+    {
+      "name": "getCourseById",
+      "request": {
+        "auth": {
+          "type": "bearer",
+          "bearer": [
+            {
+              "key": "token",
+              "value": "eyJhbGciOiJIUzI1NiJ9.eyJzdWIiOiJwcmFnYXRpQGdtYWlsLmNvbSIsImlhdCI6MTc0NTQ5NzkxNywiZXhwIjoxNzQ1NTAxNTE3fQ.9w_NWMEeTBuKCcENq8GKHJY5_grhixwimzLYWKDPl2g",
+              "type": "string"
+            }
+          ]
+        },
+        "method": "GET",
+        "header": [],
+        "url": {
+          "raw": "{{admissions_URL}}/getCourseById/1?role=staff&email=pragati@gmail.com&branchCode=BCH684",
+          "host": [
+            "{{admissions_URL}}"
+          ],
+          "path": [
+            "getCourseById",
+            "1"
+          ],
+          "query": [
+            {
+              "key": "role",
+              "value": "staff"
+            },
+            {
+              "key": "email",
+              "value": "pragati@gmail.com"
+            },
+            {
+              "key": "branchCode",
+              "value": "BCH684"
+            }
+          ]
+        }
+      },
+      "response": []
+    },
+    {
+      "name": "updateCourse",
+      "request": {
+        "auth": {
+          "type": "bearer",
+          "bearer": [
+            {
+              "key": "token",
+              "value": "eyJhbGciOiJIUzI1NiJ9.eyJzdWIiOiJwcmFnYXRpQGdtYWlsLmNvbSIsImlhdCI6MTc0NTQ5NzkxNywiZXhwIjoxNzQ1NTAxNTE3fQ.9w_NWMEeTBuKCcENq8GKHJY5_grhixwimzLYWKDPl2g",
+              "type": "string"
+            }
+          ]
+        },
+        "method": "PUT",
+        "header": [],
+        "body": {
+          "mode": "raw",
+          "raw": "{\n  \"coursename\": \"advanced java Full Stack\"\n}\n",
+          "options": {
+            "raw": {
+              "language": "json"
+            }
+          }
+        },
+        "url": {
+          "raw": "{{admissions_URL}}/updateCourse/1?role=branch&email=nigdi@gmail.com",
+          "host": [
+            "{{admissions_URL}}"
+          ],
+          "path": [
+            "updateCourse",
+            "1"
+          ],
+          "query": [
+            {
+              "key": "role",
+              "value": "branch"
+            },
+            {
+              "key": "email",
+              "value": "nigdi@gmail.com"
+            }
+          ]
+        }
+      },
+      "response": []
+    },
+    {
+      "name": "deleteCourse",
+      "request": {
+        "auth": {
+          "type": "bearer",
+          "bearer": [
+            {
+              "key": "token",
+              "value": "eyJhbGciOiJIUzI1NiJ9.eyJzdWIiOiJwcmFnYXRpQGdtYWlsLmNvbSIsImlhdCI6MTc0NTQ5NzkxNywiZXhwIjoxNzQ1NTAxNTE3fQ.9w_NWMEeTBuKCcENq8GKHJY5_grhixwimzLYWKDPl2g",
+              "type": "string"
+            }
+          ]
+        },
+        "method": "DELETE",
+        "header": [],
+        "url": {
+          "raw": "{{admissions_URL}}/deleteCourse/2?role=branch&email=nigdi@gmail.com",
+          "host": [
+            "{{admissions_URL}}"
+          ],
+          "path": [
+            "deleteCourse",
+            "2"
+          ],
+          "query": [
+            {
+              "key": "role",
+              "value": "branch"
+            },
+            {
+              "key": "email",
+              "value": "nigdi@gmail.com"
+            }
+          ]
+        }
+      },
+      "response": []
+    },
+    {
+      "name": "createCourse",
+      "request": {
+        "method": "POST",
+        "header": [],
+        "body": {
+          "mode": "raw",
+          "raw": "{\n  \"coursename\": \"Advanced Java Spring Boot\"\n}\n",
+          "options": {
+            "raw": {
+              "language": "json"
+            }
+          }
+        },
+        "url": {
+          "raw": "{{admissions_URL}}/createCourse?role=staff&email=neha@gmail.com",
+          "host": [
+            "{{admissions_URL}}"
+          ],
+          "path": [
+            "createCourse"
+          ],
+          "query": [
+            {
+              "key": "role",
+              "value": "staff"
+            },
+            {
+              "key": "email",
+              "value": "neha@gmail.com"
+            }
+          ]
+        }
+      },
+      "response": []
+    },
+    {
+      "name": "createAdmission",
+      "request": {
+        "method": "POST",
+        "header": [],
+        "body": {
+          "mode": "formdata",
+          "formdata": [
+            {
+              "key": "admission",
+              "value": "{\n  \"name\": \"Kisan\",\n  \"mobile1\": \"9876543210\",\n  \"date\": \"2025-05-07\",\n  \"coursename\": \"Java Spring Boot\",\n  \"duration\": \"6 months\",\n  \"email\": \"Kisan@gmail.com\",\n  \"mobile2\": \"9800345689\",\n  \"transactionId\": 1234567890,\n  \"totalFees\": 1240.0,\n  \"remark\": \"Interested in backend\",\n  \"status\": \"Pending\",\n  \"dueDate\": \"2025-06-01\",\n  \"mediumName\": \"English\",\n  \"paymentMethod\": \"Online\",\n  \"pendingFees\": 1240.0,\n  \"paidFees\": 0.0,\n  \"guideName\": \"Mr. Smith\",\n  \"sourceBy\": \"Google\",\n  \"paymentMode\": \"UPI\",\n  \"currentAddress\": \"123 Street, Pune\",\n  \"permanentAddress\": \"456 Street, Mumbai\",\n  \"academicYear\": \"2025-2026\",\n  \"rollNo\": 0,\n  \"gender\": \"Male\",\n  \"dob\": \"2000-01-01\",\n  \"expiredate\": \"2026-05-07\",\n  \"reference\": \"patil sir\",\n  \"createdByEmail\": \"admin@example.com\",\n  \"role\": \"ADMIN\",\n  \"branchCode\": \"PUNE001\",\n  \"password\": \"password123\",\n  \"baseAmount\":1000.00,\n  \"gstRate\":24.00,\n  \"gstAmount\":240.00,\n  \"isGstInclusive\":false,\n  \"isGstApplicable\":true\n}",
+              "type": "text"
+            },
+            {
+              "key": "role",
+              "value": "staff"
+            },
+            {
+              "key": "email",
+              "value": "neha@gmail.com"
+            },
+            {
+              "key": "studentImage",
+              "type": "file",
+              "src": "postman-cloud:///1f050bee-cf39-44c0-b37b-54bf86578ce4"
+            }
+          ]
+        },
+        "url": {
+          "raw": "{{admissions_URL}}/createAdmission",
+          "host": [
+            "{{admissions_URL}}"
+          ],
+          "path": [
+            "createAdmission"
+          ]
+        }
+      },
+      "response": []
+    },
+    {
+      "name": "getAllAdmissions",
+      "request": {
+        "auth": {
+          "type": "bearer",
+          "bearer": [
+            {
+              "key": "token",
+              "value": "eyJhbGciOiJIUzI1NiJ9.eyJzdWIiOiJwcmFnYXRpQGdtYWlsLmNvbSIsImlhdCI6MTc0ODI1OTQ0NCwiZXhwIjoxNzQ4MjYzMDQ0fQ.S66ZL7Hn682ngwSylUacdgz2dUmZnD_3UuLYRtfRQnE",
+              "type": "string"
+            }
+          ]
+        },
+        "method": "POST",
+        "header": [],
+        "body": {
+          "mode": "raw",
+          "raw": "{\n  \"role\": \"staff\",\n  \"email\": \"pragati@gmail.com\",\n  \"branchCode\": \"BCH684\"\n//   \"name\": \"abc\",\n//   \"status\": \"In Progress\",\n//   \"coursename\": \"Java Fullstack\"\n    //   \"mediumName\":\"English\"\n//   \"filterType\": \"today\",\n//   \"page\": 0,\n//   \"size\": 7\n}\n",
+          "options": {
+            "raw": {
+              "language": "json"
+            }
+          }
+        },
+        "url": {
+          "raw": "{{admissions_URL}}/getAllAdmissions",
+          "host": [
+            "{{admissions_URL}}"
+          ],
+          "path": [
+            "getAllAdmissions"
+          ]
+        }
+      },
+      "response": []
+    },
+    {
+      "name": "getAdmissionById",
+      "request": {
+        "method": "GET",
+        "header": [],
+        "url": {
+          "raw": "{{admissions_URL}}/getAdmissionById/1?role=staff&email=neha@gmail.com&branchCode=BCH729",
+          "host": [
+            "{{admissions_URL}}"
+          ],
+          "path": [
+            "getAdmissionById",
+            "1"
+          ],
+          "query": [
+            {
+              "key": "role",
+              "value": "staff"
+            },
+            {
+              "key": "email",
+              "value": "neha@gmail.com"
+            },
+            {
+              "key": "branchCode",
+              "value": "BCH729"
+            }
+          ]
+        }
+      },
+      "response": []
+    },
+    {
+      "name": "deleteAdmission",
+      "request": {
+        "auth": {
+          "type": "bearer",
+          "bearer": [
+            {
+              "key": "token",
+              "value": "eyJhbGciOiJIUzI1NiJ9.eyJzdWIiOiJzdGFmQGdtYWlsLmNvbSIsImlhdCI6MTc0OTE4NDM1NywiZXhwIjoxNzQ5MTg3OTU3fQ.n_xo83nrLFWBNg7NFWpBTNfiv3dVd75BymUyQJTIgNo",
+              "type": "string"
+            }
+          ]
+        },
+        "method": "DELETE",
+        "header": [],
+        "url": {
+          "raw": "{{admissions_URL}}/deleteAdmission/3?role=branch&email=satara@gmail.com",
+          "host": [
+            "{{admissions_URL}}"
+          ],
+          "path": [
+            "deleteAdmission",
+            "3"
+          ],
+          "query": [
+            {
+              "key": "role",
+              "value": "branch"
+            },
+            {
+              "key": "email",
+              "value": "satara@gmail.com"
+            }
+          ]
+        }
+      },
+      "response": []
+    },
+    {
+      "name": "updateAdmission",
+      "request": {
+        "auth": {
+          "type": "bearer",
+          "bearer": [
+            {
+              "key": "token",
+              "value": "eyJhbGciOiJIUzI1NiJ9.eyJzdWIiOiJzdGFmQGdtYWlsLmNvbSIsImlhdCI6MTc0OTEwNDMzMSwiZXhwIjoxNzQ5MTA3OTMxfQ.q9bxkCZrrPpD0SaGsEVu9ASGkYDPOus0JDKw1mBjijA",
+              "type": "string"
+            }
+          ]
+        },
+        "method": "PUT",
+        "header": [],
+        "body": {
+          "mode": "formdata",
+          "formdata": [
+            {
+              "key": "role",
+              "value": "staff",
+              "type": "text"
+            },
+            {
+              "key": "email",
+              "value": "staf@gmail.com",
+              "type": "text"
+            },
+            {
+              "key": "studentImage",
+              "type": "file",
+              "src": "postman-cloud:///1eff0118-440e-4350-901c-4dba7b64b3cb"
+            }
+          ]
+        },
+        "url": {
+          "raw": "{{admissions_URL}}/updateAdmission/6",
+          "host": [
+            "{{admissions_URL}}"
+          ],
+          "path": [
+            "updateAdmission",
+            "6"
+          ]
+        }
+      },
+      "response": []
+    },
+    {
+      "name": "installmentsadmissions",
+      "request": {
+        "method": "POST",
+        "header": [],
+        "body": {
+          "mode": "raw",
+          "raw": "{\n  \"amount\": -5000,\n  \"paidBy\": \"Cash\",\n  \"transactionId\": \"TXN7892\",\n  \"installmentDate\": \"2026-06-29\",\n  \"dueDate\": \"2026-06-29\",\n  \"status\": \"pending\",\n  \"remark\": \"second installment\"\n}\n",
+          "options": {
+            "raw": {
+              "language": "json"
+            }
+          }
+        },
+        "url": {
+          "raw": "{{admissions_URL}}/installment/add/3?role=staff&email=neha@gmail.com",
+          "host": [
+            "{{admissions_URL}}"
+          ],
+          "path": [
+            "installment",
+            "add",
+            "3"
+          ],
+          "query": [
+            {
+              "key": "role",
+              "value": "staff"
+            },
+            {
+              "key": "email",
+              "value": "neha@gmail.com"
+            }
+          ]
+        }
+      },
+      "response": []
+    },
+    {
+      "name": "getInstallmentsByAdmission",
+      "request": {
+        "auth": {
+          "type": "bearer",
+          "bearer": [
+            {
+              "key": "token",
+              "value": "eyJhbGciOiJIUzI1NiJ9.eyJzdWIiOiJwcmFnYXRpQGdtYWlsLmNvbSIsImlhdCI6MTc0NTkyMDUzNiwiZXhwIjoxNzQ1OTI0MTM2fQ.mjzrrZmncGh5tGTYxI81RogwDH3Jxnzr-f0fsoQ5WY4",
+              "type": "string"
+            }
+          ]
+        },
+        "method": "GET",
+        "header": [],
+        "url": {
+          "raw": "{{admissions_URL}}/installment/getInstallmentsByAdmission?admissionId=1&role=staff&email=pragati@gmail.com&branchCode=BCH684",
+          "host": [
+            "{{admissions_URL}}"
+          ],
+          "path": [
+            "installment",
+            "getInstallmentsByAdmission"
+          ],
+          "query": [
+            {
+              "key": "admissionId",
+              "value": "1"
+            },
+            {
+              "key": "role",
+              "value": "staff"
+            },
+            {
+              "key": "email",
+              "value": "pragati@gmail.com"
+            },
+            {
+              "key": "branchCode",
+              "value": "BCH684"
+            }
+          ]
+        }
+      },
+      "response": []
+    },
+    {
+      "name": "getInstallmentById",
+      "request": {
+        "auth": {
+          "type": "bearer",
+          "bearer": [
+            {
+              "key": "token",
+              "value": "eyJhbGciOiJIUzI1NiJ9.eyJzdWIiOiJwcmFnYXRpQGdtYWlsLmNvbSIsImlhdCI6MTc0NTkyMDUzNiwiZXhwIjoxNzQ1OTI0MTM2fQ.mjzrrZmncGh5tGTYxI81RogwDH3Jxnzr-f0fsoQ5WY4",
+              "type": "string"
+            }
+          ]
+        },
+        "method": "GET",
+        "header": [],
+        "url": {
+          "raw": "{{admissions_URL}}/installment/getInstallmentById?id=3&role=staff&email=pragati@gmail.com&branchCode=BCH684",
+          "host": [
+            "{{admissions_URL}}"
+          ],
+          "path": [
+            "installment",
+            "getInstallmentById"
+          ],
+          "query": [
+            {
+              "key": "id",
+              "value": "3"
+            },
+            {
+              "key": "role",
+              "value": "staff"
+            },
+            {
+              "key": "email",
+              "value": "pragati@gmail.com"
+            },
+            {
+              "key": "branchCode",
+              "value": "BCH684"
+            }
+          ]
+        }
+      },
+      "response": []
+    },
+    {
+      "name": "updateinstallments",
+      "request": {
+        "auth": {
+          "type": "bearer",
+          "bearer": [
+            {
+              "key": "token",
+              "value": "eyJhbGciOiJIUzI1NiJ9.eyJzdWIiOiJwcmFnYXRpQGdtYWlsLmNvbSIsImlhdCI6MTc0NjE3OTYyMCwiZXhwIjoxNzQ2MTgzMjIwfQ.XWocjWBXbg7xLZNSJXLUt6hkcb8TLunsPNE_F8Bhd00",
+              "type": "string"
+            }
+          ]
+        },
+        "method": "PUT",
+        "header": [],
+        "body": {
+          "mode": "raw",
+          "raw": "{\n    \"status\":\"Paid\"\n}\n",
+          "options": {
+            "raw": {
+              "language": "json"
+            }
+          }
+        },
+        "url": {
+          "raw": "{{admissions_URL}}/installment/update/14?role=branch&branchCode=BCH684&email=nigdi@gmail.com",
+          "host": [
+            "{{admissions_URL}}"
+          ],
+          "path": [
+            "installment",
+            "update",
+            "14"
+          ],
+          "query": [
+            {
+              "key": "role",
+              "value": "branch"
+            },
+            {
+              "key": "branchCode",
+              "value": "BCH684"
+            },
+            {
+              "key": "email",
+              "value": "nigdi@gmail.com"
+            }
+          ]
+        }
+      },
+      "response": []
+    },
+    {
+      "name": "createTeacher",
+      "request": {
+        "auth": {
+          "type": "bearer",
+          "bearer": [
+            {
+              "key": "token",
+              "value": "eyJhbGciOiJIUzI1NiJ9.eyJzdWIiOiJzdGFmQGdtYWlsLmNvbSIsImlhdCI6MTc0ODQyODYxOCwiZXhwIjoxNzQ4NDMyMjE4fQ.RLjGBdHuFXPg1rCEFmwmV9x3yV8wJBWBZ_VDfh5mkJ4",
+              "type": "string"
+            }
+          ]
+        },
+        "method": "POST",
+        "header": [],
+        "body": {
+          "mode": "raw",
+          "raw": "{\n  \"teacherName\": \"classteacher\",\n  \"email\": \"class@example.com\",\n  \"password\": \"123\"\n}\n",
+          "options": {
+            "raw": {
+              "language": "json"
+            }
+          }
+        },
+        "url": {
+          "raw": "{{admissions_URL}}/createTeacher?role=staff&email=staf@gmail.com",
+          "host": [
+            "{{admissions_URL}}"
+          ],
+          "path": [
+            "createTeacher"
+          ],
+          "query": [
+            {
+              "key": "role",
+              "value": "staff"
+            },
+            {
+              "key": "email",
+              "value": "staf@gmail.com"
+            }
+          ]
+        }
+      },
+      "response": []
+    },
+    {
+      "name": "getAllTeachers",
+      "request": {
+        "auth": {
+          "type": "bearer",
+          "bearer": [
+            {
+              "key": "token",
+              "value": "eyJhbGciOiJIUzI1NiJ9.eyJzdWIiOiJwcmFnYXRpQGdtYWlsLmNvbSIsImlhdCI6MTc0NTk5NDUyOCwiZXhwIjoxNzQ1OTk4MTI4fQ.MHJKDBoyXuuWqCaJ-LJvLiGrNZUPhYmnHdtgYmCCe68",
+              "type": "string"
+            }
+          ]
+        },
+        "method": "GET",
+        "header": [],
+        "url": {
+          "raw": "{{admissions_URL}}/getAllTeachers?role=staff&email=pragati@gmail.com&branchCode=BCH684",
+          "host": [
+            "{{admissions_URL}}"
+          ],
+          "path": [
+            "getAllTeachers"
+          ],
+          "query": [
+            {
+              "key": "role",
+              "value": "staff"
+            },
+            {
+              "key": "email",
+              "value": "pragati@gmail.com"
+            },
+            {
+              "key": "branchCode",
+              "value": "BCH684"
+            }
+          ]
+        }
+      },
+      "response": []
+    },
+    {
+      "name": "getTeacherById",
+      "request": {
+        "auth": {
+          "type": "bearer",
+          "bearer": [
+            {
+              "key": "token",
+              "value": "eyJhbGciOiJIUzI1NiJ9.eyJzdWIiOiJwcmFnYXRpQGdtYWlsLmNvbSIsImlhdCI6MTc0NTk5NDUyOCwiZXhwIjoxNzQ1OTk4MTI4fQ.MHJKDBoyXuuWqCaJ-LJvLiGrNZUPhYmnHdtgYmCCe68",
+              "type": "string"
+            }
+          ]
+        },
+        "method": "GET",
+        "header": [],
+        "url": {
+          "raw": "{{admissions_URL}}/getTeacherById/1?role=staff&email=pragati@gmail.com",
+          "host": [
+            "{{admissions_URL}}"
+          ],
+          "path": [
+            "getTeacherById",
+            "1"
+          ],
+          "query": [
+            {
+              "key": "role",
+              "value": "staff"
+            },
+            {
+              "key": "email",
+              "value": "pragati@gmail.com"
+            }
+          ]
+        }
+      },
+      "response": []
+    },
+    {
+      "name": "updateTeacher",
+      "request": {
+        "auth": {
+          "type": "bearer",
+          "bearer": [
+            {
+              "key": "token",
+              "value": "eyJhbGciOiJIUzI1NiJ9.eyJzdWIiOiJwcmFnYXRpQGdtYWlsLmNvbSIsImlhdCI6MTc0NTk5NDUyOCwiZXhwIjoxNzQ1OTk4MTI4fQ.MHJKDBoyXuuWqCaJ-LJvLiGrNZUPhYmnHdtgYmCCe68",
+              "type": "string"
+            }
+          ]
+        },
+        "method": "PUT",
+        "header": [],
+        "body": {
+          "mode": "raw",
+          "raw": "{\n  \"teacherName\": \"John Smith\"\n}\n",
+          "options": {
+            "raw": {
+              "language": "json"
+            }
+          }
+        },
+        "url": {
+          "raw": "{{admissions_URL}}/updateTeacher/2?role=branch&email=nigdi@gmail.com",
+          "host": [
+            "{{admissions_URL}}"
+          ],
+          "path": [
+            "updateTeacher",
+            "2"
+          ],
+          "query": [
+            {
+              "key": "role",
+              "value": "branch"
+            },
+            {
+              "key": "email",
+              "value": "nigdi@gmail.com"
+            }
+          ]
+        }
+      },
+      "response": []
+    },
+    {
+      "name": "deleteTeacher",
+      "request": {
+        "auth": {
+          "type": "bearer",
+          "bearer": [
+            {
+              "key": "token",
+              "value": "eyJhbGciOiJIUzI1NiJ9.eyJzdWIiOiJwcmFnYXRpQGdtYWlsLmNvbSIsImlhdCI6MTc0NTk5NDUyOCwiZXhwIjoxNzQ1OTk4MTI4fQ.MHJKDBoyXuuWqCaJ-LJvLiGrNZUPhYmnHdtgYmCCe68",
+              "type": "string"
+            }
+          ]
+        },
+        "method": "DELETE",
+        "header": [],
+        "url": {
+          "raw": "{{admissions_URL}}/deleteTeacher/2?role=branch&email=nigdi@gmail.com",
+          "host": [
+            "{{admissions_URL}}"
+          ],
+          "path": [
+            "deleteTeacher",
+            "2"
+          ],
+          "query": [
+            {
+              "key": "role",
+              "value": "branch"
+            },
+            {
+              "key": "email",
+              "value": "nigdi@gmail.com"
+            }
+          ]
+        }
+      },
+      "response": []
+    },
+    {
+      "name": "createRule",
+      "request": {
+        "auth": {
+          "type": "bearer",
+          "bearer": [
+            {
+              "key": "token",
+              "value": "eyJhbGciOiJIUzI1NiJ9.eyJzdWIiOiJwcmFnYXRpQGdtYWlsLmNvbSIsImlhdCI6MTc0NjAxMDkzMiwiZXhwIjoxNzQ2MDE0NTMyfQ.ZeStEOZQy0_l44OFRp8BL3HFI162744COPGbCWGX0I8",
+              "type": "string"
+            }
+          ]
+        },
+        "method": "POST",
+        "header": [],
+        "body": {
+          "mode": "raw",
+          "raw": "{\n  \"rulesAndRegulations\": \"All teachers must carry their ID card daily.\"\n}\n",
+          "options": {
+            "raw": {
+              "language": "json"
+            }
+          }
+        },
+        "url": {
+          "raw": "{{admissions_URL}}/createRule?role=staff&email=pragati@gmail.com",
+          "host": [
+            "{{admissions_URL}}"
+          ],
+          "path": [
+            "createRule"
+          ],
+          "query": [
+            {
+              "key": "role",
+              "value": "staff"
+            },
+            {
+              "key": "email",
+              "value": "pragati@gmail.com"
+            }
+          ]
+        }
+      },
+      "response": []
+    },
+    {
+      "name": "getAllRules",
+      "request": {
+        "auth": {
+          "type": "bearer",
+          "bearer": [
+            {
+              "key": "token",
+              "value": "eyJhbGciOiJIUzI1NiJ9.eyJzdWIiOiJwcmFnYXRpQGdtYWlsLmNvbSIsImlhdCI6MTc0NjAxMDkzMiwiZXhwIjoxNzQ2MDE0NTMyfQ.ZeStEOZQy0_l44OFRp8BL3HFI162744COPGbCWGX0I8",
+              "type": "string"
+            }
+          ]
+        },
+        "method": "GET",
+        "header": [],
+        "url": {
+          "raw": "{{admissions_URL}}/getAllRules?role=staff&email=pragati@gmail.com&branchCode=BCH684",
+          "host": [
+            "{{admissions_URL}}"
+          ],
+          "path": [
+            "getAllRules"
+          ],
+          "query": [
+            {
+              "key": "role",
+              "value": "staff"
+            },
+            {
+              "key": "email",
+              "value": "pragati@gmail.com"
+            },
+            {
+              "key": "branchCode",
+              "value": "BCH684"
+            }
+          ]
+        }
+      },
+      "response": []
+    },
+    {
+      "name": "getRuleById",
+      "request": {
+        "auth": {
+          "type": "bearer",
+          "bearer": [
+            {
+              "key": "token",
+              "value": "eyJhbGciOiJIUzI1NiJ9.eyJzdWIiOiJwcmFnYXRpQGdtYWlsLmNvbSIsImlhdCI6MTc0NjAxMDkzMiwiZXhwIjoxNzQ2MDE0NTMyfQ.ZeStEOZQy0_l44OFRp8BL3HFI162744COPGbCWGX0I8",
+              "type": "string"
+            }
+          ]
+        },
+        "method": "GET",
+        "header": [],
+        "url": {
+          "raw": "{{admissions_URL}}/getRuleById/1?role=staff&email=pragati@gmail.com&branchCode=BCH684",
+          "host": [
+            "{{admissions_URL}}"
+          ],
+          "path": [
+            "getRuleById",
+            "1"
+          ],
+          "query": [
+            {
+              "key": "role",
+              "value": "staff"
+            },
+            {
+              "key": "email",
+              "value": "pragati@gmail.com"
+            },
+            {
+              "key": "branchCode",
+              "value": "BCH684"
+            }
+          ]
+        }
+      },
+      "response": []
+    },
+    {
+      "name": "updateRule",
+      "request": {
+        "auth": {
+          "type": "bearer",
+          "bearer": [
+            {
+              "key": "token",
+              "value": "eyJhbGciOiJIUzI1NiJ9.eyJzdWIiOiJwcmFnYXRpQGdtYWlsLmNvbSIsImlhdCI6MTc0NjAxMDkzMiwiZXhwIjoxNzQ2MDE0NTMyfQ.ZeStEOZQy0_l44OFRp8BL3HFI162744COPGbCWGX0I8",
+              "type": "string"
+            }
+          ]
+        },
+        "method": "PUT",
+        "header": [],
+        "body": {
+          "mode": "raw",
+          "raw": "{\n  \"rulesAndRegulations\": \"All students must follow discipline and carry ID cards.\"\n}\n",
+          "options": {
+            "raw": {
+              "language": "json"
+            }
+          }
+        },
+        "url": {
+          "raw": "{{admissions_URL}}/updateRule/1?role=branch&email=nigdi@gmail.com",
+          "host": [
+            "{{admissions_URL}}"
+          ],
+          "path": [
+            "updateRule",
+            "1"
+          ],
+          "query": [
+            {
+              "key": "role",
+              "value": "branch"
+            },
+            {
+              "key": "email",
+              "value": "nigdi@gmail.com"
+            }
+          ]
+        }
+      },
+      "response": []
+    },
+    {
+      "name": "deleteRule",
+      "request": {
+        "auth": {
+          "type": "bearer",
+          "bearer": [
+            {
+              "key": "token",
+              "value": "eyJhbGciOiJIUzI1NiJ9.eyJzdWIiOiJwcmFnYXRpQGdtYWlsLmNvbSIsImlhdCI6MTc0NjAxMDkzMiwiZXhwIjoxNzQ2MDE0NTMyfQ.ZeStEOZQy0_l44OFRp8BL3HFI162744COPGbCWGX0I8",
+              "type": "string"
+            }
+          ]
+        },
+        "method": "DELETE",
+        "header": [],
+        "url": {
+          "raw": "{{admissions_URL}}/deleteRule/2?role=branch&email=nigdi@gmail.com",
+          "host": [
+            "{{admissions_URL}}"
+          ],
+          "path": [
+            "deleteRule",
+            "2"
+          ],
+          "query": [
+            {
+              "key": "role",
+              "value": "branch"
+            },
+            {
+              "key": "email",
+              "value": "nigdi@gmail.com"
+            }
+          ]
+        }
+      },
+      "response": []
+    },
+    {
+      "name": "getAdmissionsByDateFilter",
+      "request": {
+        "auth": {
+          "type": "bearer",
+          "bearer": [
+            {
+              "key": "token",
+              "value": "eyJhbGciOiJIUzI1NiJ9.eyJzdWIiOiJzdGFmQGdtYWlsLmNvbSIsImlhdCI6MTc0ODg1NjM5NCwiZXhwIjoxNzQ4ODU5OTk0fQ.xFu0FQzMa-Q11xRcV3p4pJMBSQFKbgHtSUPZquPp0ZI",
+              "type": "string"
+            }
+          ]
+        },
+        "method": "GET",
+        "header": [],
+        "url": {
+          "raw": "{{admissions_URL}}/getAdmissionsByDateFilter?role=staff&email=staf@gmail.com&startDate=2025-05-01&endDate=2025-05-30&filterType=custom",
+          "host": [
+            "{{admissions_URL}}"
+          ],
+          "path": [
+            "getAdmissionsByDateFilter"
+          ],
+          "query": [
+            {
+              "key": "role",
+              "value": "staff"
+            },
+            {
+              "key": "email",
+              "value": "staf@gmail.com"
+            },
+            {
+              "key": "startDate",
+              "value": "2025-05-01"
+            },
+            {
+              "key": "endDate",
+              "value": "2025-05-30"
+            },
+            {
+              "key": "filterType",
+              "value": "custom"
+            }
+          ]
+        }
+      },
+      "response": []
+    },
+    {
+      "name": "updatestatus",
+      "request": {
+        "auth": {
+          "type": "bearer",
+          "bearer": [
+            {
+              "key": "token",
+              "value": "eyJhbGciOiJIUzI1NiJ9.eyJzdWIiOiJwcmFnYXRpQGdtYWlsLmNvbSIsImlhdCI6MTc0NjE4ODAwNiwiZXhwIjoxNzQ2MTkxNjA2fQ.987K_1DGIMAlJyMc5KgWrYWvEg36Fo5fSpJGMdMmGvg",
+              "type": "string"
+            }
+          ]
+        },
+        "method": "PATCH",
+        "header": [],
+        "body": {
+          "mode": "raw",
+          "raw": "",
+          "options": {
+            "raw": {
+              "language": "json"
+            }
+          }
+        },
+        "url": {
+          "raw": "{{admissions_URL}}/installment/status/15?role=branch&branchCode=BCH684&email=nigdi@gmail.com&status=Paid",
+          "host": [
+            "{{admissions_URL}}"
+          ],
+          "path": [
+            "installment",
+            "status",
+            "15"
+          ],
+          "query": [
+            {
+              "key": "role",
+              "value": "branch"
+            },
+            {
+              "key": "branchCode",
+              "value": "BCH684"
+            },
+            {
+              "key": "email",
+              "value": "nigdi@gmail.com"
+            },
+            {
+              "key": "status",
+              "value": "Paid"
+            }
+          ]
+        }
+      },
+      "response": []
+    },
+    {
+      "name": "createSubject",
+      "request": {
+        "method": "POST",
+        "header": [],
+        "body": {
+          "mode": "raw",
+          "raw": "{\n  \"subjectName\": \"Geography\"\n}\n",
+          "options": {
+            "raw": {
+              "language": "json"
+            }
+          }
+        },
+        "url": {
+          "raw": "{{admissions_URL}}/createSubject?role=staff&email=neha@gmail.com",
+          "host": [
+            "{{admissions_URL}}"
+          ],
+          "path": [
+            "createSubject"
+          ],
+          "query": [
+            {
+              "key": "role",
+              "value": "staff"
+            },
+            {
+              "key": "email",
+              "value": "neha@gmail.com"
+            }
+          ]
+        }
+      },
+      "response": []
+    },
+    {
+      "name": "getAllSubjects",
+      "request": {
+        "auth": {
+          "type": "bearer",
+          "bearer": [
+            {
+              "key": "token",
+              "value": "eyJhbGciOiJIUzI1NiJ9.eyJzdWIiOiJkZXB0QGdtYWlsLmNvbSIsImlhdCI6MTc0NzAyMjc0NywiZXhwIjoxNzQ3MDI2MzQ3fQ.F-vAnc0vsaaPEcXFfyHP5-Qsu7ONc2D8ZT37LrFYdoY",
+              "type": "string"
+            }
+          ]
+        },
+        "method": "GET",
+        "header": [],
+        "url": {
+          "raw": "https://pjsofttech.in:46443/getAllSubjects?role=staff&email=staff@gmail.com&branchCode=BCH186",
+          "protocol": "https",
+          "host": [
+            "pjsofttech",
+            "in"
+          ],
+          "port": "46443",
+          "path": [
+            "getAllSubjects"
+          ],
+          "query": [
+            {
+              "key": "role",
+              "value": "staff"
+            },
+            {
+              "key": "email",
+              "value": "staff@gmail.com"
+            },
+            {
+              "key": "branchCode",
+              "value": "BCH186"
+            }
+          ]
+        }
+      },
+      "response": []
+    },
+    {
+      "name": "getSubjectById",
+      "request": {
+        "auth": {
+          "type": "bearer",
+          "bearer": [
+            {
+              "key": "token",
+              "value": "eyJhbGciOiJIUzI1NiJ9.eyJzdWIiOiJwcmFnYXRpQGdtYWlsLmNvbSIsImlhdCI6MTc0NjQ0NDA2NiwiZXhwIjoxNzQ2NDQ3NjY2fQ.13EMoymuTy-Gr9-vpPuQuocPviPRT2Z1GPTTsRaR4S8",
+              "type": "string"
+            }
+          ]
+        },
+        "method": "GET",
+        "header": [],
+        "url": {
+          "raw": "{{admissions_URL}}/getSubjectById/1?role=staff&email=pragati@gmail.com",
+          "host": [
+            "{{admissions_URL}}"
+          ],
+          "path": [
+            "getSubjectById",
+            "1"
+          ],
+          "query": [
+            {
+              "key": "role",
+              "value": "staff"
+            },
+            {
+              "key": "email",
+              "value": "pragati@gmail.com"
+            }
+          ]
+        }
+      },
+      "response": []
+    },
+    {
+      "name": "updateSubject",
+      "request": {
+        "auth": {
+          "type": "bearer",
+          "bearer": [
+            {
+              "key": "token",
+              "value": "eyJhbGciOiJIUzI1NiJ9.eyJzdWIiOiJwcmFnYXRpQGdtYWlsLmNvbSIsImlhdCI6MTc0NjQ0NDA2NiwiZXhwIjoxNzQ2NDQ3NjY2fQ.13EMoymuTy-Gr9-vpPuQuocPviPRT2Z1GPTTsRaR4S8",
+              "type": "string"
+            }
+          ]
+        },
+        "method": "PUT",
+        "header": [],
+        "body": {
+          "mode": "raw",
+          "raw": "{\n  \"subjectName\": \" extra Math\"\n}\n",
+          "options": {
+            "raw": {
+              "language": "json"
+            }
+          }
+        },
+        "url": {
+          "raw": "{{admissions_URL}}/updateSubject/2?role=branch&email=nigdi@gmail.com",
+          "host": [
+            "{{admissions_URL}}"
+          ],
+          "path": [
+            "updateSubject",
+            "2"
+          ],
+          "query": [
+            {
+              "key": "role",
+              "value": "branch"
+            },
+            {
+              "key": "email",
+              "value": "nigdi@gmail.com"
+            }
+          ]
+        }
+      },
+      "response": []
+    },
+    {
+      "name": "deleteSubject",
+      "request": {
+        "auth": {
+          "type": "bearer",
+          "bearer": [
+            {
+              "key": "token",
+              "value": "eyJhbGciOiJIUzI1NiJ9.eyJzdWIiOiJwcmFnYXRpQGdtYWlsLmNvbSIsImlhdCI6MTc0NjQ0NDA2NiwiZXhwIjoxNzQ2NDQ3NjY2fQ.13EMoymuTy-Gr9-vpPuQuocPviPRT2Z1GPTTsRaR4S8",
+              "type": "string"
+            }
+          ]
+        },
+        "method": "DELETE",
+        "header": [],
+        "url": {
+          "raw": "{{admissions_URL}}/deleteSubject/4?role=branch&email=nigdi@gmail.com",
+          "host": [
+            "{{admissions_URL}}"
+          ],
+          "path": [
+            "deleteSubject",
+            "4"
+          ],
+          "query": [
+            {
+              "key": "role",
+              "value": "branch"
+            },
+            {
+              "key": "email",
+              "value": "nigdi@gmail.com"
+            }
+          ]
+        }
+      },
+      "response": []
+    },
+    {
+      "name": "createClassRoom",
+      "request": {
+        "method": "POST",
+        "header": [],
+        "body": {
+          "mode": "raw",
+          "raw": "{\n  \"batchName\": \"class3\",\n  \"batchStartTime\": \"08:00:00\",\n  \"batchEndTime\": \"10:00:00\",\n  \"academicYear\": \"2026-2027\"\n}\n",
+          "options": {
+            "raw": {
+              "language": "json"
+            }
+          }
+        },
+        "url": {
+          "raw": "{{admissions_URL}}/createClassRoom?role=staff&email=neha@gmail.com&mediumId=1&courseId=1&subjectIds=1,2,4&teacherIds=1",
+          "host": [
+            "{{admissions_URL}}"
+          ],
+          "path": [
+            "createClassRoom"
+          ],
+          "query": [
+            {
+              "key": "role",
+              "value": "staff"
+            },
+            {
+              "key": "email",
+              "value": "neha@gmail.com"
+            },
+            {
+              "key": "mediumId",
+              "value": "1"
+            },
+            {
+              "key": "courseId",
+              "value": "1"
+            },
+            {
+              "key": "subjectIds",
+              "value": "1,2,4"
+            },
+            {
+              "key": "teacherIds",
+              "value": "1"
+            }
+          ]
+        }
+      },
+      "response": []
+    },
+    {
+      "name": "getAllClassRooms",
+      "request": {
+        "method": "GET",
+        "header": [],
+        "url": {
+          "raw": "{{admissions_URL}}/getAllClassRooms?role=branch&email=Pentagoninstituteshrirampur@gmail.com&branchCode=BCH118",
+          "host": [
+            "{{admissions_URL}}"
+          ],
+          "path": [
+            "getAllClassRooms"
+          ],
+          "query": [
+            {
+              "key": "role",
+              "value": "branch"
+            },
+            {
+              "key": "email",
+              "value": "Pentagoninstituteshrirampur@gmail.com"
+            },
+            {
+              "key": "branchCode",
+              "value": "BCH118"
+            }
+          ]
+        }
+      },
+      "response": []
+    },
+    {
+      "name": "getClassRoomById",
+      "request": {
+        "method": "GET",
+        "header": [],
+        "url": {
+          "raw": "{{admissions_URL}}/getClassRoomById/1?role=staff&email=neha@gmail.com&branchCode=BCH729",
+          "host": [
+            "{{admissions_URL}}"
+          ],
+          "path": [
+            "getClassRoomById",
+            "1"
+          ],
+          "query": [
+            {
+              "key": "role",
+              "value": "staff"
+            },
+            {
+              "key": "email",
+              "value": "neha@gmail.com"
+            },
+            {
+              "key": "branchCode",
+              "value": "BCH729"
+            }
+          ]
+        }
+      },
+      "response": []
+    },
+    {
+      "name": "updateClassRoom",
+      "request": {
+        "auth": {
+          "type": "bearer",
+          "bearer": [
+            {
+              "key": "token",
+              "value": "eyJhbGciOiJIUzI1NiJ9.eyJzdWIiOiJwcmFnYXRpQGdtYWlsLmNvbSIsImlhdCI6MTc0NjYwMjE4MSwiZXhwIjoxNzQ2NjA1NzgxfQ.zVryuFV2WmtUhsYx0lareQHx3Kw2dRrmqoTGEWLx_Q4",
+              "type": "string"
+            }
+          ]
+        },
+        "method": "PUT",
+        "header": [],
+        "body": {
+          "mode": "raw",
+          "raw": "{\n  \"batchName\": \"latesteupdated Batch\",\n  \"batchStartTime\": \"09:00:00\",\n  \"batchEndTime\": \"11:00:00\",\n  \"academicYear\": \"2025-26\"\n}\n",
+          "options": {
+            "raw": {
+              "language": "json"
+            }
+          }
+        },
+        "url": {
+          "raw": "{{admissions_URL}}/updateClassRoom/4?role=branch&email=nigdi@gmail.com",
+          "host": [
+            "{{admissions_URL}}"
+          ],
+          "path": [
+            "updateClassRoom",
+            "4"
+          ],
+          "query": [
+            {
+              "key": "role",
+              "value": "branch"
+            },
+            {
+              "key": "email",
+              "value": "nigdi@gmail.com"
+            }
+          ]
+        }
+      },
+      "response": []
+    },
+    {
+      "name": "deleteClassRoom",
+      "request": {
+        "auth": {
+          "type": "bearer",
+          "bearer": [
+            {
+              "key": "token",
+              "value": "eyJhbGciOiJIUzI1NiJ9.eyJzdWIiOiJwcmFnYXRpQGdtYWlsLmNvbSIsImlhdCI6MTc0NjYwMjE4MSwiZXhwIjoxNzQ2NjA1NzgxfQ.zVryuFV2WmtUhsYx0lareQHx3Kw2dRrmqoTGEWLx_Q4",
+              "type": "string"
+            }
+          ]
+        },
+        "method": "DELETE",
+        "header": [],
+        "url": {
+          "raw": "{{admissions_URL}}/deleteClassRoom/1?role=branch&email=nigdi@gmail.com",
+          "host": [
+            "{{admissions_URL}}"
+          ],
+          "path": [
+            "deleteClassRoom",
+            "1"
+          ],
+          "query": [
+            {
+              "key": "role",
+              "value": "branch"
+            },
+            {
+              "key": "email",
+              "value": "nigdi@gmail.com"
+            }
+          ]
+        }
+      },
+      "response": []
+    },
+    {
+      "name": "filterstudents",
+      "request": {
+        "auth": {
+          "type": "bearer",
+          "bearer": [
+            {
+              "key": "token",
+              "value": "eyJhbGciOiJIUzI1NiJ9.eyJzdWIiOiJzdGFmQGdtYWlsLmNvbSIsImlhdCI6MTc0ODg1NjM5NCwiZXhwIjoxNzQ4ODU5OTk0fQ.xFu0FQzMa-Q11xRcV3p4pJMBSQFKbgHtSUPZquPp0ZI",
+              "type": "string"
+            }
+          ]
+        },
+        "method": "GET",
+        "header": [],
+        "url": {
+          "raw": "{{admissions_URL}}/filterstudents?role=staff&email=staf@gmail.com&mediumName=English&courseName=Java Spring Boot&academicYear=2025-2026",
+          "host": [
+            "{{admissions_URL}}"
+          ],
+          "path": [
+            "filterstudents"
+          ],
+          "query": [
+            {
+              "key": "role",
+              "value": "staff"
+            },
+            {
+              "key": "email",
+              "value": "staf@gmail.com"
+            },
+            {
+              "key": "mediumName",
+              "value": "English"
+            },
+            {
+              "key": "courseName",
+              "value": "Java Spring Boot"
+            },
+            {
+              "key": "academicYear",
+              "value": "2025-2026"
+            }
+          ]
+        }
+      },
+      "response": []
+    },
+    {
+      "name": "assignAdmissionsToClassRoom",
+      "request": {
+        "method": "POST",
+        "header": [],
+        "url": {
+          "raw": "{{admissions_URL}}/assignAdmissionsToClassRoom?admissionIds=3,4,11&classRoomId=3&role=staff&email=neha@gmail.com",
+          "host": [
+            "{{admissions_URL}}"
+          ],
+          "path": [
+            "assignAdmissionsToClassRoom"
+          ],
+          "query": [
+            {
+              "key": "admissionIds",
+              "value": "3,4,11"
+            },
+            {
+              "key": "classRoomId",
+              "value": "3"
+            },
+            {
+              "key": "role",
+              "value": "staff"
+            },
+            {
+              "key": "email",
+              "value": "neha@gmail.com"
+            }
+          ]
+        }
+      },
+      "response": []
+    },
+    {
+      "name": "getAdmissionsByClassroomId",
+      "request": {
+        "method": "GET",
+        "header": [],
+        "url": {
+          "raw": "{{admissions_URL}}/getAdmissionsByClassroomId?role=staff&email=neha@gmail.com&classroomId=1",
+          "host": [
+            "{{admissions_URL}}"
+          ],
+          "path": [
+            "getAdmissionsByClassroomId"
+          ],
+          "query": [
+            {
+              "key": "role",
+              "value": "staff"
+            },
+            {
+              "key": "email",
+              "value": "neha@gmail.com"
+            },
+            {
+              "key": "classroomId",
+              "value": "1"
+            }
+          ]
+        }
+      },
+      "response": [
+        {
+          "name": "getAdmissionsByClassroomId",
+          "originalRequest": {
+            "method": "GET",
+            "header": [],
+            "url": {
+              "raw": "{{admissions_URL}}/getAdmissionsByClassroomId?role=staff&email=neha@gmail.com&classroomId=1",
+              "host": [
+                "{{admissions_URL}}"
+              ],
+              "path": [
+                "getAdmissionsByClassroomId"
+              ],
+              "query": [
+                {
+                  "key": "role",
+                  "value": "staff"
+                },
+                {
+                  "key": "email",
+                  "value": "neha@gmail.com"
+                },
+                {
+                  "key": "classroomId",
+                  "value": "1"
+                }
+              ]
+            }
+          },
+          "status": "OK",
+          "code": 200,
+          "_postman_previewlanguage": null,
+          "header": [
+            {
+              "key": "Vary",
+              "value": "Origin"
+            },
+            {
+              "key": "Vary",
+              "value": "Access-Control-Request-Method"
+            },
+            {
+              "key": "Vary",
+              "value": "Access-Control-Request-Headers"
+            },
+            {
+              "key": "X-Content-Type-Options",
+              "value": "nosniff"
+            },
+            {
+              "key": "X-XSS-Protection",
+              "value": "0"
+            },
+            {
+              "key": "Cache-Control",
+              "value": "no-cache, no-store, max-age=0, must-revalidate"
+            },
+            {
+              "key": "Pragma",
+              "value": "no-cache"
+            },
+            {
+              "key": "Expires",
+              "value": "0"
+            },
+            {
+              "key": "X-Frame-Options",
+              "value": "DENY"
+            },
+            {
+              "key": "Content-Type",
+              "value": "application/json"
+            },
+            {
+              "key": "Transfer-Encoding",
+              "value": "chunked"
+            },
+            {
+              "key": "Date",
+              "value": "Tue, 19 May 2026 12:37:04 GMT"
+            },
+            {
+              "key": "Keep-Alive",
+              "value": "timeout=60"
+            },
+            {
+              "key": "Connection",
+              "value": "keep-alive"
+            }
+          ],
+          "cookie": [],
+          "body": "[\n    {\n        \"id\": 2,\n        \"name\": \"abhishek\",\n        \"mobile1\": \"9876543210\",\n        \"date\": \"2025-05-07\",\n        \"coursename\": \"Java Spring Boot\",\n        \"duration\": \"6 months\",\n        \"email\": \"abhishek@gmail.com\",\n        \"mobile2\": \"9800345689\",\n        \"transactionId\": \"1234567890\",\n        \"totalFees\": 50000,\n        \"remark\": \"Interested in backend\",\n        \"status\": \"Pending\",\n        \"qualification\": null,\n        \"city\": null,\n        \"pincode\": null,\n        \"state\": null,\n        \"dueDate\": \"2025-06-01\",\n        \"mediumName\": \"English\",\n        \"paymentMethod\": \"Online\",\n        \"studentImage\": null,\n        \"paymentImage\": null,\n        \"pendingFees\": 25000,\n        \"paidFees\": 25000,\n        \"sourceBy\": \"Google\",\n        \"paymentMode\": \"UPI\",\n        \"currentAddress\": \"123 Street, Pune\",\n        \"permanentAddress\": \"456 Street, Mumbai\",\n        \"academicYear\": \"2025-2026\",\n        \"rollNo\": 0,\n        \"paymentDate\": null,\n        \"gender\": \"Male\",\n        \"dob\": \"2000-01-01\",\n        \"expiredate\": \"2025-11-07\",\n        \"reference\": \"patil sir\",\n        \"createdByEmail\": \"neha@gmail.com\",\n        \"role\": \"staff\",\n        \"branchCode\": \"BCH729\",\n        \"createdByName\": null,\n        \"password\": \"$2a$10$oLerbpMjJCEtFI/scZ2FlutyWHHy1bwMDDlh9GJ4fTOu6LDaOga3i\",\n        \"aadhaarCardNo\": null,\n        \"registrationNo\": \"20260001\",\n        \"parentEmail\": null,\n        \"admissionPdf\": null,\n        \"studentType\": null,\n        \"stream\": null,\n        \"classType\": null,\n        \"installments\": [],\n        \"admissionClassRoom\": {\n            \"id\": 1,\n            \"batchName\": \"class3\",\n            \"batchStartTime\": \"08:00:00\",\n            \"batchEndTime\": \"10:00:00\",\n            \"academicYear\": \"2026-2027\",\n            \"createdByEmail\": \"neha@gmail.com\",\n            \"role\": \"staff\",\n            \"branchCode\": \"BCH729\",\n            \"createdDate\": \"2026-05-19\",\n            \"medium\": {\n                \"id\": 1,\n                \"mediumName\": \"English\",\n                \"createdByEmail\": \"neha@gmail.com\",\n                \"role\": \"staff\",\n                \"branchCode\": \"BCH729\"\n            },\n            \"course\": {\n                \"id\": 1,\n                \"coursename\": \"Advanced Java Spring Boot\",\n                \"createdByEmail\": \"neha@gmail.com\",\n                \"role\": \"staff\",\n                \"branchCode\": \"BCH729\"\n            },\n            \"subjects\": [\n                {\n                    \"id\": 1,\n                    \"subjectName\": \"Marathi\",\n                    \"createdByEmail\": \"neha@gmail.com\",\n                    \"role\": \"staff\",\n                    \"branchCode\": \"BCH729\"\n                },\n                {\n                    \"id\": 2,\n                    \"subjectName\": \"English\",\n                    \"createdByEmail\": \"neha@gmail.com\",\n                    \"role\": \"staff\",\n                    \"branchCode\": \"BCH729\"\n                },\n                {\n                    \"id\": 3,\n                    \"subjectName\": \"Mathematics\",\n                    \"createdByEmail\": \"neha@gmail.com\",\n                    \"role\": \"staff\",\n                    \"branchCode\": \"BCH729\"\n                }\n            ],\n            \"teachers\": []\n        },\n        \"rulesAndRegulationsList\": []\n    }\n]"
+        }
+      ]
+    },
+    {
+      "name": "getAdmissionStats",
+      "request": {
+        "auth": {
+          "type": "bearer",
+          "bearer": [
+            {
+              "key": "token",
+              "value": "eyJhbGciOiJIUzI1NiJ9.eyJzdWIiOiJ2YXRhbkBnbWFpbC5jb20iLCJpYXQiOjE3NDgyNTc2NjcsImV4cCI6MTc0ODI2MTI2N30.FTvVD13VE2AhWA4R0LkdEXToXXosfjXAB43xuWFzS4E",
+              "type": "string"
+            }
+          ]
+        },
+        "method": "GET",
+        "header": [],
+        "url": {
+          "raw": "{{admissions_URL}}/getAdmissionStats?role=staff&email=pragati@gmail.com",
+          "host": [
+            "{{admissions_URL}}"
+          ],
+          "path": [
+            "getAdmissionStats"
+          ],
+          "query": [
+            {
+              "key": "role",
+              "value": "staff"
+            },
+            {
+              "key": "email",
+              "value": "pragati@gmail.com"
+            }
+          ]
+        }
+      },
+      "response": []
+    },
+    {
+      "name": "getDailyStats",
+      "request": {
+        "auth": {
+          "type": "bearer",
+          "bearer": [
+            {
+              "key": "token",
+              "value": "eyJhbGciOiJIUzI1NiJ9.eyJzdWIiOiJ2YXRhbkBnbWFpbC5jb20iLCJpYXQiOjE3NDczMTAxOTksImV4cCI6MTc0NzMxMzc5OX0.hWtAbGECrF6tfCgsBAMM3vyvG_hd0l9urs9mS3Wcze4",
+              "type": "string"
+            }
+          ]
+        },
+        "method": "GET",
+        "header": [],
+        "url": {
+          "raw": "{{admissions_URL}}/getDailyStats?role=staff&email=vatan@gmail.com&month=05&year=2025",
+          "host": [
+            "{{admissions_URL}}"
+          ],
+          "path": [
+            "getDailyStats"
+          ],
+          "query": [
+            {
+              "key": "role",
+              "value": "staff"
+            },
+            {
+              "key": "email",
+              "value": "vatan@gmail.com"
+            },
+            {
+              "key": "month",
+              "value": "05"
+            },
+            {
+              "key": "year",
+              "value": "2025"
+            }
+          ]
+        }
+      },
+      "response": []
+    },
+    {
+      "name": "getMonthlyStats",
+      "request": {
+        "auth": {
+          "type": "bearer",
+          "bearer": [
+            {
+              "key": "token",
+              "value": "eyJhbGciOiJIUzI1NiJ9.eyJzdWIiOiJzdGFmQGdtYWlsLmNvbSIsImlhdCI6MTc0ODU5NjYzNiwiZXhwIjoxNzQ4NjAwMjM2fQ.eDY0TwT1FL7BgDe5bVFAO97pNPtDLkwXvPLRmprT2uY",
+              "type": "string"
+            }
+          ]
+        },
+        "method": "GET",
+        "header": [],
+        "url": {
+          "raw": "{{admissions_URL}}/getMonthlyStats?role=staff&email=staf@gmail.com&year=2025",
+          "host": [
+            "{{admissions_URL}}"
+          ],
+          "path": [
+            "getMonthlyStats"
+          ],
+          "query": [
+            {
+              "key": "role",
+              "value": "staff"
+            },
+            {
+              "key": "email",
+              "value": "staf@gmail.com"
+            },
+            {
+              "key": "year",
+              "value": "2025"
+            }
+          ]
+        }
+      },
+      "response": []
+    },
+    {
+      "name": "compareTwoYearsStats",
+      "request": {
+        "auth": {
+          "type": "bearer",
+          "bearer": [
+            {
+              "key": "token",
+              "value": "eyJhbGciOiJIUzI1NiJ9.eyJzdWIiOiJ2YXRhbkBnbWFpbC5jb20iLCJpYXQiOjE3NDczMTAxOTksImV4cCI6MTc0NzMxMzc5OX0.hWtAbGECrF6tfCgsBAMM3vyvG_hd0l9urs9mS3Wcze4",
+              "type": "string"
+            }
+          ]
+        },
+        "method": "GET",
+        "header": [],
+        "url": {
+          "raw": "{{admissions_URL}}/compareTwoYearsStats?role=staff&email=vatan@gmail.com&year1=2025&year2=2026",
+          "host": [
+            "{{admissions_URL}}"
+          ],
+          "path": [
+            "compareTwoYearsStats"
+          ],
+          "query": [
+            {
+              "key": "role",
+              "value": "staff"
+            },
+            {
+              "key": "email",
+              "value": "vatan@gmail.com"
+            },
+            {
+              "key": "year1",
+              "value": "2025"
+            },
+            {
+              "key": "year2",
+              "value": "2026"
+            }
+          ]
+        }
+      },
+      "response": []
+    },
+    {
+      "name": "admissionsbycourse",
+      "request": {
+        "auth": {
+          "type": "bearer",
+          "bearer": [
+            {
+              "key": "token",
+              "value": "eyJhbGciOiJIUzI1NiJ9.eyJzdWIiOiJzdGFmQGdtYWlsLmNvbSIsImlhdCI6MTc0OTcyODM3NCwiZXhwIjoxNzQ5NzMxOTc0fQ._UvVe6RNYGlRXspvawVWskYWuq70P0nGxyYISz8cyx0",
+              "type": "string"
+            }
+          ]
+        },
+        "method": "GET",
+        "header": [],
+        "url": {
+          "raw": "{{admissions_URL}}/admissionsbycourse?role=staff&email=staf@gmail.com&year=2025&month=custom&startDate=2025-05-01&endDate=2025-06-01",
+          "host": [
+            "{{admissions_URL}}"
+          ],
+          "path": [
+            "admissionsbycourse"
+          ],
+          "query": [
+            {
+              "key": "role",
+              "value": "staff"
+            },
+            {
+              "key": "email",
+              "value": "staf@gmail.com"
+            },
+            {
+              "key": "year",
+              "value": "2025"
+            },
+            {
+              "key": "month",
+              "value": "custom"
+            },
+            {
+              "key": "startDate",
+              "value": "2025-05-01"
+            },
+            {
+              "key": "endDate",
+              "value": "2025-06-01"
+            }
+          ]
+        }
+      },
+      "response": []
+    },
+    {
+      "name": "admissionsbysource",
+      "request": {
+        "auth": {
+          "type": "bearer",
+          "bearer": [
+            {
+              "key": "token",
+              "value": "eyJhbGciOiJIUzI1NiJ9.eyJzdWIiOiJ2YXRhbkBnbWFpbC5jb20iLCJpYXQiOjE3NDczMTAxOTksImV4cCI6MTc0NzMxMzc5OX0.hWtAbGECrF6tfCgsBAMM3vyvG_hd0l9urs9mS3Wcze4",
+              "type": "string"
+            }
+          ]
+        },
+        "method": "GET",
+        "header": [],
+        "url": {
+          "raw": "{{admissions_URL}}/admissionsbysource?role=staff&email=pragati@gmail.com",
+          "host": [
+            "{{admissions_URL}}"
+          ],
+          "path": [
+            "admissionsbysource"
+          ],
+          "query": [
+            {
+              "key": "role",
+              "value": "staff"
+            },
+            {
+              "key": "email",
+              "value": "pragati@gmail.com"
+            }
+          ]
+        }
+      },
+      "response": []
+    },
+    {
+      "name": "createTerms",
+      "request": {
+        "auth": {
+          "type": "bearer",
+          "bearer": [
+            {
+              "key": "token",
+              "value": "eyJhbGciOiJIUzI1NiJ9.eyJzdWIiOiJwcmFnYXRpQGdtYWlsLmNvbSIsImlhdCI6MTc0Njc2OTM5MCwiZXhwIjoxNzQ2NzcyOTkwfQ.jZXHpwS0FoPNJxiI3fXjXvrQOgM7jQF-ud9A98Q6u-4",
+              "type": "string"
+            }
+          ]
+        },
+        "method": "POST",
+        "header": [],
+        "body": {
+          "mode": "raw",
+          "raw": "{\n  \"termsAndCondition\": \"Students must bring their ID cards every day and update delete.\"\n}\n",
+          "options": {
+            "raw": {
+              "language": "json"
+            }
+          }
+        },
+        "url": {
+          "raw": "{{admissions_URL}}/createTerms?role=staff&email=pragati@gmail.com",
+          "host": [
+            "{{admissions_URL}}"
+          ],
+          "path": [
+            "createTerms"
+          ],
+          "query": [
+            {
+              "key": "role",
+              "value": "staff"
+            },
+            {
+              "key": "email",
+              "value": "pragati@gmail.com"
+            }
+          ]
+        }
+      },
+      "response": []
+    },
+    {
+      "name": "getAllTerms",
+      "request": {
+        "auth": {
+          "type": "bearer",
+          "bearer": [
+            {
+              "key": "token",
+              "value": "eyJhbGciOiJIUzI1NiJ9.eyJzdWIiOiJ2YXRhbkBnbWFpbC5jb20iLCJpYXQiOjE3NDcxMzQ2MjYsImV4cCI6MTc0NzEzODIyNn0.8eqbFnhSmR3KKf5r1G67aYaY1U5ZY07m-5EnnFoXRdQ",
+              "type": "string"
+            }
+          ]
+        },
+        "method": "GET",
+        "header": [],
+        "url": {
+          "raw": "{{admissions_URL}}/getAllTerms?role=staff&email=pragati@gmail.com&branchCode=BCH684",
+          "host": [
+            "{{admissions_URL}}"
+          ],
+          "path": [
+            "getAllTerms"
+          ],
+          "query": [
+            {
+              "key": "role",
+              "value": "staff"
+            },
+            {
+              "key": "email",
+              "value": "pragati@gmail.com"
+            },
+            {
+              "key": "branchCode",
+              "value": "BCH684"
+            }
+          ]
+        }
+      },
+      "response": []
+    },
+    {
+      "name": "getTermById",
+      "request": {
+        "auth": {
+          "type": "bearer",
+          "bearer": [
+            {
+              "key": "token",
+              "value": "eyJhbGciOiJIUzI1NiJ9.eyJzdWIiOiJwcmFnYXRpQGdtYWlsLmNvbSIsImlhdCI6MTc0Njc2OTM5MCwiZXhwIjoxNzQ2NzcyOTkwfQ.jZXHpwS0FoPNJxiI3fXjXvrQOgM7jQF-ud9A98Q6u-4",
+              "type": "string"
+            }
+          ]
+        },
+        "method": "GET",
+        "header": [],
+        "url": {
+          "raw": "{{admissions_URL}}/getTermById/1?role=staff&email=pragati@gmail.com",
+          "host": [
+            "{{admissions_URL}}"
+          ],
+          "path": [
+            "getTermById",
+            "1"
+          ],
+          "query": [
+            {
+              "key": "role",
+              "value": "staff"
+            },
+            {
+              "key": "email",
+              "value": "pragati@gmail.com"
+            }
+          ]
+        }
+      },
+      "response": []
+    },
+    {
+      "name": "updateTerm",
+      "request": {
+        "auth": {
+          "type": "bearer",
+          "bearer": [
+            {
+              "key": "token",
+              "value": "eyJhbGciOiJIUzI1NiJ9.eyJzdWIiOiJwcmFnYXRpQGdtYWlsLmNvbSIsImlhdCI6MTc0Njc2OTM5MCwiZXhwIjoxNzQ2NzcyOTkwfQ.jZXHpwS0FoPNJxiI3fXjXvrQOgM7jQF-ud9A98Q6u-4",
+              "type": "string"
+            }
+          ]
+        },
+        "method": "PUT",
+        "header": [],
+        "body": {
+          "mode": "raw",
+          "raw": "{\n  \"termsAndCondition\": \"Students must bring their ID cards every day and update delete.\"\n}\n",
+          "options": {
+            "raw": {
+              "language": "json"
+            }
+          }
+        },
+        "url": {
+          "raw": "{{admissions_URL}}/updateTerm/2?role=branch&email=nigdi@gmail.com",
+          "host": [
+            "{{admissions_URL}}"
+          ],
+          "path": [
+            "updateTerm",
+            "2"
+          ],
+          "query": [
+            {
+              "key": "role",
+              "value": "branch"
+            },
+            {
+              "key": "email",
+              "value": "nigdi@gmail.com"
+            }
+          ]
+        }
+      },
+      "response": []
+    },
+    {
+      "name": "deleteTerm",
+      "request": {
+        "auth": {
+          "type": "bearer",
+          "bearer": [
+            {
+              "key": "token",
+              "value": "eyJhbGciOiJIUzI1NiJ9.eyJzdWIiOiJwcmFnYXRpQGdtYWlsLmNvbSIsImlhdCI6MTc0Njc2OTM5MCwiZXhwIjoxNzQ2NzcyOTkwfQ.jZXHpwS0FoPNJxiI3fXjXvrQOgM7jQF-ud9A98Q6u-4",
+              "type": "string"
+            }
+          ]
+        },
+        "method": "DELETE",
+        "header": [],
+        "body": {
+          "mode": "raw",
+          "raw": ""
+        },
+        "url": {
+          "raw": "{{admissions_URL}}/deleteTerm/2?role=branch&email=nigdi@gmail.com",
+          "host": [
+            "{{admissions_URL}}"
+          ],
+          "path": [
+            "deleteTerm",
+            "2"
+          ],
+          "query": [
+            {
+              "key": "role",
+              "value": "branch"
+            },
+            {
+              "key": "email",
+              "value": "nigdi@gmail.com"
+            }
+          ]
+        }
+      },
+      "response": []
+    },
+    {
+      "name": "teacherlogin",
+      "request": {
+        "method": "POST",
+        "header": [],
+        "body": {
+          "mode": "raw",
+          "raw": "{\n  \"email\": \"test@example.com\",\n  \"password\": \"123\"\n}\n",
+          "options": {
+            "raw": {
+              "language": "json"
+            }
+          }
+        },
+        "url": {
+          "raw": "{{admissions_URL}}/teacherlogin",
+          "host": [
+            "{{admissions_URL}}"
+          ],
+          "path": [
+            "teacherlogin"
+          ]
+        }
+      },
+      "response": []
+    },
+    {
+      "name": "getAdmissionsByTeacherEmail",
+      "request": {
+        "auth": {
+          "type": "bearer",
+          "bearer": [
+            {
+              "key": "token",
+              "value": "eyJhbGciOiJIUzI1NiJ9.eyJzdWIiOiJzdGFmQGdtYWlsLmNvbSIsImlhdCI6MTc0ODU4OTM1NiwiZXhwIjoxNzQ4NTkyOTU2fQ.ZyqKKgtrQneUpLsmChACsWJ86qOLYqZbH0hwU1OShDw",
+              "type": "string"
+            }
+          ]
+        },
+        "method": "GET",
+        "header": [],
+        "url": {
+          "raw": "{{admissions_URL}}/getAdmissionsByTeacherEmail?role=teacher&email=class@example.com&branchCode=BCH584",
+          "host": [
+            "{{admissions_URL}}"
+          ],
+          "path": [
+            "getAdmissionsByTeacherEmail"
+          ],
+          "query": [
+            {
+              "key": "role",
+              "value": "teacher"
+            },
+            {
+              "key": "email",
+              "value": "class@example.com"
+            },
+            {
+              "key": "branchCode",
+              "value": "BCH584"
+            }
+          ]
+        }
+      },
+      "response": []
+    },
+    {
+      "name": "sendBulkEmails",
+      "request": {
+        "auth": {
+          "type": "bearer",
+          "bearer": [
+            {
+              "key": "token",
+              "value": "eyJhbGciOiJIUzI1NiJ9.eyJzdWIiOiJ2YXRhbkBnbWFpbC5jb20iLCJpYXQiOjE3NDczNzM5ODEsImV4cCI6MTc0NzM3NzU4MX0.thjSkoF8caXyByzT8lsNzt5zO00uL1FJJWq0sZJQZhU",
+              "type": "string"
+            }
+          ]
+        },
+        "method": "POST",
+        "header": [],
+        "body": {
+          "mode": "raw",
+          "raw": "{\n  \"subject\": \"🎓PJSoftTech increment letter!\",\n  \"message\": \"<h2>Hello shubham,</h2><p>as per your extra ordinary performance we glad to inform you that you have been promoted to senior software app developer with increment of 200 % hike on your current package...... congratulations</p>\",\n  \"ids\": [30]\n}\n",
+          "options": {
+            "raw": {
+              "language": "json"
+            }
+          }
+        },
+        "url": {
+          "raw": "{{admissions_URL}}/sendBulkEmails",
+          "host": [
+            "{{admissions_URL}}"
+          ],
+          "path": [
+            "sendBulkEmails"
+          ]
+        }
+      },
+      "response": []
+    },
+    {
+      "name": "createExamType",
+      "request": {
+        "method": "POST",
+        "header": [],
+        "body": {
+          "mode": "raw",
+          "raw": "{\n  \"examType\": \"practical\"\n}",
+          "options": {
+            "raw": {
+              "language": "json"
+            }
+          }
+        },
+        "url": {
+          "raw": "{{admissions_URL}}/createExamType?role=staff&email=neha@gmail.com",
+          "host": [
+            "{{admissions_URL}}"
+          ],
+          "path": [
+            "createExamType"
+          ],
+          "query": [
+            {
+              "key": "role",
+              "value": "staff"
+            },
+            {
+              "key": "email",
+              "value": "neha@gmail.com"
+            }
+          ]
+        }
+      },
+      "response": []
+    },
+    {
+      "name": "updateExamType",
+      "request": {
+        "auth": {
+          "type": "bearer",
+          "bearer": [
+            {
+              "key": "token",
+              "value": "eyJhbGciOiJIUzI1NiJ9.eyJzdWIiOiJ2YXRhbkBnbWFpbC5jb20iLCJpYXQiOjE3NDczMDA3MjMsImV4cCI6MTc0NzMwNDMyM30.hQXVTRHvUgQo4QHWrydOmJG1_0yz9uf2dIm-NvWPcYk",
+              "type": "string"
+            }
+          ]
+        },
+        "method": "PUT",
+        "header": [],
+        "body": {
+          "mode": "raw",
+          "raw": "{\n  \"examType\":\"written\"\n}\n",
+          "options": {
+            "raw": {
+              "language": "json"
+            }
+          }
+        },
+        "url": {
+          "raw": "{{admissions_URL}}/updateExamType/1",
+          "host": [
+            "{{admissions_URL}}"
+          ],
+          "path": [
+            "updateExamType",
+            "1"
+          ]
+        }
+      },
+      "response": []
+    },
+    {
+      "name": "deleteExamType",
+      "request": {
+        "auth": {
+          "type": "bearer",
+          "bearer": [
+            {
+              "key": "token",
+              "value": "eyJhbGciOiJIUzI1NiJ9.eyJzdWIiOiJ2YXRhbkBnbWFpbC5jb20iLCJpYXQiOjE3NDczMDA3MjMsImV4cCI6MTc0NzMwNDMyM30.hQXVTRHvUgQo4QHWrydOmJG1_0yz9uf2dIm-NvWPcYk",
+              "type": "string"
+            }
+          ]
+        },
+        "method": "DELETE",
+        "header": [],
+        "body": {
+          "mode": "raw",
+          "raw": ""
+        },
+        "url": {
+          "raw": "{{admissions_URL}}/deleteExamType/2",
+          "host": [
+            "{{admissions_URL}}"
+          ],
+          "path": [
+            "deleteExamType",
+            "2"
+          ]
+        }
+      },
+      "response": []
+    },
+    {
+      "name": "ExamTypegetbyid",
+      "protocolProfileBehavior": {
+        "disableBodyPruning": true
+      },
+      "request": {
+        "auth": {
+          "type": "bearer",
+          "bearer": [
+            {
+              "key": "token",
+              "value": "eyJhbGciOiJIUzI1NiJ9.eyJzdWIiOiJ2YXRhbkBnbWFpbC5jb20iLCJpYXQiOjE3NDczMDA3MjMsImV4cCI6MTc0NzMwNDMyM30.hQXVTRHvUgQo4QHWrydOmJG1_0yz9uf2dIm-NvWPcYk",
+              "type": "string"
+            }
+          ]
+        },
+        "method": "GET",
+        "header": [],
+        "body": {
+          "mode": "raw",
+          "raw": ""
+        },
+        "url": {
+          "raw": "{{admissions_URL}}/ExamTypegetbyid/1",
+          "host": [
+            "{{admissions_URL}}"
+          ],
+          "path": [
+            "ExamTypegetbyid",
+            "1"
+          ]
+        }
+      },
+      "response": []
+    },
+    {
+      "name": "getAllExamType",
+      "protocolProfileBehavior": {
+        "disableBodyPruning": true
+      },
+      "request": {
+        "auth": {
+          "type": "bearer",
+          "bearer": [
+            {
+              "key": "token",
+              "value": "eyJhbGciOiJIUzI1NiJ9.eyJzdWIiOiJ2YXRhbkBnbWFpbC5jb20iLCJpYXQiOjE3NDczMDA3MjMsImV4cCI6MTc0NzMwNDMyM30.hQXVTRHvUgQo4QHWrydOmJG1_0yz9uf2dIm-NvWPcYk",
+              "type": "string"
+            }
+          ]
+        },
+        "method": "GET",
+        "header": [],
+        "body": {
+          "mode": "raw",
+          "raw": ""
+        },
+        "url": {
+          "raw": "{{admissions_URL}}/getAllExamType",
+          "host": [
+            "{{admissions_URL}}"
+          ],
+          "path": [
+            "getAllExamType"
+          ]
+        }
+      },
+      "response": []
+    },
+    {
+      "name": "createPaperType",
+      "request": {
+        "method": "POST",
+        "header": [],
+        "body": {
+          "mode": "raw",
+          "raw": "{\n    \"paperType\":\"written\"\n}",
+          "options": {
+            "raw": {
+              "language": "json"
+            }
+          }
+        },
+        "url": {
+          "raw": "{{admissions_URL}}/createPaperType?role=staff&email=neha@gmail.com",
+          "host": [
+            "{{admissions_URL}}"
+          ],
+          "path": [
+            "createPaperType"
+          ],
+          "query": [
+            {
+              "key": "role",
+              "value": "staff"
+            },
+            {
+              "key": "email",
+              "value": "neha@gmail.com"
+            }
+          ]
+        }
+      },
+      "response": []
+    },
+    {
+      "name": "updatePaperType",
+      "request": {
+        "auth": {
+          "type": "bearer",
+          "bearer": [
+            {
+              "key": "token",
+              "value": "eyJhbGciOiJIUzI1NiJ9.eyJzdWIiOiJ2YXRhbkBnbWFpbC5jb20iLCJpYXQiOjE3NDczMDA3MjMsImV4cCI6MTc0NzMwNDMyM30.hQXVTRHvUgQo4QHWrydOmJG1_0yz9uf2dIm-NvWPcYk",
+              "type": "string"
+            }
+          ]
+        },
+        "method": "PUT",
+        "header": [],
+        "body": {
+          "mode": "raw",
+          "raw": "{\n    \"paperType\":\"xyzz\"\n}",
+          "options": {
+            "raw": {
+              "language": "json"
+            }
+          }
+        },
+        "url": {
+          "raw": "{{admissions_URL}}/updatePaperType/2",
+          "host": [
+            "{{admissions_URL}}"
+          ],
+          "path": [
+            "updatePaperType",
+            "2"
+          ]
+        }
+      },
+      "response": []
+    },
+    {
+      "name": "deletePaperType",
+      "request": {
+        "auth": {
+          "type": "bearer",
+          "bearer": [
+            {
+              "key": "token",
+              "value": "eyJhbGciOiJIUzI1NiJ9.eyJzdWIiOiJ2YXRhbkBnbWFpbC5jb20iLCJpYXQiOjE3NDczMDA3MjMsImV4cCI6MTc0NzMwNDMyM30.hQXVTRHvUgQo4QHWrydOmJG1_0yz9uf2dIm-NvWPcYk",
+              "type": "string"
+            }
+          ]
+        },
+        "method": "DELETE",
+        "header": [],
+        "body": {
+          "mode": "raw",
+          "raw": ""
+        },
+        "url": {
+          "raw": "{{admissions_URL}}/deletePaperType/2",
+          "host": [
+            "{{admissions_URL}}"
+          ],
+          "path": [
+            "deletePaperType",
+            "2"
+          ]
+        }
+      },
+      "response": []
+    },
+    {
+      "name": "PaperTypegetById",
+      "protocolProfileBehavior": {
+        "disableBodyPruning": true
+      },
+      "request": {
+        "auth": {
+          "type": "bearer",
+          "bearer": [
+            {
+              "key": "token",
+              "value": "eyJhbGciOiJIUzI1NiJ9.eyJzdWIiOiJ2YXRhbkBnbWFpbC5jb20iLCJpYXQiOjE3NDczMDA3MjMsImV4cCI6MTc0NzMwNDMyM30.hQXVTRHvUgQo4QHWrydOmJG1_0yz9uf2dIm-NvWPcYk",
+              "type": "string"
+            }
+          ]
+        },
+        "method": "GET",
+        "header": [],
+        "body": {
+          "mode": "raw",
+          "raw": ""
+        },
+        "url": {
+          "raw": "{{admissions_URL}}/PaperTypegetById/1",
+          "host": [
+            "{{admissions_URL}}"
+          ],
+          "path": [
+            "PaperTypegetById",
+            "1"
+          ]
+        }
+      },
+      "response": []
+    },
+    {
+      "name": "getAllPaperType",
+      "protocolProfileBehavior": {
+        "disableBodyPruning": true
+      },
+      "request": {
+        "auth": {
+          "type": "bearer",
+          "bearer": [
+            {
+              "key": "token",
+              "value": "eyJhbGciOiJIUzI1NiJ9.eyJzdWIiOiJ2YXRhbkBnbWFpbC5jb20iLCJpYXQiOjE3NDczMTAxOTksImV4cCI6MTc0NzMxMzc5OX0.hWtAbGECrF6tfCgsBAMM3vyvG_hd0l9urs9mS3Wcze4",
+              "type": "string"
+            }
+          ]
+        },
+        "method": "GET",
+        "header": [],
+        "body": {
+          "mode": "raw",
+          "raw": ""
+        },
+        "url": {
+          "raw": "{{admissions_URL}}/getAllPaperType",
+          "host": [
+            "{{admissions_URL}}"
+          ],
+          "path": [
+            "getAllPaperType"
+          ]
+        }
+      },
+      "response": []
+    },
+    {
+      "name": "createClassRoomSubjectDetails",
+      "request": {
+        "method": "POST",
+        "header": [],
+        "body": {
+          "mode": "raw",
+          "raw": "{\n  \"totalMarks\": 515,\n  \"passingMarks\": 85,\n  \"topicName\":\"def\",\n  \"classroom\": {\n    \"id\": 1\n  },\n  \"subject\": {\n    \"id\": 3\n  },\n  \"examType\": {\n    \"id\": 1\n  },\n  \"paperType\": {\n    \"id\": 1\n  }\n}\n",
+          "options": {
+            "raw": {
+              "language": "json"
+            }
+          }
+        },
+        "url": {
+          "raw": "{{admissions_URL}}/createClassRoomSubjectDetails?role=staff&email=neha@gmail.com",
+          "host": [
+            "{{admissions_URL}}"
+          ],
+          "path": [
+            "createClassRoomSubjectDetails"
+          ],
+          "query": [
+            {
+              "key": "role",
+              "value": "staff"
+            },
+            {
+              "key": "email",
+              "value": "neha@gmail.com"
+            }
+          ]
+        }
+      },
+      "response": []
+    },
+    {
+      "name": "getAllStudentSubjectResult",
+      "protocolProfileBehavior": {
+        "disableBodyPruning": true
+      },
+      "request": {
+        "auth": {
+          "type": "bearer",
+          "bearer": [
+            {
+              "key": "token",
+              "value": "",
+              "type": "string"
+            }
+          ]
+        },
+        "method": "GET",
+        "header": [],
+        "body": {
+          "mode": "raw",
+          "raw": ""
+        },
+        "url": {
+          "raw": "{{admissions_URL}}/getAllstudent?role=teacher&email=johndoe@example.com&branchCode=BCH123",
+          "host": [
+            "{{admissions_URL}}"
+          ],
+          "path": [
+            "getAllstudent"
+          ],
+          "query": [
+            {
+              "key": "role",
+              "value": "teacher"
+            },
+            {
+              "key": "email",
+              "value": "johndoe@example.com"
+            },
+            {
+              "key": "branchCode",
+              "value": "BCH123"
+            }
+          ]
+        }
+      },
+      "response": []
+    },
+    {
+      "name": "getStudentSubjectResultById",
+      "protocolProfileBehavior": {
+        "disableBodyPruning": true
+      },
+      "request": {
+        "auth": {
+          "type": "bearer",
+          "bearer": [
+            {
+              "key": "token",
+              "value": "eyJhbGciOiJIUzI1NiJ9.eyJzdWIiOiJzdGFmQGdtYWlsLmNvbSIsImlhdCI6MTc1MDY3NjA2MywiZXhwIjoxNzUwNjc5NjYzfQ.Q7-3L4VmcivdTPeCfMCGl0lY-wG3U-Sc_F0F9SNWt5c",
+              "type": "string"
+            }
+          ]
+        },
+        "method": "GET",
+        "header": [],
+        "body": {
+          "mode": "raw",
+          "raw": ""
+        },
+        "url": {
+          "raw": "{{admissions_URL}}/getStudentSubjectResultById/2?role=staff&email=vatan@gmail.com",
+          "host": [
+            "{{admissions_URL}}"
+          ],
+          "path": [
+            "getStudentSubjectResultById",
+            "2"
+          ],
+          "query": [
+            {
+              "key": "role",
+              "value": "staff"
+            },
+            {
+              "key": "email",
+              "value": "vatan@gmail.com"
+            }
+          ]
+        }
+      },
+      "response": []
+    },
+    {
+      "name": "getclassroombyteacheremail",
+      "request": {
+        "auth": {
+          "type": "bearer",
+          "bearer": [
+            {
+              "key": "token",
+              "value": "eyJhbGciOiJIUzI1NiJ9.eyJzdWIiOiJ2YXRhbkBnbWFpbC5jb20iLCJpYXQiOjE3NDgyNDI5MTEsImV4cCI6MTc0ODI0NjUxMX0.7m4RPNGP4qWcCj8I3sCelbIYTLSKXK5XUmjpiDU0LYY",
+              "type": "string"
+            }
+          ]
+        },
+        "method": "GET",
+        "header": [],
+        "url": {
+          "raw": "{{admissions_URL}}/classroomsbyteacheremail?role=teacher&email=johndoe@example.com&teacherEmail=johndoe@example.com",
+          "host": [
+            "{{admissions_URL}}"
+          ],
+          "path": [
+            "classroomsbyteacheremail"
+          ],
+          "query": [
+            {
+              "key": "role",
+              "value": "teacher"
+            },
+            {
+              "key": "email",
+              "value": "johndoe@example.com"
+            },
+            {
+              "key": "teacherEmail",
+              "value": "johndoe@example.com"
+            }
+          ]
+        }
+      },
+      "response": []
+    },
+    {
+      "name": "getResultsByStudentId",
+      "request": {
+        "auth": {
+          "type": "bearer",
+          "bearer": [
+            {
+              "key": "token",
+              "value": "eyJhbGciOiJIUzI1NiJ9.eyJzdWIiOiJwcmFnYXRpQGdtYWlsLmNvbSIsImlhdCI6MTc0ODI1OTQ0NCwiZXhwIjoxNzQ4MjYzMDQ0fQ.S66ZL7Hn682ngwSylUacdgz2dUmZnD_3UuLYRtfRQnE",
+              "type": "string"
+            }
+          ]
+        },
+        "method": "GET",
+        "header": [],
+        "url": {
+          "raw": "{{admissions_URL}}/getResultsByStudentId/10?role=staff&email=pragati@gmail.com",
+          "host": [
+            "{{admissions_URL}}"
+          ],
+          "path": [
+            "getResultsByStudentId",
+            "10"
+          ],
+          "query": [
+            {
+              "key": "role",
+              "value": "staff"
+            },
+            {
+              "key": "email",
+              "value": "pragati@gmail.com"
+            }
+          ]
+        }
+      },
+      "response": []
+    },
+    {
+      "name": "createStudentSubjectResult",
+      "request": {
+        "auth": {
+          "type": "bearer",
+          "bearer": [
+            {
+              "key": "token",
+              "value": "eyJhbGciOiJIUzI1NiJ9.eyJzdWIiOiJzdGFmQGdtYWlsLmNvbSIsImlhdCI6MTc1MDc1Njk3MSwiZXhwIjoxNzUwNzYwNTcxfQ.YzM3vb4aq1awGL8QK9yiQ7mnZyI9Ez7VoGmqniUVx1Q",
+              "type": "string"
+            }
+          ]
+        },
+        "method": "POST",
+        "header": [],
+        "body": {
+          "mode": "raw",
+          "raw": "[\n  \n  {\n    \"obtainedMarks\": 80,\n    \"student\": { \"id\": 7 },\n    \"subjectDetails\": { \"id\": 4 },\n    \"examType\": { \"id\": 3 },\n    \"paperType\": { \"id\": 3 }\n  },\n  {\n    \"obtainedMarks\": 70,\n    \"student\": { \"id\": 7 },\n    \"subjectDetails\": { \"id\": 5 },\n    \"examType\": { \"id\": 3 },\n    \"paperType\": { \"id\": 3 }\n  },\n  {\n    \"obtainedMarks\": 60,\n    \"student\": { \"id\": 7 },\n    \"subjectDetails\": { \"id\": 6 },\n    \"examType\": { \"id\": 3 },\n    \"paperType\": { \"id\": 3 }\n  }\n\n]\n",
+          "options": {
+            "raw": {
+              "language": "json"
+            }
+          }
+        },
+        "url": {
+          "raw": "{{admissions_URL}}/createStudentSubjectResult?role=teacher&email=class@example.com",
+          "host": [
+            "{{admissions_URL}}"
+          ],
+          "path": [
+            "createStudentSubjectResult"
+          ],
+          "query": [
+            {
+              "key": "role",
+              "value": "teacher"
+            },
+            {
+              "key": "email",
+              "value": "class@example.com"
+            }
+          ]
+        }
+      },
+      "response": []
+    },
+    {
+      "name": "getAllClassRoomSubjectDetails",
+      "request": {
+        "auth": {
+          "type": "bearer",
+          "bearer": [
+            {
+              "key": "token",
+              "value": "eyJhbGciOiJIUzI1NiJ9.eyJzdWIiOiJzdGFmQGdtYWlsLmNvbSIsImlhdCI6MTc1MDY3NjA2MywiZXhwIjoxNzUwNjc5NjYzfQ.Q7-3L4VmcivdTPeCfMCGl0lY-wG3U-Sc_F0F9SNWt5c",
+              "type": "string"
+            }
+          ]
+        },
+        "method": "GET",
+        "header": [],
+        "url": {
+          "raw": "{{admissions_URL}}/getAllClassRoomSubjectDetails?role=teacher&email=class@example.com&branchCode=BCH584",
+          "host": [
+            "{{admissions_URL}}"
+          ],
+          "path": [
+            "getAllClassRoomSubjectDetails"
+          ],
+          "query": [
+            {
+              "key": "role",
+              "value": "teacher"
+            },
+            {
+              "key": "email",
+              "value": "class@example.com"
+            },
+            {
+              "key": "branchCode",
+              "value": "BCH584"
+            }
+          ]
+        }
+      },
+      "response": []
+    },
+    {
+      "name": "getAllStudentResults",
+      "protocolProfileBehavior": {
+        "disableBodyPruning": true
+      },
+      "request": {
+        "auth": {
+          "type": "bearer",
+          "bearer": [
+            {
+              "key": "token",
+              "value": "eyJhbGciOiJIUzI1NiJ9.eyJzdWIiOiJzdGFmQGdtYWlsLmNvbSIsImlhdCI6MTc1MDc2MDI4NywiZXhwIjoxNzUwNzYzODg3fQ.uc0kKG_XKBz-JRtcXl6U_dFsKDm23TARclVYyJxmijs",
+              "type": "string"
+            }
+          ]
+        },
+        "method": "GET",
+        "header": [],
+        "body": {
+          "mode": "raw",
+          "raw": ""
+        },
+        "url": {
+          "raw": "{{admissions_URL}}/getAllStudentResults?role=teacher&email=class@example.com&branchCode=BCH584",
+          "host": [
+            "{{admissions_URL}}"
+          ],
+          "path": [
+            "getAllStudentResults"
+          ],
+          "query": [
+            {
+              "key": "role",
+              "value": "teacher"
+            },
+            {
+              "key": "email",
+              "value": "class@example.com"
+            },
+            {
+              "key": "branchCode",
+              "value": "BCH584"
+            }
+          ]
+        }
+      },
+      "response": []
+    },
+    {
+      "name": "getStudentResult",
+      "protocolProfileBehavior": {
+        "disableBodyPruning": true
+      },
+      "request": {
+        "auth": {
+          "type": "bearer",
+          "bearer": [
+            {
+              "key": "token",
+              "value": "eyJhbGciOiJIUzI1NiJ9.eyJzdWIiOiJzdGFmQGdtYWlsLmNvbSIsImlhdCI6MTc1MDc2Mzk1MywiZXhwIjoxNzUwNzY3NTUzfQ.X-mNlKiUVqbFJ33f9jqOanwACiCEEDrRVLDWkgc_Tm4",
+              "type": "string"
+            }
+          ]
+        },
+        "method": "GET",
+        "header": [],
+        "body": {
+          "mode": "raw",
+          "raw": ""
+        },
+        "url": {
+          "raw": "{{admissions_URL}}/getStudentResult/7?role=teacher&email=class@example.com",
+          "host": [
+            "{{admissions_URL}}"
+          ],
+          "path": [
+            "getStudentResult",
+            "7"
+          ],
+          "query": [
+            {
+              "key": "role",
+              "value": "teacher"
+            },
+            {
+              "key": "email",
+              "value": "class@example.com"
+            }
+          ]
+        }
+      },
+      "response": []
+    },
+    {
+      "name": "passfailcount",
+      "request": {
+        "auth": {
+          "type": "bearer",
+          "bearer": [
+            {
+              "key": "token",
+              "value": "eyJhbGciOiJIUzI1NiJ9.eyJzdWIiOiJzdGFmQGdtYWlsLmNvbSIsImlhdCI6MTc0ODQxMzk0MCwiZXhwIjoxNzQ4NDE3NTQwfQ.EkIPWt0cpEHpAHAwsMMXpqni7-g5shuQIVayoxb3Rwg",
+              "type": "string"
+            }
+          ]
+        },
+        "method": "GET",
+        "header": [],
+        "url": {
+          "raw": "{{admissions_URL}}/passfailcount?role=teacher&email=johndoe@example.com&examType=written&paperType=abc",
+          "host": [
+            "{{admissions_URL}}"
+          ],
+          "path": [
+            "passfailcount"
+          ],
+          "query": [
+            {
+              "key": "role",
+              "value": "teacher"
+            },
+            {
+              "key": "email",
+              "value": "johndoe@example.com"
+            },
+            {
+              "key": "examType",
+              "value": "written"
+            },
+            {
+              "key": "paperType",
+              "value": "abc"
+            }
+          ]
+        }
+      },
+      "response": []
+    },
+    {
+      "name": "createReference",
+      "request": {
+        "auth": {
+          "type": "bearer",
+          "bearer": [
+            {
+              "key": "token",
+              "value": "eyJhbGciOiJIUzI1NiJ9.eyJzdWIiOiJzdGFmQGdtYWlsLmNvbSIsImlhdCI6MTc0ODQ5MjYyMiwiZXhwIjoxNzQ4NDk2MjIyfQ.w7nQMZFA3n8kSSEnluUdG0ql1Vs5wl7QxcZfl4UYVUY",
+              "type": "string"
+            }
+          ]
+        },
+        "method": "POST",
+        "header": [],
+        "body": {
+          "mode": "raw",
+          "raw": "{\n  \"reference\": \"offline Campaign\"\n}\n",
+          "options": {
+            "raw": {
+              "language": "json"
+            }
+          }
+        },
+        "url": {
+          "raw": "{{admissions_URL}}/createReference?role=staff&email=staf@gmail.com",
+          "host": [
+            "{{admissions_URL}}"
+          ],
+          "path": [
+            "createReference"
+          ],
+          "query": [
+            {
+              "key": "role",
+              "value": "staff"
+            },
+            {
+              "key": "email",
+              "value": "staf@gmail.com"
+            }
+          ]
+        }
+      },
+      "response": []
+    },
+    {
+      "name": "getAllReferences",
+      "protocolProfileBehavior": {
+        "disableBodyPruning": true
+      },
+      "request": {
+        "auth": {
+          "type": "bearer",
+          "bearer": [
+            {
+              "key": "token",
+              "value": "eyJhbGciOiJIUzI1NiJ9.eyJzdWIiOiJzdGFmQGdtYWlsLmNvbSIsImlhdCI6MTc0ODQ5MjYyMiwiZXhwIjoxNzQ4NDk2MjIyfQ.w7nQMZFA3n8kSSEnluUdG0ql1Vs5wl7QxcZfl4UYVUY",
+              "type": "string"
+            }
+          ]
+        },
+        "method": "GET",
+        "header": [],
+        "body": {
+          "mode": "raw",
+          "raw": ""
+        },
+        "url": {
+          "raw": "{{admissions_URL}}/getAllReferences?role=staff&email=staf@gmail.com&branchCode=BCH584",
+          "host": [
+            "{{admissions_URL}}"
+          ],
+          "path": [
+            "getAllReferences"
+          ],
+          "query": [
+            {
+              "key": "role",
+              "value": "staff"
+            },
+            {
+              "key": "email",
+              "value": "staf@gmail.com"
+            },
+            {
+              "key": "branchCode",
+              "value": "BCH584"
+            }
+          ]
+        }
+      },
+      "response": []
+    },
+    {
+      "name": "getReferenceById",
+      "protocolProfileBehavior": {
+        "disableBodyPruning": true
+      },
+      "request": {
+        "auth": {
+          "type": "bearer",
+          "bearer": [
+            {
+              "key": "token",
+              "value": "eyJhbGciOiJIUzI1NiJ9.eyJzdWIiOiJzdGFmQGdtYWlsLmNvbSIsImlhdCI6MTc0ODQ5MjYyMiwiZXhwIjoxNzQ4NDk2MjIyfQ.w7nQMZFA3n8kSSEnluUdG0ql1Vs5wl7QxcZfl4UYVUY",
+              "type": "string"
+            }
+          ]
+        },
+        "method": "GET",
+        "header": [],
+        "body": {
+          "mode": "raw",
+          "raw": ""
+        },
+        "url": {
+          "raw": "{{admissions_URL}}/getReferenceById/1?role=staff&email=staf@gmail.com",
+          "host": [
+            "{{admissions_URL}}"
+          ],
+          "path": [
+            "getReferenceById",
+            "1"
+          ],
+          "query": [
+            {
+              "key": "role",
+              "value": "staff"
+            },
+            {
+              "key": "email",
+              "value": "staf@gmail.com"
+            }
+          ]
+        }
+      },
+      "response": []
+    },
+    {
+      "name": "updateReference",
+      "request": {
+        "auth": {
+          "type": "bearer",
+          "bearer": [
+            {
+              "key": "token",
+              "value": "eyJhbGciOiJIUzI1NiJ9.eyJzdWIiOiJzdGFmQGdtYWlsLmNvbSIsImlhdCI6MTc0ODQ5MjYyMiwiZXhwIjoxNzQ4NDk2MjIyfQ.w7nQMZFA3n8kSSEnluUdG0ql1Vs5wl7QxcZfl4UYVUY",
+              "type": "string"
+            }
+          ]
+        },
+        "method": "PUT",
+        "header": [],
+        "body": {
+          "mode": "raw",
+          "raw": "{\n  \"reference\": \"Updated Reference Name\"\n}\n",
+          "options": {
+            "raw": {
+              "language": "json"
+            }
+          }
+        },
+        "url": {
+          "raw": "{{admissions_URL}}/updateReference/2?role=staff&email=staf@gmail.com",
+          "host": [
+            "{{admissions_URL}}"
+          ],
+          "path": [
+            "updateReference",
+            "2"
+          ],
+          "query": [
+            {
+              "key": "role",
+              "value": "staff"
+            },
+            {
+              "key": "email",
+              "value": "staf@gmail.com"
+            }
+          ]
+        }
+      },
+      "response": []
+    },
+    {
+      "name": "deleteReference",
+      "request": {
+        "auth": {
+          "type": "bearer",
+          "bearer": [
+            {
+              "key": "token",
+              "value": "eyJhbGciOiJIUzI1NiJ9.eyJzdWIiOiJzdGFmQGdtYWlsLmNvbSIsImlhdCI6MTc0ODQ5MjYyMiwiZXhwIjoxNzQ4NDk2MjIyfQ.w7nQMZFA3n8kSSEnluUdG0ql1Vs5wl7QxcZfl4UYVUY",
+              "type": "string"
+            }
+          ]
+        },
+        "method": "DELETE",
+        "header": [],
+        "body": {
+          "mode": "raw",
+          "raw": ""
+        },
+        "url": {
+          "raw": "{{admissions_URL}}/deleteReference/2?role=staff&email=staf@gmail.com",
+          "host": [
+            "{{admissions_URL}}"
+          ],
+          "path": [
+            "deleteReference",
+            "2"
+          ],
+          "query": [
+            {
+              "key": "role",
+              "value": "staff"
+            },
+            {
+              "key": "email",
+              "value": "staf@gmail.com"
+            }
+          ]
+        }
+      },
+      "response": []
+    },
+    {
+      "name": "logoutAttendance",
+      "request": {
+        "auth": {
+          "type": "bearer",
+          "bearer": [
+            {
+              "key": "token",
+              "value": "eyJhbGciOiJIUzI1NiJ9.eyJzdWIiOiJzdGFmQGdtYWlsLmNvbSIsImlhdCI6MTc1MDc0Mzk0MCwiZXhwIjoxNzUwNzQ3NTQwfQ.gdRXzr-yiI9bgxqWZ4jtiyD8Lzy7brL7Ri7FXp6gCJU",
+              "type": "string"
+            }
+          ]
+        },
+        "method": "POST",
+        "header": [],
+        "body": {
+          "mode": "formdata",
+          "formdata": [
+            {
+              "key": "image",
+              "type": "file",
+              "src": "postman-cloud:///1f050bee-cf39-44c0-b37b-54bf86578ce4"
+            },
+            {
+              "key": "branch_code",
+              "value": "BCH584",
+              "type": "text"
+            }
+          ]
+        },
+        "url": {
+          "raw": "{{admissions_URL}}/logoutAttendance",
+          "host": [
+            "{{admissions_URL}}"
+          ],
+          "path": [
+            "logoutAttendance"
+          ]
+        }
+      },
+      "response": []
+    },
+    {
+      "name": "markAttendance",
+      "request": {
+        "auth": {
+          "type": "bearer",
+          "bearer": [
+            {
+              "key": "token",
+              "value": "eyJhbGciOiJIUzI1NiJ9.eyJzdWIiOiJzdGFmQGdtYWlsLmNvbSIsImlhdCI6MTc1MDc0Mzk0MCwiZXhwIjoxNzUwNzQ3NTQwfQ.gdRXzr-yiI9bgxqWZ4jtiyD8Lzy7brL7Ri7FXp6gCJU",
+              "type": "string"
+            }
+          ]
+        },
+        "method": "POST",
+        "header": [],
+        "body": {
+          "mode": "formdata",
+          "formdata": [
+            {
+              "key": "image",
+              "type": "file",
+              "src": "postman-cloud:///1f050bee-cf39-44c0-b37b-54bf86578ce4"
+            },
+            {
+              "key": "branch_code",
+              "value": "BCH584",
+              "type": "text"
+            }
+          ]
+        },
+        "url": {
+          "raw": "{{admissions_URL}}/markAttendance",
+          "host": [
+            "{{admissions_URL}}"
+          ],
+          "path": [
+            "markAttendance"
+          ]
+        }
+      },
+      "response": []
+    },
+    {
+      "name": "getClassRoomsByBranchCode",
+      "protocolProfileBehavior": {
+        "disableBodyPruning": true
+      },
+      "request": {
+        "method": "GET",
+        "header": [],
+        "body": {
+          "mode": "raw",
+          "raw": "",
+          "options": {
+            "raw": {
+              "language": "json"
+            }
+          }
+        },
+        "url": {
+          "raw": "{{admissions_URL}}/getClassRoomsByBranchCode?role=branch&email=Pentagoninstituteshrirampur@gmail.com&branchCode=BCH118",
+          "host": [
+            "{{admissions_URL}}"
+          ],
+          "path": [
+            "getClassRoomsByBranchCode"
+          ],
+          "query": [
+            {
+              "key": "role",
+              "value": "branch"
+            },
+            {
+              "key": "email",
+              "value": "Pentagoninstituteshrirampur@gmail.com"
+            },
+            {
+              "key": "branchCode",
+              "value": "BCH118"
+            }
+          ]
+        }
+      },
+      "response": []
+    },
+    {
+      "name": "Attendencebyclassid",
+      "request": {
+        "auth": {
+          "type": "bearer",
+          "bearer": [
+            {
+              "key": "token",
+              "value": "eyJhbGciOiJIUzI1NiJ9.eyJzdWIiOiJzdGFmQGdtYWlsLmNvbSIsImlhdCI6MTc0OTc5MDI2MiwiZXhwIjoxNzQ5NzkzODYyfQ.0b19iSZscKYMdqzJYswahFE0GvzmAdsjhpg0eamtsLA",
+              "type": "string"
+            }
+          ]
+        },
+        "method": "GET",
+        "header": [],
+        "url": {
+          "raw": "{{admissions_URL}}/byClassroomAndBranch?classroomId=1&branchCode=BCH584",
+          "host": [
+            "{{admissions_URL}}"
+          ],
+          "path": [
+            "byClassroomAndBranch"
+          ],
+          "query": [
+            {
+              "key": "classroomId",
+              "value": "1"
+            },
+            {
+              "key": "branchCode",
+              "value": "BCH584"
+            }
+          ]
+        }
+      },
+      "response": []
+    },
+    {
+      "name": "getAttendanceByAdmissionId",
+      "protocolProfileBehavior": {
+        "disableBodyPruning": true
+      },
+      "request": {
+        "auth": {
+          "type": "bearer",
+          "bearer": [
+            {
+              "key": "token",
+              "value": "eyJhbGciOiJIUzI1NiJ9.eyJzdWIiOiJzdGFmQGdtYWlsLmNvbSIsImlhdCI6MTc0OTc5MDI2MiwiZXhwIjoxNzQ5NzkzODYyfQ.0b19iSZscKYMdqzJYswahFE0GvzmAdsjhpg0eamtsLA",
+              "type": "string"
+            }
+          ]
+        },
+        "method": "GET",
+        "header": [],
+        "body": {
+          "mode": "raw",
+          "raw": "",
+          "options": {
+            "raw": {
+              "language": "json"
+            }
+          }
+        },
+        "url": {
+          "raw": "{{admissions_URL}}/getAttendanceByAdmissionId?admissionId=1&branchCode=BCH584",
+          "host": [
+            "{{admissions_URL}}"
+          ],
+          "path": [
+            "getAttendanceByAdmissionId"
+          ],
+          "query": [
+            {
+              "key": "admissionId",
+              "value": "1"
+            },
+            {
+              "key": "branchCode",
+              "value": "BCH584"
+            }
+          ]
+        }
+      },
+      "response": []
+    },
+    {
+      "name": "attendancefilter",
+      "request": {
+        "auth": {
+          "type": "bearer",
+          "bearer": [
+            {
+              "key": "token",
+              "value": "eyJhbGciOiJIUzI1NiJ9.eyJzdWIiOiJzdGFmQGdtYWlsLmNvbSIsImlhdCI6MTc1MDMxMzkxNywiZXhwIjoxNzUwMzE3NTE3fQ.ogsXPR5_flpvkWrpA96FR7Uhrx_Lp54lKjVX5sbfBzg",
+              "type": "string"
+            }
+          ]
+        },
+        "method": "GET",
+        "header": [],
+        "url": {
+          "raw": "{{admissions_URL}}/attendancefilter?classroomId=2&filter=today&branchCode=BCH584",
+          "host": [
+            "{{admissions_URL}}"
+          ],
+          "path": [
+            "attendancefilter"
+          ],
+          "query": [
+            {
+              "key": "classroomId",
+              "value": "2"
+            },
+            {
+              "key": "filter",
+              "value": "today"
+            },
+            {
+              "key": "branchCode",
+              "value": "BCH584"
+            }
+          ]
+        }
+      },
+      "response": []
+    },
+    {
+      "name": "userlogin",
+      "request": {
+        "auth": {
+          "type": "bearer",
+          "bearer": [
+            {
+              "key": "token",
+              "value": "",
+              "type": "string"
+            }
+          ]
+        },
+        "method": "POST",
+        "header": [],
+        "body": {
+          "mode": "raw",
+          "raw": "{\n    \"email\":\"akash@gmail.com\",\n    \"password\":\"password123\"\n}",
+          "options": {
+            "raw": {
+              "language": "json"
+            }
+          }
+        },
+        "url": {
+          "raw": "{{admissions_URL}}/userlogin",
+          "host": [
+            "{{admissions_URL}}"
+          ],
+          "path": [
+            "userlogin"
+          ]
+        }
+      },
+      "response": []
+    },
+    {
+      "name": "sendotpuser",
+      "request": {
+        "auth": {
+          "type": "bearer",
+          "bearer": [
+            {
+              "key": "token",
+              "value": "",
+              "type": "string"
+            }
+          ]
+        },
+        "method": "POST",
+        "header": [],
+        "body": {
+          "mode": "raw",
+          "raw": "{ \"email\": \"shubhamwaikar538@gmail.com\" }\n",
+          "options": {
+            "raw": {
+              "language": "json"
+            }
+          }
+        },
+        "url": {
+          "raw": "{{admissions_URL}}/sendotp",
+          "host": [
+            "{{admissions_URL}}"
+          ],
+          "path": [
+            "sendotp"
+          ]
+        }
+      },
+      "response": []
+    },
+    {
+      "name": "resetuserpassword",
+      "request": {
+        "auth": {
+          "type": "bearer",
+          "bearer": [
+            {
+              "key": "token",
+              "value": "",
+              "type": "string"
+            }
+          ]
+        },
+        "method": "POST",
+        "header": [],
+        "body": {
+          "mode": "raw",
+          "raw": "{ \"email\": \"shubhamwaikar538@gmail.com\",\n  \"otp\": \"315549\",\n  \"newPassword\": \"myNewPass\"\n   \n }\n",
+          "options": {
+            "raw": {
+              "language": "json"
+            }
+          }
+        },
+        "url": {
+          "raw": "{{admissions_URL}}/resetuserpassword",
+          "host": [
+            "{{admissions_URL}}"
+          ],
+          "path": [
+            "resetuserpassword"
+          ]
+        }
+      },
+      "response": []
+    },
+    {
+      "name": "usergetById",
+      "protocolProfileBehavior": {
+        "disableBodyPruning": true
+      },
+      "request": {
+        "auth": {
+          "type": "bearer",
+          "bearer": [
+            {
+              "key": "token",
+              "value": "eyJhbGciOiJIUzI1NiJ9.eyJzdWIiOiJzdGFmQGdtYWlsLmNvbSIsImlhdCI6MTc1MDA3NTA0MiwiZXhwIjoxNzUwMDc4NjQyfQ.wq2CRA2m4Jp1ORUH668j-3OldFToHeaf9354s6XimFo",
+              "type": "string"
+            }
+          ]
+        },
+        "method": "GET",
+        "header": [],
+        "body": {
+          "mode": "raw",
+          "raw": ""
+        },
+        "url": {
+          "raw": "{{admissions_URL}}/usergetById/2",
+          "host": [
+            "{{admissions_URL}}"
+          ],
+          "path": [
+            "usergetById",
+            "2"
+          ]
+        }
+      },
+      "response": []
+    },
+    {
+      "name": "attendancebyadmissionid",
+      "request": {
+        "auth": {
+          "type": "bearer",
+          "bearer": [
+            {
+              "key": "token",
+              "value": "eyJhbGciOiJIUzI1NiJ9.eyJzdWIiOiJzdGFmQGdtYWlsLmNvbSIsImlhdCI6MTc1MDMxMjMxMSwiZXhwIjoxNzUwMzE1OTExfQ.kKQT_3RQe7l-O5EfYG2T9IpZ61Yukx3DuDF1i5ik1Ks",
+              "type": "string"
+            }
+          ]
+        },
+        "method": "GET",
+        "header": [],
+        "url": {
+          "raw": "{{admissions_URL}}/byadmissionid/5",
+          "host": [
+            "{{admissions_URL}}"
+          ],
+          "path": [
+            "byadmissionid",
+            "5"
+          ]
+        }
+      },
+      "response": []
+    },
+    {
+      "name": "getuserResult",
+      "request": {
+        "auth": {
+          "type": "bearer",
+          "bearer": [
+            {
+              "key": "token",
+              "value": "eyJhbGciOiJIUzI1NiJ9.eyJzdWIiOiJzdGFmQGdtYWlsLmNvbSIsImlhdCI6MTc1MDc2Mzk1MywiZXhwIjoxNzUwNzY3NTUzfQ.X-mNlKiUVqbFJ33f9jqOanwACiCEEDrRVLDWkgc_Tm4",
+              "type": "string"
+            }
+          ]
+        },
+        "method": "GET",
+        "header": [],
+        "url": {
+          "raw": "{{admissions_URL}}/getuserResult/7",
+          "host": [
+            "{{admissions_URL}}"
+          ],
+          "path": [
+            "getuserResult",
+            "7"
+          ]
+        }
+      },
+      "response": []
+    },
+    {
+      "name": "manualMarkAttendance",
+      "request": {
+        "auth": {
+          "type": "bearer",
+          "bearer": [
+            {
+              "key": "token",
+              "value": "eyJhbGciOiJIUzI1NiJ9.eyJzdWIiOiJzdGFmQGdtYWlsLmNvbSIsImlhdCI6MTc1MDMxMzkxNywiZXhwIjoxNzUwMzE3NTE3fQ.ogsXPR5_flpvkWrpA96FR7Uhrx_Lp54lKjVX5sbfBzg",
+              "type": "string"
+            }
+          ]
+        },
+        "method": "POST",
+        "header": [],
+        "body": {
+          "mode": "raw",
+          "raw": "[1]\n",
+          "options": {
+            "raw": {
+              "language": "json"
+            }
+          }
+        },
+        "url": {
+          "raw": "{{admissions_URL}}/manualMarkAttendance?branch_code=BCH584&classroomId=2",
+          "host": [
+            "{{admissions_URL}}"
+          ],
+          "path": [
+            "manualMarkAttendance"
+          ],
+          "query": [
+            {
+              "key": "branch_code",
+              "value": "BCH584"
+            },
+            {
+              "key": "classroomId",
+              "value": "2"
+            }
+          ]
+        }
+      },
+      "response": []
+    },
+    {
+      "name": "http://localhost:8111/getStudentforAssignToClassRoom?role=staff&email=tunvi%40gmail.com&page=0&size=10",
+      "protocolProfileBehavior": {
+        "disableBodyPruning": true
+      },
+      "request": {
+        "auth": {
+          "type": "bearer",
+          "bearer": [
+            {
+              "key": "token",
+              "value": "eyJhbGciOiJIUzI1NiJ9.eyJzdWIiOiJ0dW52aUBnbWFpbC5jb20iLCJpYXQiOjE3NTE0NTc4MjMsImV4cCI6MTc1MTQ2MTQyM30.h-sgEmW318J0nSDB-WqNWrZK7KWvC36Gk33akrHzSck",
+              "type": "string"
+            }
+          ]
+        },
+        "method": "GET",
+        "header": [],
+        "body": {
+          "mode": "raw",
+          "raw": "",
+          "options": {
+            "raw": {
+              "language": "json"
+            }
+          }
+        },
+        "url": {
+          "raw": "{{admissions_URL}}:8111/getStudentforAssignToClassRoom?role=staff&email=tunvi%40gmail.com&page=0&size=10",
+          "host": [
+            "{{admissions_URL}}"
+          ],
+          "port": "8111",
+          "path": [
+            "getStudentforAssignToClassRoom"
+          ],
+          "query": [
+            {
+              "key": "role",
+              "value": "staff"
+            },
+            {
+              "key": "email",
+              "value": "tunvi%40gmail.com"
+            },
+            {
+              "key": "page",
+              "value": "0"
+            },
+            {
+              "key": "size",
+              "value": "10"
+            }
+          ]
+        }
+      },
+      "response": []
+    },
+    {
+      "name": "New Request",
+      "request": {
+        "method": "GET",
+        "header": [],
+        "url": {
+          "raw": ""
+        }
+      },
+      "response": []
+    },
+    {
+      "name": "submitHomework",
+      "request": {
+        "method": "GET",
+        "header": [],
+        "url": {
+          "raw": ""
+        }
+      },
+      "response": []
+    },
+    {
+      "name": "getHomeworkForStudent",
+      "request": {
+        "method": "GET",
+        "header": [],
+        "url": {
+          "raw": ""
+        }
+      },
+      "response": []
+    },
+    {
+      "name": "generateQRCodeForAdmission",
+      "request": {
+        "method": "GET",
+        "header": [],
+        "url": {
+          "raw": ""
+        }
+      },
+      "response": []
+    }
+  ],
+  "auth": {
+    "type": "bearer",
+    "bearer": [
+      {
+        "key": "token",
+        "value": "eyJhbGciOiJIUzI1NiJ9.eyJzdWIiOiJuZWhhQGdtYWlsLmNvbSIsImlhdCI6MTc4MDA0NjcxNywiZXhwIjoxNzgwMDUwMzE3fQ.7Td-NoDyEKGi7q9CZVLUhArdeuaR7pRrHuPozefdIvk",
+        "type": "string"
+      }
+    ]
+  },
+  "event": [
+    {
+      "listen": "prerequest",
+      "script": {
+        "type": "text/javascript",
+        "packages": {},
+        "requests": {},
+        "exec": [
+          ""
+        ]
+      }
+    },
+    {
+      "listen": "test",
+      "script": {
+        "type": "text/javascript",
+        "packages": {},
+        "requests": {},
+        "exec": [
+          ""
+        ]
+      }
+    }
+  ]
+}
